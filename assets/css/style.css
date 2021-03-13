@@ -1254,6 +1254,13 @@ section {
   margin: 0 auto;
 }
 
+@media (max-width: 1080px) {
+  #testimonials .testimonial-item .testimonial-img {
+    width: 400px;
+    height: 330px;
+  }
+}
+
 #testimonials .testimonial-item h3 {
   font-size: 25px;
   font-weight: bold;
