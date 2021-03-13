@@ -1256,10 +1256,11 @@ section {
 
 @media (max-width: 1080px) {
   #testimonials .testimonial-item .testimonial-img {
-    width: 400px;
-    height: 330px;
+    width: 350px;
+    height: 300px;
   }
 }
+
 
 #testimonials .testimonial-item h3 {
   font-size: 25px;
