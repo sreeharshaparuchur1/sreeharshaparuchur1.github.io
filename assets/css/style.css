@@ -632,6 +632,7 @@ section {
 
 #about .container {
   position: relative;
+  text-align: left;
   z-index: 10;
 }
 
