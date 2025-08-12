@@ -503,20 +503,99 @@ h1, h2, h3, h4, h5, h6 {
 #intro .btn-get-started {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 32px;
+  padding: 10px 24px;
   border-radius: 50px;
   transition: 0.5s;
-  margin: 10px;
+  margin: 8px;
   color: #fff;
   background: #18d26e;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(24, 210, 110, 0.2);
+}
+
+@media (max-width: 768px) {
+  #intro .btn-get-started {
+    font-size: 14px;
+    padding: 8px 20px;
+    margin: 6px;
+  }
 }
 
 #intro .btn-get-started:hover {
   background: #fff;
   color: #18d26e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.3);
+}
+
+/* Profile Picture Styling */
+#intro .profile-picture {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #18d26e;
+  margin: 0 auto 30px auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 8px 32px rgba(24, 210, 110, 0.3);
+  transition: all 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+#intro .profile-picture:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 48px rgba(24, 210, 110, 0.4);
+}
+
+@media (max-width: 768px) {
+  #intro .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  #intro .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Updated text styling for better hierarchy */
+#intro .subtitle {
+  color: #18d26e;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#intro .tagline {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  font-style: italic;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  #intro .subtitle {
+    font-size: 16px;
+  }
+  
+  #intro .tagline {
+    font-size: 16px;
+    max-width: 90%;
+  }
 }
 
 /*--------------------------------------------------------------

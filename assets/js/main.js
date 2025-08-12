@@ -158,8 +158,8 @@
   });
 
   introCarousel.on('slid.bs.carousel', function(e) {
-    $(this).find('h2').addClass('animate__animated animate__fadeInDown');
-    $(this).find('p, .btn-get-started').addClass('animate__animated animate__fadeInUp');
+    $(this).find('.profile-picture, h2').addClass('animate__animated animate__fadeInDown');
+    $(this).find('.subtitle, .tagline, .btn-get-started').addClass('animate__animated animate__fadeInUp');
   });
 
   // Skills section
