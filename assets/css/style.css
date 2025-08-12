@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Prelaoder */
+/* Preloader */
 #preloader {
   position: fixed;
   top: 0;
@@ -1150,7 +1150,7 @@ section {
   transition: .9s;
 }
 
-/* Facts Section
+/* Facts Section - Commented Out
 --------------------------------
 #facts {
   background: url("../img/facts-bg.jpg") center top no-repeat fixed;
@@ -1803,7 +1803,7 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: italic;
+  font-style: italic;
   line-height: 26px;
 }
 
