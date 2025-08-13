@@ -306,3 +306,49 @@
   });
 
 })(jQuery);
+
+// Experience Cards Toggle Functionality (Global scope for onclick)
+function toggleCard(link) {
+  const card = link.closest('.experience-card');
+  const content = card.querySelector('.card-content');
+  const linkText = link.querySelector('.link-text');
+  const icon = link.querySelector('i');
+  
+  if (content.classList.contains('expanded')) {
+    // Collapse the card
+    content.classList.remove('expanded');
+    link.classList.remove('expanded');
+    linkText.textContent = 'More details';
+  } else {
+    // Expand the card
+    content.classList.add('expanded');
+    link.classList.add('expanded');
+    linkText.textContent = 'Less details';
+  }
+}
+
+
+
+// Close other expanded cards when opening a new one (optional UX enhancement)
+function toggleCardExclusive(link) {
+  const currentCard = link.closest('.experience-card');
+  const allCards = document.querySelectorAll('.experience-card');
+  
+  // Close all other cards
+  allCards.forEach(card => {
+    if (card !== currentCard) {
+      const content = card.querySelector('.card-content');
+      const cardLink = card.querySelector('.read-more-link');
+      const linkText = cardLink.querySelector('.link-text');
+      
+      if (content.classList.contains('expanded')) {
+        content.classList.remove('expanded');
+        cardLink.classList.remove('expanded');
+        linkText.textContent = 'More details';
+      }
+    }
+  });
+  
+  // Toggle current card
+  toggleCard(link);
+}
