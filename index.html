@@ -427,73 +427,113 @@
             </div>
         </section>
 
-        <!-- ======= Services Section ======= -->
+        <!-- ======= Projects Section ======= -->
         <section id="services">
             <div class="container" data-aos="fade-up">
-                <header class="section-header wow fadeInUp">
+                <header class="section-header">
                     <h3>Major Projects</h3>
-                    <h5>The only problem without a solution is an improperly phrased one.</h5>
-                    <h4>Do check out my <a href="https://github.com/sreeharshaparuchur1">GitHub</a> for more projects / codes.</h4>
                 </header>
-                <br><br>
-                <div class="row">
-                    <div class="mt-6 col-lg-6 col-md-4 box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-                        <h4 class="title"><a
-                                href="https://github.com/sreeharshaparuchur1/Point-cloud-reconstruction">Dense Stero
-                                Reconstruction in real-time</a></h4>
-                        <p class="description">Given a set of stereo images from the <a
-                                href="http://www.cvlibs.net/datasets/kitti/index.php">KITTI dataset</a>, we undistort
-                            and rectify the stereo pair. We employ epipolar geometry to find correspondences between the
-                            images and then use block-matching to compute a disparity map for each stereo pair.
-                            Poses are estimated using <a href="https://github.com/UZ-SLAMLab/ORB_SLAM3">ORB-SLAM 3</a>
-                            and the sequence is registered and visualized as a point cloud and an octomap.
-                        </p>
+
+                <!-- Projects Philosophy -->
+                <div class="projects-philosophy">
+                    <blockquote class="projects-quote">
+                        "The only problem without a solution is an improperly phrased one"
+                    </blockquote>
+                    <p class="projects-intro">
+                        Explore my portfolio of technical projects spanning computer vision, robotics, and machine learning. 
+                        Each project represents a deep dive into cutting-edge technologies and methodologies. 
+                        Check out my <a href="https://github.com/sreeharshaparuchur1" target="_blank">GitHub</a> for more projects and code implementations.
+                    </p>
+                </div>
+
+                <!-- Projects Container -->
+                <div class="projects-container">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/280x180/e8f4fd/18d26e?text=STEREO+RECONSTRUCTION" alt="Dense Stereo Reconstruction Project">
+                        </div>
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h4 class="project-title">Dense Stereo Reconstruction in Real-time</h4>
+                                <p class="project-description">
+                                    Implementation of epipolar geometry and block-matching for disparity map computation using KITTI dataset. 
+                                    Advanced computer vision techniques for stereo rectification with ORB-SLAM 3 pose estimation, enabling 
+                                    real-time 3D reconstruction for robotics applications.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/sreeharshaparuchur1/Point-cloud-reconstruction" target="_blank" class="project-link">
+                                        <i class="fa fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-md-4 box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-                        <h4 class="title"><a
-                                href="https://github.com/sreeharshaparuchur1/seq2seq_machine_translation">Neural Machine
-                                Translation</a></h4>
-                        <p class="description">Comparing an LSTM and GRU based Bahdanau Attention architecture (as
-                            described in <a href="https://arxiv.org/pdf/1409.0473.pdf"> this paper </a>) for a popular
-                            NLP Sequence2Sequence task of Machine Translation.
-                            Both approaches make use of the <a href="https://arxiv.org/pdf/1412.6980.pdf">ADAM
-                                optimizer</a>. The resulting English to Hindi translation is evaluated using the <a
-                                href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/what-is-bleu-score">
-                                BLEU score</a>.
-                        </p>
+
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/280x180/f0fff4/18d26e?text=NEURAL+TRANSLATION" alt="Neural Machine Translation Project">
+                        </div>
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h4 class="project-title">Neural Machine Translation</h4>
+                                <p class="project-description">
+                                    Comparative analysis of LSTM and GRU-based Bahdanau Attention architectures for sequence-to-sequence translation. 
+                                    English to Hindi translation system with ADAM optimization, evaluated using BLEU score metrics for 
+                                    architectural effectiveness analysis.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/sreeharshaparuchur1/seq2seq_machine_translation" target="_blank" class="project-link">
+                                        <i class="fa fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-md-4 box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-                        <h4 class="title"><a
-                                href="https://github.com/sreeharshaparuchur1/basicRoboticsAlgorithms/blob/main/poseGraphOptim_and_SLAM/poseGraphOptim_and_SLAM.ipynb">Pose-Graph
-                                Optimization</a></h4>
-                        <p class="description">This project deals with a popular backend optimization framework for <a
-                                href="https://in.mathworks.com/discovery/slam.html">SLAM techniques </a>. This SLAM
-                            backend uses information from the frontend to model the evolution of the robot in the
-                            enviornment as a graph.
-                            A non-linear least squares optimization is done using the jacobian of residuals which
-                            includes weighted loop-closures. Iteratively, an optimal pose-graph is solved for. A paper
-                            on the <a href="https://arxiv.org/pdf/1606.05830.pdf"> Past, Present and Future of SLAM </a>
-                            is discussed.</p>
+
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/280x180/e8f9ec/18d26e?text=POSE+GRAPH+SLAM" alt="Pose Graph Optimization Project">
+                        </div>
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h4 class="project-title">Pose-Graph Optimization</h4>
+                                <p class="project-description">
+                                    Backend optimization framework for SLAM with graph-based robot trajectory modeling. 
+                                    Non-linear least squares optimization using Jacobian matrices and weighted loop-closures 
+                                    for robust localization and mapping capabilities.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/sreeharshaparuchur1/basicRoboticsAlgorithms/blob/main/poseGraphOptim_and_SLAM/poseGraphOptim_and_SLAM.ipynb" target="_blank" class="project-link">
+                                        <i class="fa fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-md-4 box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                        <h4 class="title"><a
-                                href="https://www.iiit.ac.in/team-cerebrus-robotics-research-center-rrc-secured-second-place-at-the-artpark-robotics-challenge-conducted-by-iisc-bangalores-innovation-hub-iiith-team-cerebrus-was-led-by-suraj-bonagiri/">Artpark
-                                Robotics Challenge</a>
-                        </h4>
-                        <p class="description">Finished as runners up this nation-wide competition which called forth a
-                            seamless integration of computer vision, navigation, dynamics and control algorithms in a
-                            modular software stack. Contributed to the computer vision algorithm to detect trash items
-                            and a trash can in real time using data from a RGB-D stereo camera. Used the navigation
-                            stack in ROS to communicate waypoint messages to the multiple nodes and SLAM backend.</p>
+
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/280x180/f8fcff/18d26e?text=ROBOTICS+CHALLENGE" alt="Artpark Robotics Challenge Project">
+                        </div>
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h4 class="project-title">Artpark Robotics Challenge</h4>
+                                <p class="project-description">
+                                    Second place in nationwide robotics competition with computer vision, navigation, and control integration. 
+                                    Real-time trash detection using RGB-D cameras with ROS navigation stack for autonomous 
+                                    environmental interaction and task execution.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://www.iiit.ac.in/team-cerebrus-robotics-research-center-rrc-secured-second-place-at-the-artpark-robotics-challenge-conducted-by-iisc-bangalores-innovation-hub-iiith-team-cerebrus-was-led-by-suraj-bonagiri/" target="_blank" class="project-link">
+                                        <i class="fa fa-external-link"></i> Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Services Section -->
 
 
         <!-- ======= Teaching Section ======= -->
