@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 26px 0;
+  padding: 16px 0;
   background: rgba(0, 0, 0, 0.9);
 }
 
@@ -127,19 +127,19 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.9);
-  padding: 18px 0;
+  padding: 12px 0;
 }
 
 #header .logo {
-  font-size: 34px;
+  font-size: 28px;
   margin: 0;
   padding: 0;
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  letter-spacing: 3px;
-  padding-left: 10px;
-  border-left: 4px solid #18d26e;
+  letter-spacing: 2px;
+  padding-left: 8px;
+  border-left: 3px solid #18d26e;
 }
 
 #header .logo a {
@@ -152,7 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 992px) {
   #header .logo {
-    font-size: 28px;
+    font-size: 24px;
+    letter-spacing: 1px;
   }
 }
 
@@ -1451,12 +1452,16 @@ section {
   border-radius: 15%;
   border: 2px solid #fff;
   margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 1080px) {
   #testimonials .testimonial-item .testimonial-img {
     width: 350px;
     height: 300px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -1841,4 +1846,94 @@ section {
   text-align: center;
   font-size: 13px;
   color: #ddd;
+}
+
+/* Experience Highlights Section */
+#experience {
+  padding: 60px 0;
+}
+
+.experience-highlights {
+  text-align: center;
+  margin-top: 15px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 80px;
+  overflow: hidden;
+}
+
+.rotating-highlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 1.6;
+  font-style: italic;
+  will-change: opacity;
+  backface-visibility: hidden;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.rotating-highlight.active {
+  opacity: 1;
+}
+
+.rotating-highlight:first-child {
+  opacity: 1;
+}
+
+/* Waymo Portrait in Testimonials - inherits base testimonial-img styles */
+.waymo-portrait {
+  /* Base testimonial-img styles already applied */
+  /* object-fit and object-position already set above */
+}
+
+@media (max-width: 768px) {
+  .rotating-highlight {
+    font-size: 18px;
+    padding: 0 15px;
+  }
+  
+  .highlight-container {
+    height: 90px;
+  }
+  
+  .experience-highlights {
+    min-height: 125px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rotating-highlight {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  .highlight-container {
+    height: 100px;
+  }
+  
+  .experience-highlights {
+    min-height: 130px;
+    margin-top: 8px;
+  }
 }

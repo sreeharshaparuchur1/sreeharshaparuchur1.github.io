@@ -243,4 +243,66 @@
     aos_init();
   });
 
+    // Experience highlights rotation
+  function initExperienceHighlights() {
+    const highlights = $('.rotating-highlight');
+    let currentIndex = 0;
+    let rotationInterval;
+    
+    if (highlights.length > 1) {
+      // Ensure first highlight is visible and others are hidden
+      highlights.each(function(index) {
+        if (index === 0) {
+          $(this).addClass('active').css('opacity', '1');
+        } else {
+          $(this).removeClass('active').css('opacity', '0');
+        }
+      });
+      
+      // Start rotation
+      rotationInterval = setInterval(function() {
+        if (highlights.length > 0) {
+          // Fade out current
+          highlights.eq(currentIndex).removeClass('active').css('opacity', '0');
+          // Move to next
+          currentIndex = (currentIndex + 1) % highlights.length;
+          // Fade in new
+          highlights.eq(currentIndex).addClass('active').css('opacity', '1');
+        }
+      }, 3000); // 3 seconds
+
+      // Clean up interval when page is unloaded or hidden
+      $(window).on('beforeunload unload pagehide', function() {
+        if (rotationInterval) {
+          clearInterval(rotationInterval);
+        }
+      });
+      
+      // Pause rotation when page is not visible
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          if (rotationInterval) {
+            clearInterval(rotationInterval);
+          }
+                 } else {
+           rotationInterval = setInterval(function() {
+             if (highlights.length > 0) {
+               // Fade out current
+               highlights.eq(currentIndex).removeClass('active').css('opacity', '0');
+               // Move to next
+               currentIndex = (currentIndex + 1) % highlights.length;
+               // Fade in new
+               highlights.eq(currentIndex).addClass('active').css('opacity', '1');
+             }
+           }, 3000);
+        }
+      });
+    }
+  }
+  
+  // Initialize experience highlights when page loads
+  $(document).ready(function() {
+    initExperienceHighlights();
+  });
+
 })(jQuery);
