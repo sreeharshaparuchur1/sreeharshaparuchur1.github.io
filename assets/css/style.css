@@ -609,50 +609,54 @@ section {
 /* Sections Header
 --------------------------------*/
 .section-header h3 {
-  font-size: 32px;
-  color: #111;
-  text-transform: uppercase;
+  font-size: 24px;
+  color: #333;
+  text-transform: none;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
 }
 
 .section-header h3::before {
   content: '';
   position: absolute;
   display: block;
-  width: 120px;
+  width: 60px;
   height: 1px;
-  background: #ddd;
+  background: #e0e0e0;
   bottom: 1px;
-  left: calc(50% - 60px);
+  left: calc(50% - 30px);
 }
 
 .section-header h3::after {
   content: '';
   position: absolute;
   display: block;
-  width: 40px;
-  height: 3px;
+  width: 20px;
+  height: 2px;
   background: #18d26e;
   bottom: 0;
-  left: calc(50% - 20px);
+  left: calc(50% - 10px);
 }
 
 .section-header p {
   text-align: center;
-  padding-bottom: 30px;
-  color: #333;
+  padding-bottom: 25px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
 }
 .section-header1 h3 {
-  font-size: 32px;
-  color:  #ffffff;
-  text-transform: uppercase;
+  font-size: 24px;
+  color: #333;
+  text-transform: none;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
 }
 
 .section-header1 h3::before {
@@ -693,27 +697,55 @@ section {
 /* About Us Section
 --------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg") center top no-repeat fixed;
-  background-size: cover;
-  padding: 60px 0 40px 0;
+  background: #ffffff;
+  padding: 50px 0 35px 0;
   position: relative;
-}
-
-#about::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.92);
-  z-index: 9;
 }
 
 #about .container {
   position: relative;
   text-align: left;
   z-index: 10;
+}
+
+/* About Content Styling */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-intro, .about-journey, .about-vision {
+  margin-bottom: 25px;
+}
+
+.about-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 0;
+}
+
+.about-journey p, .about-vision p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 18px;
+}
+
+.about-journey p:last-child, .about-vision p:last-child {
+  margin-bottom: 0;
+}
+
+.about-content a {
+  color: #18d26e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.about-content a:hover {
+  text-decoration: underline;
 }
 
 #about .about-col {
@@ -1324,6 +1356,115 @@ section {
   font-size: 12px;
 }
 
+/* About Section Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 15px;
+  }
+  
+  .about-intro p {
+    font-size: 16px;
+  }
+  
+  .about-journey p, .about-vision p {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro p {
+    font-size: 15px;
+  }
+  
+  .about-journey p, .about-vision p {
+    font-size: 14px;
+  }
+}
+
+/* Publications Section Responsive Design */
+@media (max-width: 768px) {
+  .publications-content {
+    padding: 0 15px;
+  }
+  
+  .publication-item {
+    padding: 25px 20px;
+  }
+  
+  .publication-title {
+    font-size: 18px;
+  }
+  
+  .publication-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .publication-item {
+    padding: 20px 18px;
+    margin-bottom: 20px;
+  }
+  
+  .publication-title {
+    font-size: 16px;
+  }
+  
+  .publication-description {
+    font-size: 14px;
+  }
+}
+
+/* Contact Section Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 0 15px;
+  }
+  
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .contact-item {
+    justify-content: flex-start;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-grid {
+    gap: 20px;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .contact-icon i {
+    font-size: 20px;
+  }
+  
+  .contact-details h4 {
+    font-size: 16px;
+  }
+  
+  .contact-details p {
+    font-size: 14px;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* Projects Section Responsive Design */
 @media (max-width: 1024px) {
   .projects-container {
@@ -1565,9 +1706,72 @@ section {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  padding: 60px 0;
-  background:  #000000 ;
-  color:  #ffffff;
+  padding: 50px 0;
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* Publications Content Styling */
+.publications-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.publication-item {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 30px 35px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+}
+
+.publication-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
+  border-radius: 6px 6px 0 0;
+}
+
+.publication-item:hover {
+  box-shadow: 0 4px 16px rgba(24, 210, 110, 0.1);
+  transform: translateY(-2px);
+}
+
+.publication-item:last-child {
+  margin-bottom: 0;
+}
+
+.publication-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.publication-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.publication-title a:hover {
+  color: #18d26e;
+  text-decoration: none;
+}
+
+.publication-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  text-align: justify;
 }
 
 #portfolio #portfolio-flters {
@@ -1896,44 +2100,118 @@ section {
 }
 
 #contact {
-  padding: 60px 0;
+  padding: 50px 0;
+  background: #f7f7f7;
 }
 
-#contact .contact-info {
-  margin-bottom: 20px;
+/* Contact Content Styling */
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  text-align: left;
+}
+
+.contact-icon {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  background: #18d26e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contact-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+.contact-item:hover .contact-icon {
+  background: #13c162;
+  transform: scale(1.05);
+}
+
+.contact-details h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.contact-details p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-details a {
+  color: #18d26e;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #18d26e;
+  text-decoration: none;
+}
+
+.social-links i {
+  font-size: 18px;
+}
+
+.footer-content {
   text-align: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 25px;
+  margin-top: 20px;
 }
 
-#contact .contact-info i {
-  font-size: 48px;
-  display: inline-block;
-  margin-bottom: 10px;
-  color: #18d26e;
+.footer-content .copyright {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
 }
 
-#contact .contact-info address, #contact .contact-info p {
-  margin-bottom: 0;
-  color: #000;
-}
-
-#contact .contact-info h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #999;
-}
-
-#contact .contact-info a {
-  color: #000;
-}
-
-#contact .contact-info a:hover {
-  color: #18d26e;
-}
-
-#contact .contact-address, #contact .contact-phone, #contact .contact-email {
-  margin-bottom: 20px;
+.footer-content .quote {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
