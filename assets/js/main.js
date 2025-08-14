@@ -352,3 +352,53 @@ function toggleCardExclusive(link) {
   // Toggle current card
   toggleCard(link);
 }
+
+// Publication Figure Carousels - Auto-rotating every 3 seconds
+class PublicationCarousel {
+  constructor(carouselId) {
+    this.carousel = document.getElementById(carouselId);
+    this.slides = this.carousel ? this.carousel.getElementsByClassName('figure-slide') : [];
+    this.currentIndex = 0;
+    this.init();
+  }
+
+  init() {
+    if (this.slides.length > 0) {
+      this.showSlide(0);
+      this.startAutoRotation();
+    }
+  }
+
+  showSlide(index) {
+    // Hide all slides
+    for (let i = 0; i < this.slides.length; i++) {
+      this.slides[i].classList.remove('active');
+    }
+    
+    // Show current slide
+    if (this.slides[index]) {
+      this.slides[index].classList.add('active');
+      this.currentIndex = index;
+    }
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentIndex + 1) % this.slides.length;
+    this.showSlide(nextIndex);
+  }
+
+  startAutoRotation() {
+    if (this.slides.length > 1) {
+      setInterval(() => {
+        this.nextSlide();
+      }, 3000); // 3 seconds
+    }
+  }
+}
+
+// Initialize carousels when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize each publication carousel
+  new PublicationCarousel('carousel-pub1');
+  new PublicationCarousel('carousel-pub2');
+});

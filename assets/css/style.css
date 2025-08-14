@@ -794,10 +794,10 @@ section {
 }
 
 #about .section-header h3 {
-  color: #000;
+  color: #333;
   text-align: center;
-  font-weight: 700;
-  font-size: 32px;
+  font-weight: 500;
+  font-size: 24px;
   padding: 0;
   margin: 17px 0 12px 0;
 }
@@ -815,9 +815,9 @@ section {
 }
 
 #about .section-header p {
-  font-size: 20px;
-  line-height: 30px;
-  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
   margin-bottom: 0;
   padding: 0 20px 20px 20px;
 }
@@ -1772,6 +1772,72 @@ section {
   color: #555;
   margin: 0;
   text-align: justify;
+}
+
+/* Publication Layout - Text + Carousel Side by Side */
+.publication-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.publication-text {
+  flex: 2;
+  min-width: 0;
+}
+
+.publication-figures {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Figure Carousel - Auto-rotating, no controls */
+.figure-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.figure-slide {
+  display: none;
+  position: relative;
+}
+
+.figure-slide.active {
+  display: block;
+}
+
+.figure-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .publication-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .publication-figures {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .publication-figures {
+    max-width: 100%;
+  }
+  
+  .figure-slide img {
+    height: 180px;
+  }
 }
 
 #portfolio #portfolio-flters {
