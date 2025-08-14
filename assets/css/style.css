@@ -720,18 +720,18 @@ section {
 }
 
 .about-intro p {
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.6;
   color: #444;
   margin-bottom: 0;
 }
 
 .about-journey p, .about-vision p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #555;
   text-align: justify;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .about-journey p:last-child, .about-vision p:last-child {
@@ -837,27 +837,27 @@ section {
 }
 
 .feynman-quote {
-  font-size: 24px;
+  font-size: 20px;
   font-style: italic;
   color: #333;
-  margin: 0 0 15px 0;
+  margin: 0 0 12px 0;
   padding: 0;
   position: relative;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .feynman-quote cite {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   color: #18d26e;
   font-style: normal;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .teaching-intro {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   color: #555;
   margin: 0;
   text-align: center;
@@ -912,7 +912,7 @@ section {
 }
 
 .course-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #111;
   margin: 0;
@@ -932,8 +932,8 @@ section {
 }
 
 .course-description {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #555;
   margin: 0;
 }
@@ -1016,15 +1016,15 @@ section {
 }
 
 .writing-intro {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   color: #555;
-  margin: 0 0 20px 0;
+  margin: 0 0 18px 0;
 }
 
 .writing-journey {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #666;
   margin: 0;
 }
@@ -1050,13 +1050,13 @@ section {
 }
 
 .articles-heading {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #666;
   text-align: center;
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 .articles-grid {
@@ -1098,8 +1098,8 @@ section {
 }
 
 .article-title {
-  margin: 0 0 8px 0;
-  font-size: 20px;
+  margin: 0 0 6px 0;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -1115,14 +1115,14 @@ section {
 }
 
 .publication-info {
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
   font-weight: 500;
 }
 
 .article-description {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #555;
   margin: 0;
 }
@@ -1210,17 +1210,17 @@ section {
 }
 
 .projects-quote {
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   color: #333;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   position: relative;
   line-height: 1.3;
 }
 
 .projects-intro {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: #555;
   margin: 0;
@@ -1309,19 +1309,19 @@ section {
 }
 
 .project-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #111;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   line-height: 1.3;
   text-align: left;
 }
 
 .project-description {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #555;
-  margin: 0 0 18px 0;
+  margin: 0 0 15px 0;
   text-align: justify;
 }
 
@@ -1749,10 +1749,10 @@ section {
 }
 
 .publication-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin: 0 0 15px 0;
-  line-height: 1.4;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
 }
 
 .publication-title a {
@@ -1767,8 +1767,8 @@ section {
 }
 
 .publication-description {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #555;
   margin: 0;
   text-align: justify;
@@ -2172,28 +2172,28 @@ section {
 
 /* Contact Content Styling */
 .contact-content {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .contact-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 12px;
   text-align: left;
 }
 
 .contact-icon {
   flex: 0 0 auto;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: #18d26e;
   border-radius: 50%;
   display: flex;
@@ -2203,27 +2203,27 @@ section {
 }
 
 .contact-icon i {
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
 }
 
 .contact-item:hover .contact-icon {
   background: #13c162;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .contact-details h4 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
 .contact-details p {
-  font-size: 16px;
+  font-size: 15px;
   color: #555;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .contact-details a {
@@ -2237,15 +2237,16 @@ section {
 
 .social-links {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 16px;
+  gap: 6px;
+  font-size: 15px;
   color: #555;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -2263,14 +2264,14 @@ section {
 .footer-content {
   text-align: center;
   border-top: 1px solid #e0e0e0;
-  padding-top: 25px;
-  margin-top: 20px;
+  padding-top: 20px;
+  margin-top: 15px;
 }
 
 .footer-content .copyright {
   font-size: 14px;
   color: #666;
-  margin: 0 0 8px 0;
+  margin: 0 0 5px 0;
 }
 
 .footer-content .quote {
@@ -2278,6 +2279,38 @@ section {
   color: #888;
   font-style: italic;
   margin: 0;
+}
+
+/* Contact Section Responsive Design */
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item {
+    gap: 10px;
+  }
+  
+  .contact-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .contact-icon i {
+    font-size: 18px;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .footer-content {
+    padding-top: 15px;
+    margin-top: 12px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2575,24 +2608,25 @@ section {
 }
 
 .subsection-heading {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #666;
   text-align: center;
-  margin: 0 0 25px 0;
+  margin: 0 0 20px 0;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 /* Ensure consistent spacing between subsections */
 .experience-subsection + .experience-subsection {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .experience-highlights {
   text-align: center;
   margin-top: 15px;
-  min-height: 120px;
+  margin-bottom: 25px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2601,9 +2635,9 @@ section {
 .highlight-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  height: 80px;
+  height: 50px;
   overflow: hidden;
 }
 
@@ -2613,15 +2647,15 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   color: #666;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
   margin: 0;
   padding: 0 20px;
-  line-height: 1.6;
-  font-style: italic;
+  line-height: 1.4;
+  font-style: normal;
   will-change: opacity;
   backface-visibility: hidden;
   text-align: center;
@@ -2645,27 +2679,27 @@ section {
 /* Experience Cards */
 .experience-cards-container {
   margin-top: 0;
-  max-width: 750px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  gap: 35px;
+  gap: 20px;
 }
 
 .experience-card {
   background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.3s ease;
   border: none;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .experience-card:hover {
-  box-shadow: 0 4px 16px rgba(24, 210, 110, 0.12);
-  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.08);
+  transform: translateY(-1px);
 }
 
 .experience-card::before {
@@ -2674,28 +2708,28 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
 }
 
 .card-header {
   display: flex;
-  padding: 30px 35px;
+  padding: 20px 25px;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   cursor: pointer;
   position: relative;
 }
 
 .company-logo {
   flex: 0 0 auto;
-  width: 145px;
-  height: 145px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 5px;
+  padding: 4px;
   border-radius: 50%;
   background: #ffffff;
   border: 0.5px solid #e8e8e8;
@@ -2704,8 +2738,8 @@ section {
 
 .company-logo:hover {
   border: 1px solid #18d26e;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(24, 210, 110, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(24, 210, 110, 0.1);
 }
 
 .company-logo img {
@@ -2740,36 +2774,36 @@ section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .company-name {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: #111;
   margin: 0;
   line-height: 1.2;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
 }
 
 .job-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #555;
   margin: 0;
   line-height: 1.3;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
 }
 
 .employment-dates {
   flex: 0 0 auto;
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
   font-weight: 500;
   text-align: center;
-  min-width: 110px;
+  min-width: 90px;
   position: relative;
-  padding-left: 12px;
+  padding-left: 10px;
 }
 
 .employment-dates::before {
@@ -2820,30 +2854,30 @@ section {
 }
 
 .card-content.expanded {
-  max-height: 400px;
-  padding: 30px 35px;
+  max-height: 350px;
+  padding: 20px 25px;
 }
 
 .job-description h5 {
   color: #111;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  margin: 0 0 18px 0;
+  margin: 0 0 12px 0;
 }
 
 .job-description ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
 }
 
 .job-description li {
   position: relative;
-  padding-left: 22px;
-  margin-bottom: 12px;
+  padding-left: 20px;
+  margin-bottom: 8px;
   color: #555;
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 15px;
 }
 
 .job-description li::before {
