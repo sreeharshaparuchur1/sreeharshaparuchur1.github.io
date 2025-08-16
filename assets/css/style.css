@@ -3118,4 +3118,484 @@ section {
   }
 }
 
+/* Education Section */
+#education {
+  background: #fff;
+  padding: 40px 0;
+}
+
+.education-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Education Cards */
+.education-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
+  border-radius: 12px 12px 0 0;
+}
+
+.education-card:hover {
+  box-shadow: 0 4px 20px rgba(24, 210, 110, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Card Header */
+.education-card .card-header {
+  display: flex;
+  padding: 25px 30px;
+  align-items: center;
+  gap: 20px;
+  cursor: default;
+  position: relative;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.institution-logo {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.institution-logo:hover {
+  border: 1px solid #18d26e;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(24, 210, 110, 0.2);
+}
+
+.institution-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.logo-placeholder {
+  display: none;
+  background: linear-gradient(135deg, #18d26e, #13c162);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.3);
+}
+
+.education-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.institution-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.degree-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.education-details {
+  display: flex;
+  gap: 20px;
+  margin-top: 5px;
+}
+
+.duration, .location {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.duration::before {
+  content: "📅 ";
+  margin-right: 4px;
+}
+
+.location::before {
+  content: "📍 ";
+  margin-right: 4px;
+}
+
+/* Education Sections */
+.education-sections {
+  padding: 0;
+}
+
+.education-dropdown {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.education-dropdown:last-child {
+  border-bottom: none;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 30px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: #f8f9fa;
+  color: #18d26e;
+  text-decoration: none;
+}
+
+.dropdown-toggle i.fa {
+  color: #18d26e;
+  font-size: 16px;
+}
+
+.dropdown-toggle .arrow {
+  margin-left: auto;
+  color: #666;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.dropdown-toggle.active .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: #fafafa;
+}
+
+.dropdown-content.active {
+  max-height: 1000px;
+  padding: 20px 30px 25px 30px;
+}
+
+/* Courses Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.course-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #18d26e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.course-item:hover {
+  box-shadow: 0 3px 10px rgba(24, 210, 110, 0.15);
+  transform: translateY(-1px);
+}
+
+.course-item strong {
+  display: block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.course-item span {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Teaching Roles */
+.teaching-roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.teaching-role {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.teaching-role:hover {
+  box-shadow: 0 3px 10px rgba(24, 210, 110, 0.1);
+  transform: translateY(-1px);
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.role-header h5 {
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.course-code {
+  background: #f0fff4;
+  color: #18d26e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #18d26e;
+  white-space: nowrap;
+}
+
+.teaching-role p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Featured Role (IDL) */
+.featured-role {
+  background: linear-gradient(135deg, #f8fff9 0%, #f0fff4 100%);
+  border: 2px solid #18d26e;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-role::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
+}
+
+.featured-role .role-header {
+  margin-bottom: 15px;
+}
+
+.role-badge {
+  background: #18d26e;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(24, 210, 110, 0.3);
+}
+
+.role-description {
+  margin-top: 15px;
+}
+
+.role-description > p {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Achievements */
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border-left: 3px solid #18d26e;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.15);
+}
+
+.achievement-item i {
+  color: #18d26e;
+  font-size: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.achievement-item div {
+  flex: 1;
+}
+
+.achievement-item strong {
+  display: block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.achievement-item p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-content {
+    padding: 0 15px;
+    gap: 25px;
+  }
+  
+  .education-card .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 20px;
+  }
+  
+  .institution-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .education-details {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .dropdown-toggle {
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+  
+  .dropdown-content.active {
+    padding: 18px 20px 20px 20px;
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .achievement-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .achievement-item i {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-card .card-header {
+    padding: 18px 15px;
+  }
+  
+  .institution-name {
+    font-size: 20px;
+  }
+  
+  .degree-title {
+    font-size: 15px;
+  }
+  
+  .dropdown-toggle {
+    padding: 15px 15px;
+    font-size: 14px;
+  }
+  
+  .dropdown-content.active {
+    padding: 15px 15px 18px 15px;
+  }
+  
+  .achievement-item {
+    padding: 12px;
+  }
+  
+  .achievement-item strong {
+    font-size: 14px;
+  }
+  
+  .achievement-item p {
+    font-size: 13px;
+  }
+}
+
+/* // ... existing code ... */
+
+
 

@@ -402,3 +402,77 @@ document.addEventListener('DOMContentLoaded', function() {
   new PublicationCarousel('carousel-pub1');
   new PublicationCarousel('carousel-pub2');
 });
+
+// Education Dropdown Functionality
+function toggleEducationDropdown(toggle, contentId) {
+  const content = document.getElementById(contentId);
+  const arrow = toggle.querySelector('.arrow');
+  
+  if (content.classList.contains('active')) {
+    // Close the dropdown
+    content.classList.remove('active');
+    toggle.classList.remove('active');
+  } else {
+    // Close all other dropdowns in the same card first
+    const card = toggle.closest('.education-card');
+    const allDropdowns = card.querySelectorAll('.dropdown-content');
+    const allToggles = card.querySelectorAll('.dropdown-toggle');
+    
+    allDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    allToggles.forEach(toggleBtn => toggleBtn.classList.remove('active'));
+    
+    // Open the clicked dropdown
+    content.classList.add('active');
+    toggle.classList.add('active');
+  }
+}
+
+// Close education dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+  const isDropdownToggle = event.target.closest('.dropdown-toggle');
+  const isDropdownContent = event.target.closest('.dropdown-content');
+  
+  if (!isDropdownToggle && !isDropdownContent) {
+    // Close all education dropdowns
+    document.querySelectorAll('.dropdown-content.active').forEach(content => {
+      content.classList.remove('active');
+    });
+    document.querySelectorAll('.dropdown-toggle.active').forEach(toggle => {
+      toggle.classList.remove('active');
+    });
+  }
+});
+
+// Initialize education section enhancements
+function initEducationEnhancements() {
+  // Add hover effects to education cards
+  const educationCards = document.querySelectorAll('.education-card');
+  
+  educationCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-4px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0px)';
+    });
+  });
+  
+  // Add smooth scrolling to achievement items
+  const achievementItems = document.querySelectorAll('.achievement-item');
+  
+  achievementItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(8px)';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0px)';
+    });
+  });
+}
+
+// Initialize when DOM is loaded
+$(document).ready(function() {
+  initEducationEnhancements();
+});
