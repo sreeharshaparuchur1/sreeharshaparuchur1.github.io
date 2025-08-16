@@ -380,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #intro {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background: #000;
   overflow: hidden;
   position: relative;
@@ -428,14 +428,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro h2 {
   color: #fff;
-  margin-bottom: 30px;
-  font-size: 48px;
+  margin-bottom: 20px;
+  font-size: 42px;
   font-weight: 700;
 }
 
 @media (max-width: 768px) {
   #intro h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -534,11 +534,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Profile Picture Styling */
 #intro .profile-picture {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 4px solid #18d26e;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 25px auto;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -555,33 +555,33 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #intro .profile-picture {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
 }
 
 @media (max-width: 480px) {
   #intro .profile-picture {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 }
 
 /* Updated text styling for better hierarchy */
 #intro .subtitle {
   color: #18d26e;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 #intro .tagline {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-style: italic;
   max-width: 70%;
   margin-left: auto;
@@ -604,50 +604,54 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
+  padding: 40px 0;
 }
 
 /* Sections Header
 --------------------------------*/
 .section-header h3 {
-  font-size: 24px;
+  font-size: 22px;
   color: #333;
   text-transform: none;
   text-align: center;
   font-weight: 500;
   position: relative;
-  padding-bottom: 12px;
-  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  letter-spacing: 0.3px;
+  margin-bottom: 15px;
 }
 
 .section-header h3::before {
   content: '';
   position: absolute;
   display: block;
-  width: 60px;
+  width: 50px;
   height: 1px;
   background: #e0e0e0;
   bottom: 1px;
-  left: calc(50% - 30px);
+  left: calc(50% - 25px);
 }
 
 .section-header h3::after {
   content: '';
   position: absolute;
   display: block;
-  width: 20px;
+  width: 16px;
   height: 2px;
   background: #18d26e;
   bottom: 0;
-  left: calc(50% - 10px);
+  left: calc(50% - 8px);
 }
 
 .section-header p {
   text-align: center;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   color: #555;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 15px;
 }
+
 .section-header1 h3 {
   font-size: 24px;
   color: #333;
@@ -698,7 +702,7 @@ section {
 --------------------------------*/
 #about {
   background: #ffffff;
-  padding: 50px 0 35px 0;
+  padding: 40px 0 25px 0;
   position: relative;
 }
 
@@ -716,22 +720,22 @@ section {
 }
 
 .about-intro, .about-journey, .about-vision {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .about-intro p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   color: #444;
   margin-bottom: 0;
 }
 
 .about-journey p, .about-vision p {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
   color: #555;
   text-align: justify;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .about-journey p:last-child, .about-vision p:last-child {
@@ -826,24 +830,24 @@ section {
 --------------------------------*/
 #teaching {
   background: #fff;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 /* Teaching Philosophy */
 .teaching-philosophy {
   text-align: center;
   max-width: 700px;
-  margin: 30px auto 50px auto;
+  margin: 20px auto 35px auto;
 }
 
 .feynman-quote {
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   color: #333;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   position: relative;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .feynman-quote cite {
@@ -856,8 +860,8 @@ section {
 }
 
 .teaching-intro {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.4;
   color: #555;
   margin: 0;
   text-align: center;
@@ -879,7 +883,7 @@ section {
 .course-card {
   background: #ffffff;
   border-radius: 8px;
-  padding: 25px;
+  padding: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: none;
@@ -912,7 +916,7 @@ section {
 }
 
 .course-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: #111;
   margin: 0;
@@ -932,8 +936,8 @@ section {
 }
 
 .course-description {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
   color: #555;
   margin: 0;
 }
@@ -1199,29 +1203,29 @@ section {
 --------------------------------*/
 #services {
   background: #fff;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 /* Projects Philosophy */
 .projects-philosophy {
   text-align: center;
   max-width: 650px;
-  margin: 20px auto 35px auto;
+  margin: 15px auto 25px auto;
 }
 
 .projects-quote {
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
   color: #333;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   padding: 0;
   position: relative;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .projects-intro {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
   color: #555;
   margin: 0;
   text-align: center;
@@ -1240,10 +1244,10 @@ section {
 /* Projects Container */
 .projects-container {
   max-width: 900px;
-  margin: 25px auto 0;
+  margin: 20px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .project-item {
@@ -1304,24 +1308,24 @@ section {
 }
 
 .project-content {
-  padding: 20px 25px;
+  padding: 18px 22px;
   text-align: left;
 }
 
 .project-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #111;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   line-height: 1.3;
   text-align: left;
 }
 
 .project-description {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.3;
   color: #555;
-  margin: 0 0 15px 0;
+  margin: 0 0 12px 0;
   text-align: justify;
 }
 
@@ -1706,7 +1710,7 @@ section {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  padding: 50px 0;
+  padding: 40px 0;
   background: #f7f7f7;
   color: #333;
 }
@@ -1720,8 +1724,8 @@ section {
 .publication-item {
   background: #ffffff;
   border-radius: 6px;
-  padding: 30px 35px;
-  margin-bottom: 25px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   border: none;
@@ -1749,9 +1753,9 @@ section {
 }
 
 .publication-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   line-height: 1.3;
 }
 
@@ -1767,8 +1771,8 @@ section {
 }
 
 .publication-description {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
   color: #555;
   margin: 0;
   text-align: justify;
@@ -2166,7 +2170,7 @@ section {
 }
 
 #contact {
-  padding: 50px 0;
+  padding: 40px 0;
   background: #f7f7f7;
 }
 
@@ -2179,8 +2183,8 @@ section {
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-bottom: 25px;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 
 .contact-item {
@@ -2213,17 +2217,17 @@ section {
 }
 
 .contact-details h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #333;
-  margin: 0 0 6px 0;
+  margin: 0 0 5px 0;
 }
 
 .contact-details p {
-  font-size: 15px;
+  font-size: 14px;
   color: #555;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .contact-details a {
@@ -2591,16 +2595,16 @@ section {
 
 /* Experience Highlights Section */
 #experience {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 /* Experience Subsection Styling */
 .experience-subsection {
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 
 .experience-subsection:first-of-type {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .experience-subsection:last-of-type {
@@ -2608,25 +2612,25 @@ section {
 }
 
 .subsection-heading {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #666;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 
 /* Ensure consistent spacing between subsections */
 .experience-subsection + .experience-subsection {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .experience-highlights {
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 25px;
-  min-height: 60px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2637,7 +2641,7 @@ section {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  height: 50px;
+  height: 40px;
   overflow: hidden;
 }
 
@@ -2647,14 +2651,14 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #666;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
   margin: 0;
   padding: 0 20px;
-  line-height: 1.4;
+  line-height: 1.3;
   font-style: normal;
   will-change: opacity;
   backface-visibility: hidden;
@@ -2694,7 +2698,7 @@ section {
   transition: all 0.3s ease;
   border: none;
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .experience-card:hover {
@@ -2714,17 +2718,17 @@ section {
 
 .card-header {
   display: flex;
-  padding: 20px 25px;
+  padding: 15px 20px;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   cursor: pointer;
   position: relative;
 }
 
 .company-logo {
   flex: 0 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2778,7 +2782,7 @@ section {
 }
 
 .company-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #111;
   margin: 0;
@@ -2787,7 +2791,7 @@ section {
 }
 
 .job-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #555;
   margin: 0;
@@ -2854,15 +2858,15 @@ section {
 }
 
 .card-content.expanded {
-  max-height: 350px;
-  padding: 20px 25px;
+  max-height: 300px;
+  padding: 15px 20px;
 }
 
 .job-description h5 {
   color: #111;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
 }
 
 .job-description ul {
@@ -2873,11 +2877,11 @@ section {
 
 .job-description li {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
+  padding-left: 18px;
+  margin-bottom: 6px;
   color: #555;
-  line-height: 1.5;
-  font-size: 15px;
+  line-height: 1.4;
+  font-size: 14px;
 }
 
 .job-description li::before {
@@ -2903,18 +2907,35 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  section {
+    padding: 30px 0; /* Further reduced for mobile */
+  }
+  
+  #intro {
+    height: 85vh; /* Further reduced for mobile */
+  }
+  
+  #intro h2 {
+    font-size: 28px; /* Reduced from 32px */
+  }
+  
+  #intro .profile-picture {
+    width: 140px; /* Reduced from 160px */
+    height: 140px; /* Reduced from 160px */
+  }
+
   .card-header {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
-    padding: 25px 20px;
+    gap: 15px; /* Reduced from 20px */
+    padding: 18px 15px; /* Reduced padding */
     position: relative;
   }
   
   .company-logo {
     flex: none;
-    width: 120px;
-    height: 120px;
+    width: 100px; /* Reduced from 120px */
+    height: 100px; /* Reduced from 120px */
     margin: 0 auto;
     padding: 5px;
   }
@@ -2942,28 +2963,28 @@ section {
   }
   
   .company-name {
-    font-size: 22px;
+    font-size: 20px; /* Reduced from 22px */
   }
   
   .job-title {
-    font-size: 16px;
+    font-size: 15px; /* Reduced from 16px */
   }
   
   .card-content.expanded {
-    padding: 25px 20px;
+    padding: 18px 15px; /* Reduced padding */
   }
   
   .experience-cards-container {
     padding: 0 15px;
-    gap: 30px;
+    gap: 25px; /* Reduced from 30px */
   }
   
   .experience-subsection {
-    margin-bottom: 50px;
+    margin-bottom: 35px; /* Reduced from 50px */
   }
   
   .experience-subsection:first-of-type {
-    margin-top: 30px;
+    margin-top: 25px; /* Reduced from 30px */
   }
   
   .experience-subsection:last-of-type {
@@ -2971,24 +2992,37 @@ section {
   }
   
   .experience-subsection + .experience-subsection {
-    margin-top: 50px;
+    margin-top: 35px; /* Reduced from 50px */
   }
   
   .subsection-heading {
-    font-size: 16px;
-    margin: 0 0 20px 0;
+    font-size: 15px; /* Reduced from 16px */
+    margin: 0 0 15px 0; /* Reduced from 20px */
   }
 }
 
 @media (max-width: 480px) {
+  section {
+    padding: 25px 0; /* Further reduced for small mobile */
+  }
+  
+  #intro h2 {
+    font-size: 26px;
+  }
+  
+  #intro .profile-picture {
+    width: 120px; /* Reduced from 140px */
+    height: 120px; /* Reduced from 140px */
+  }
+
   .card-header {
-    padding: 20px 15px;
-    gap: 18px;
+    padding: 16px 12px; /* Further reduced */
+    gap: 15px; /* Reduced from 18px */
   }
   
   .company-logo {
-    width: 110px;
-    height: 110px;
+    width: 90px; /* Reduced from 110px */
+    height: 90px; /* Reduced from 110px */
     padding: 4px;
   }
   
@@ -3005,11 +3039,11 @@ section {
   }
   
   .company-name {
-    font-size: 20px;
+    font-size: 18px; /* Reduced from 20px */
   }
   
   .job-title {
-    font-size: 15px;
+    font-size: 14px; /* Reduced from 15px */
   }
   
   .read-more-link {
@@ -3017,24 +3051,24 @@ section {
   }
   
   .card-content.expanded {
-    padding: 20px 15px;
-    max-height: 350px;
+    padding: 15px 12px; /* Further reduced */
+    max-height: 280px; /* Reduced from 350px */
   }
   
   .job-description li {
-    font-size: 15px;
+    font-size: 13px; /* Reduced from 15px */
   }
   
   .experience-cards-container {
-    gap: 25px;
+    gap: 20px; /* Reduced from 25px */
   }
   
   .experience-subsection {
-    margin-bottom: 45px;
+    margin-bottom: 30px; /* Further reduced from 45px */
   }
   
   .experience-subsection:first-of-type {
-    margin-top: 25px;
+    margin-top: 20px; /* Reduced from 25px */
   }
   
   .experience-subsection:last-of-type {
@@ -3042,12 +3076,12 @@ section {
   }
   
   .experience-subsection + .experience-subsection {
-    margin-top: 45px;
+    margin-top: 30px; /* Reduced from 45px */
   }
   
   .subsection-heading {
-    font-size: 15px;
-    margin: 0 0 18px 0;
+    font-size: 14px; /* Reduced from 15px */
+    margin: 0 0 12px 0; /* Reduced from 18px */
   }
 }
 
