@@ -871,7 +871,7 @@ section {
 --------------------------------*/
 .section-header h3 {
   font-size: 28px;
-  color: #333;
+  color: #ffffff;
   text-transform: none;
   text-align: center;
   font-weight: 600;
@@ -2830,7 +2830,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #444;
+  color: white;
   text-align: center;
   margin: 0 0 18px 0;
   text-transform: uppercase;
@@ -2872,6 +2872,7 @@ section {
 
 .experience-highlights {
   text-align: center;
+  color: #ffffff;
   margin-top: 8px;
   margin-bottom: 15px;
   min-height: 38px;
@@ -2897,7 +2898,7 @@ section {
   width: 100%;
   font-size: 13px;
   font-weight: 400;
-  color: #666;
+  color: white;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
   margin: 0;
