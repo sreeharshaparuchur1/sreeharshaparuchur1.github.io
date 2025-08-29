@@ -2794,6 +2794,10 @@ section {
 /* Experience Highlights Section */
 #experience {
   padding: 25px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../img/backgrounds/experience-section-background-3.jpeg') center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 }
 
 /* Experience Container - Two Column Layout */
@@ -3290,6 +3294,82 @@ a.company-logo {
     height: 85%;
   }
   
+/* Experience section readability improvements for background image */
+#experience .section-header h3 {
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  font-weight: 700;
+}
+
+#experience .section-header h3::before {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+#experience .rotating-highlight {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+}
+
+#experience .subsection-heading {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+#experience .company-name {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+#experience .company-name a {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+#experience .company-name a:hover {
+  color: #18d26e;
+}
+
+#experience .job-title {
+  color: #18d26e;
+  font-weight: 600;
+}
+
+#experience .job-description li {
+  color: #333333;
+  font-weight: 500;
+}
+
+#experience .job-description p {
+  color: #555555;
+  font-weight: 500;
+}
+
+#experience .employment-dates {
+  background: rgba(24, 210, 110, 0.9);
+  border: 1px solid rgba(24, 210, 110, 1);
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#experience .card-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#experience .read-more-link {
+  color: #18d26e;
+  font-weight: 600;
+}
+
+#experience .read-more-link:hover {
+  color: #13c162;
+}
+
   .logo-placeholder {
     font-size: 14px;
   }
