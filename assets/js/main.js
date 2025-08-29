@@ -403,4 +403,4 @@ document.addEventListener('DOMContentLoaded', function() {
   new PublicationCarousel('carousel-pub2');
 });
 
-// Minimalist education section - no complex interactions needed
+// Education section now uses same toggle functionality as experience cards
