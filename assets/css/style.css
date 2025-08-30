@@ -878,6 +878,102 @@ section {
   padding: 25px 0;
 }
 
+/* Main sections background after landing page */
+#main {
+  background: url('../img/backgrounds/main-section-background-3.jpeg') center center fixed !important;
+  background-size: cover !important;
+  position: relative;
+  min-height: 100vh;
+}
+
+#main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure no conflicting backgrounds in main sections */
+#main section {
+  background: transparent !important;
+}
+
+#main .section-bg {
+  background: transparent !important;
+}
+
+/* Dark theme for main sections */
+#main .section-header h3 {
+  color: #ffffff !important;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 1) !important;
+}
+
+#main .section-header h3::before {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+#main .section-header h3::after {
+  background: #18d26e !important;
+}
+
+#main section {
+  color: #ffffff;
+}
+
+#main section p {
+  color: #e0e0e0;
+}
+
+#main section h4 {
+  color: #ffffff;
+}
+
+#main section h5 {
+  color: #ffffff;
+}
+
+#main .course-title {
+  color: #ffffff !important;
+}
+
+#main .course-description {
+  color: #e0e0e0 !important;
+}
+
+#main .projects-quote {
+  color: #ffffff !important;
+}
+
+#main .projects-intro {
+  color: #e0e0e0 !important;
+}
+
+#main .project-title {
+  color: #ffffff !important;
+}
+
+#main .project-description {
+  color: #e0e0e0 !important;
+}
+
+#main .publication-title a {
+  color: #ffffff !important;
+}
+
+#main .publication-description {
+  color: #e0e0e0 !important;
+}
+
 /* Sections Header
 --------------------------------*/
 .section-header h3 {
@@ -966,7 +1062,7 @@ section {
 /* Section with background
 --------------------------------*/
 .section-bg {
-  background: #f7f7f7;
+  background: transparent !important;
 }
 
 
@@ -2805,9 +2901,6 @@ section {
 /* Experience Highlights Section */
 #experience {
   padding: 25px 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../img/backgrounds/experience-section-background-3.jpeg') center center;
-  background-size: cover;
-  background-attachment: fixed;
   position: relative;
 }
 
@@ -3568,8 +3661,8 @@ a.company-logo {
 
 /* Education Section - Compact Design */
 #education {
-  background: #fff;
   padding: 25px 0;
+  position: relative;
 }
 
 .education-cards-container {
