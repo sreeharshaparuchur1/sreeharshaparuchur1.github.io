@@ -672,81 +672,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Education Section - Inherit Experience Card Styling */
-#education .education-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid #f0f3f6;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-#education .education-card:hover {
-  box-shadow: 0 4px 16px rgba(24, 210, 110, 0.12);
-  transform: translateY(-3px);
-  border-color: rgba(24, 210, 110, 0.2);
-}
-
-#education .education-card .card-header {
-  display: flex;
-  padding: 16px 20px;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  position: relative;
-  background: #fafbfc;
-  border-bottom: 1px solid #f0f3f6;
-}
-
-#education .education-card .company-logo {
-  flex: 0 0 auto;
-  width: 120px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 2px solid #f0f3f6;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-#education .education-card .company-logo:hover {
-  border: 2px solid #18d26e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
-}
-
-#education .education-card .company-logo img {
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-/* Make CMU logo larger */
-#education .education-card .company-logo img[src*="cmu-logo"] {
-  width: 95% !important;
-  height: 95% !important;
-  transform: scale(1.1);
-}
-
-#education .education-card:hover .company-logo img[src*="cmu-logo"] {
-  transform: scale(1.15);
-}
-
-#education .education-card .company-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+/* Education Section - Removed old styling, using updated version below */
 
 #education .education-card .company-name {
   font-size: 18px;
@@ -783,87 +709,92 @@ h1, h2, h3, h4, h5, h6 {
 #education .education-card .card-content {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #education .education-card .card-content.expanded {
-  max-height: 180px;
-  padding: 14px 16px;
+  max-height: 350px;
+  padding: 12px 18px;
 }
 
-#education .education-card .job-description h5 {
-  color: #1a1a1a;
-  font-size: 12px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
-  letter-spacing: 0;
+/* Old education-description rules removed - using new simplified structure */
+
+/* Education Section Styling */
+.education-section {
+  margin-bottom: 16px;
 }
 
-#education .education-card .job-description h5:not(:first-child) {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid #e9ecef;
+.education-section:last-child {
+  margin-bottom: 0;
 }
 
-#education .education-card .job-description ul {
-  list-style: none;
-  padding: 0;
+.education-section h5 {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
   margin: 0 0 8px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  letter-spacing: -0.1px;
 }
 
-#education .education-card .job-description li {
-  background: #e8f4fd;
-  color: #1a5490;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.2;
-  border: 1px solid #b8d4ed;
-}
-
-#education .education-card .job-description li::before {
-  display: none;
-}
-
-#education .education-card .job-description p {
-  margin: 0 0 6px 0;
-  color: #4a5568;
-  font-size: 11px;
-  line-height: 1.4;
+/* Course List - Comma Separated */
+.course-list {
+  color: #e8e8e8;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
   font-weight: 400;
 }
 
-#education .education-card .job-description strong {
+/* Teaching Course Items - Compact Format */
+.teaching-list {
+  margin: 0;
+}
+
+.teaching-course {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #b8b8b8;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.teaching-course:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.teaching-course strong {
   color: #18d26e;
+  font-size: 12px;
   font-weight: 600;
 }
 
 #education .education-card .read-more-link {
-  color: #18d26e;
+  color: #18d26e !important;
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 500;
-  display: flex;
+  font-size: 12px;
+  font-weight: 500 !important;
+  display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
   transition: all 0.3s ease;
-  margin-top: 4px;
+  margin-top: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 #education .education-card .read-more-link:hover {
-  color: #13c162;
+  color: #13c162 !important;
   text-decoration: none;
 }
 
 #education .education-card .read-more-link i {
   transition: transform 0.3s ease;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #education .education-card .read-more-link.expanded i {
@@ -3219,7 +3150,7 @@ a.company-logo {
   letter-spacing: -0.1px;
 }
 
-.job-title {
+.position-title {
   font-size: 13px;
   font-weight: 500;
   color: #18d26e;
@@ -3248,7 +3179,7 @@ a.company-logo {
 /* Remove the bullet point for cleaner look */
 
 /* Strong overrides for all experience section text visibility */
-#experience .job-title {
+#experience .position-title {
   color: #18d26e !important;
   font-weight: 600 !important;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
@@ -3490,7 +3421,7 @@ a.company-logo {
 
 #experience .read-more-link {
   color: #18d26e !important;
-  font-weight: 600;
+  font-weight: 500 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -3689,133 +3620,134 @@ a.company-logo {
 }
 
 .education-cards-container {
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 /* Education Cards - Smaller than Experience Cards */
 #education .education-card {
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid #f0f3f6;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 #education .education-card:hover {
-  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.1);
-  transform: translateY(-2px);
-  border-color: rgba(24, 210, 110, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(24, 210, 110, 0.2);
+  transform: translateY(-5px);
+  border-color: rgba(24, 210, 110, 0.3);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #education .education-card .card-header {
   display: flex;
-  padding: 12px 16px;
+  padding: 14px 18px;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
   position: relative;
-  background: #fafbfc;
-  border-bottom: 1px solid #f0f3f6;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #education .education-card .company-logo {
   flex: 0 0 auto;
-  width: 80px;
-  height: 60px;
+  width: 120px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 4px 6px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
   background: #ffffff;
-  border: 1px solid #e8e8e8;
+  border: 2px solid #f0f3f6;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 #education .education-card .company-logo:hover {
-  border: 1px solid #18d26e;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.1);
+  border: 2px solid #18d26e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
 }
 
 #education .education-card .company-logo img {
-  width: 95%;
-  height: 95%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
-  transition: all 0.3s ease;
 }
 
-/* Make CMU logo even larger in education section */
-#education .education-card .company-logo img[src*="cmu-logo"] {
-  width: 100% !important;
-  height: 100% !important;
-  transform: scale(1.2);
+/* CMU logo - zoomed in for better visibility */
+#education .education-card .company-logo img[src*="cmu.jpeg"] {
+  width: 98% !important;
+  height: 98% !important;
+  transform: scale(1.1);
 }
 
-#education .education-card:hover .company-logo img[src*="cmu-logo"] {
-  transform: scale(1.25);
-}
-
-#education .education-card .company-info {
+#education .education-card .institution-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-#education .education-card .company-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0 0 2px 0;
-  line-height: 1.3;
+#education .education-card .institution-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+  line-height: 1.2;
   letter-spacing: -0.1px;
 }
 
-#education .education-card .job-title {
+#education .education-card .degree-title {
   font-size: 13px;
-  font-weight: 500;
-  color: #18d26e;
+  font-weight: 600 !important;
+  color: #18d26e !important;
   margin: 0 0 6px 0;
-  line-height: 1.3;
-  letter-spacing: 0;
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
 }
 
-#education .education-card .employment-dates {
+#education .education-card .study-dates {
   flex: 0 0 auto;
-  font-size: 11px;
-  font-weight: 500;
-  color: #666;
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background: rgba(24, 210, 110, 0.08);
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  min-width: 80px;
+  position: relative;
   padding: 3px 6px;
-  border-radius: 8px;
-  border: 1px solid rgba(24, 210, 110, 0.15);
+  background: rgba(24, 210, 110, 0.2);
+  border: 1px solid rgba(24, 210, 110, 0.4);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* IIIT-H Logo Styling */
+/* IIIT-H Logo Styling - Match other education logos */
 .iiith-logo-container {
   background: #ffffff !important;
   border: 2px solid #f0f3f6 !important;
-  padding: 8px !important;
+  padding: 8px 12px !important;
 }
 
 .iiith-logo-container img {
-  width: 100% !important;
-  height: 100% !important;
+  width: 98% !important;
+  height: 98% !important;
   object-fit: contain !important;
-  border-radius: 4px;
+  transform: scale(1.1);
 }
 
 .iiith-logo-container:hover {
@@ -3846,43 +3778,39 @@ a.company-logo {
     padding: 4px 6px;
   }
   
-  #education .education-card .company-info {
+  #education .education-card .institution-info {
     order: 1;
   }
   
-  #education .education-card .employment-dates {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 10px;
+  #education .education-card .study-dates {
+    font-size: 9px;
+    min-width: 70px;
+    padding: 2px 5px;
   }
   
   #education .education-card .card-content.expanded {
-    max-height: 140px;
+    max-height: 280px;
     padding: 10px 12px;
   }
   
-  #education .education-card .job-description h5 {
+  /* Responsive education section styling */
+  .education-section h5 {
+    font-size: 12px;
+    margin: 0 0 6px 0;
+  }
+  
+  .course-list {
     font-size: 11px;
-    margin: 0 0 5px 0;
   }
   
-  #education .education-card .job-description h5:not(:first-child) {
-    margin-top: 8px;
-    padding-top: 6px;
-  }
-  
-  #education .education-card .job-description ul {
-    gap: 3px;
-  }
-  
-  #education .education-card .job-description li {
-    font-size: 9px;
-    padding: 1px 4px;
-  }
-  
-  #education .education-card .job-description p {
+  .teaching-course {
     font-size: 10px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+  }
+  
+  .teaching-course strong {
+    font-size: 11px;
   }
 }
 
@@ -3900,31 +3828,37 @@ a.company-logo {
     height: 45px;
   }
   
-  #education .education-card .company-name {
+  #education .education-card .institution-name {
     font-size: 14px;
   }
   
-  #education .education-card .job-title {
+  #education .education-card .degree-title {
     font-size: 12px;
   }
   
   #education .education-card .card-content.expanded {
-    max-height: 120px;
+    max-height: 250px;
     padding: 8px 10px;
   }
   
-  #education .education-card .job-description h5 {
+  /* Smaller screen responsive styling */
+  .education-section h5 {
+    font-size: 11px;
+    margin: 0 0 5px 0;
+  }
+  
+  .course-list {
     font-size: 10px;
-    margin: 0 0 4px 0;
   }
   
-  #education .education-card .job-description h5:not(:first-child) {
-    margin-top: 6px;
-    padding-top: 4px;
-  }
-  
-  #education .education-card .job-description p {
+  .teaching-course {
     font-size: 9px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .teaching-course strong {
+    font-size: 10px;
   }
 }
 

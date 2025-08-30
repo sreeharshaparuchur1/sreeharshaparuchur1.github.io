@@ -307,9 +307,9 @@
 
 })(jQuery);
 
-// Experience Cards Toggle Functionality (Global scope for onclick)
+// Cards Toggle Functionality (Global scope for onclick) - Works for both experience and education
 function toggleCard(link) {
-  const card = link.closest('.experience-card');
+  const card = link.closest('.experience-card, .education-card');
   const content = card.querySelector('.card-content');
   const linkText = link.querySelector('.link-text');
   const icon = link.querySelector('i');
@@ -331,8 +331,8 @@ function toggleCard(link) {
 
 // Close other expanded cards when opening a new one (optional UX enhancement)
 function toggleCardExclusive(link) {
-  const currentCard = link.closest('.experience-card');
-  const allCards = document.querySelectorAll('.experience-card');
+  const currentCard = link.closest('.experience-card, .education-card');
+  const allCards = document.querySelectorAll('.experience-card, .education-card');
   
   // Close all other cards
   allCards.forEach(card => {
