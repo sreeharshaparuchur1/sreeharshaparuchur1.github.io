@@ -83,7 +83,6 @@
                             <li><a href="#education">Education</a></li>
                             <li><a href="#services">Projects</a></li>
                             <li><a href="#portfolio">Publications</a></li>
-                            <li><a href="#teaching">Teaching</a></li>
                             <li><a href="media.html">Media</a></li>
                             <li><a href="#contact">Connect</a></li>
                         </ul>
@@ -395,13 +394,16 @@
                                     <h5>Teaching Assistant Experience</h5>
                                     <div class="teaching-list">
                                         <div class="teaching-course">
-                                            <strong>CSE 568: Mobile Robotics</strong> — Advanced course on autonomous robot navigation, SLAM, path planning, and ROS programming. Led lab sessions, assisted with robot hardware setup, and guided students through complex robotics projects.
+                                            <strong>CS7.503.M21: Mobile Robotics</strong> — The most renowned course of IIIT-H across international universities. Provides students with a comprehensive toolkit for research at the intersection of Robotics and Computer Vision, covering SLAM algorithms and classical Computer Vision techniques.
                                         </div>
                                         <div class="teaching-course">
-                                            <strong>CSE 523: Music, Mind and Technology</strong> — Interdisciplinary course exploring cognitive science, music theory, and technology. Helped students with programming assignments involving audio processing and machine learning applications in music.
+                                            <strong>CS9.434.S22: Music, Mind and Technology</strong> — An interdisciplinary course using algorithms and mathematics to explore how music is perceived by individuals and groups. Served as head TA, designing evaluations for over 60 graduate and undergraduate students.
                                         </div>
                                         <div class="teaching-course">
-                                            <strong>CSE 201: Introduction to Coding Theory</strong> — Fundamental course on error-correcting codes and information theory. Conducted tutorial sessions and assisted students with mathematical proofs and coding exercises.
+                                            <strong>EC5.205.S21: Introduction to Coding Theory</strong> — A fascinating subject building on Shannon's Theory of Communication, exploring the mathematical foundations that underpin everyday communication systems.
+                                        </div>
+                                        <div class="teaching-course">
+                                            <strong>RRC Summer School: Computer Vision Program</strong> — Taught students the fundamentals of classical Computer Vision and introduced modern AI-based methods utilizing convolutional neural networks during this intensive summer program.
                                         </div>
                                     </div>
                                 </div>
@@ -432,19 +434,32 @@
                 </div>
 
                 <!-- Projects Container -->
-                <div class="projects-container">
-                    <div class="project-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/280x180/e8f4fd/18d26e?text=STEREO+RECONSTRUCTION" alt="Dense Stereo Reconstruction Project">
-                        </div>
-                        <div class="project-card">
-                            <div class="project-content">
+                <div class="projects-cards-container">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/280x180/e8f4fd/18d26e?text=STEREO+RECONSTRUCTION" alt="Dense Stereo Reconstruction Project">
+                            </div>
+                            <div class="project-info">
                                 <h4 class="project-title">Dense Stereo Reconstruction in Real-time</h4>
                                 <p class="project-description">
                                     Implementation of epipolar geometry and block-matching for disparity map computation using KITTI dataset. 
-                                    Advanced computer vision techniques for stereo rectification with ORB-SLAM 3 pose estimation, enabling 
-                                    real-time 3D reconstruction for robotics applications.
+                                    Advanced computer vision techniques for stereo rectification with ORB-SLAM 3 pose estimation.
                                 </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-details">
+                                <ul>
+                                    <li>Real-time 3D reconstruction for robotics applications</li>
+                                    <li>KITTI dataset integration with performance optimization</li>
+                                    <li>ORB-SLAM 3 pose estimation implementation</li>
+                                    <li>Advanced stereo rectification algorithms</li>
+                                </ul>
                                 <div class="project-links">
                                     <a href="https://github.com/sreeharshaparuchur1/Point-cloud-reconstruction" target="_blank" class="project-link">
                                         <i class="fa fa-github"></i> View Code
@@ -454,18 +469,31 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/280x180/f0fff4/18d26e?text=NEURAL+TRANSLATION" alt="Neural Machine Translation Project">
-                        </div>
-                        <div class="project-card">
-                            <div class="project-content">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/280x180/f0fff4/18d26e?text=NEURAL+TRANSLATION" alt="Neural Machine Translation Project">
+                            </div>
+                            <div class="project-info">
                                 <h4 class="project-title">Neural Machine Translation</h4>
                                 <p class="project-description">
                                     Comparative analysis of LSTM and GRU-based Bahdanau Attention architectures for sequence-to-sequence translation. 
-                                    English to Hindi translation system with ADAM optimization, evaluated using BLEU score metrics for 
-                                    architectural effectiveness analysis.
+                                    English to Hindi translation system with ADAM optimization.
                                 </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-details">
+                                <ul>
+                                    <li>BLEU score metrics for architectural effectiveness analysis</li>
+                                    <li>Bahdanau Attention mechanism implementation</li>
+                                    <li>LSTM vs GRU comparative performance study</li>
+                                    <li>ADAM optimization for enhanced convergence</li>
+                                </ul>
                                 <div class="project-links">
                                     <a href="https://github.com/sreeharshaparuchur1/seq2seq_machine_translation" target="_blank" class="project-link">
                                         <i class="fa fa-github"></i> View Code
@@ -475,18 +503,31 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/280x180/e8f9ec/18d26e?text=POSE+GRAPH+SLAM" alt="Pose Graph Optimization Project">
-                        </div>
-                        <div class="project-card">
-                            <div class="project-content">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/280x180/e8f9ec/18d26e?text=POSE+GRAPH+SLAM" alt="Pose Graph Optimization Project">
+                            </div>
+                            <div class="project-info">
                                 <h4 class="project-title">Pose-Graph Optimization</h4>
                                 <p class="project-description">
                                     Backend optimization framework for SLAM with graph-based robot trajectory modeling. 
-                                    Non-linear least squares optimization using Jacobian matrices and weighted loop-closures 
-                                    for robust localization and mapping capabilities.
+                                    Non-linear least squares optimization using Jacobian matrices and weighted loop-closures.
                                 </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-details">
+                                <ul>
+                                    <li>Robust localization and mapping capabilities</li>
+                                    <li>Graph-based robot trajectory modeling</li>
+                                    <li>Jacobian matrices for optimization</li>
+                                    <li>Weighted loop-closure detection and correction</li>
+                                </ul>
                                 <div class="project-links">
                                     <a href="https://github.com/sreeharshaparuchur1/basicRoboticsAlgorithms/blob/main/poseGraphOptim_and_SLAM/poseGraphOptim_and_SLAM.ipynb" target="_blank" class="project-link">
                                         <i class="fa fa-github"></i> View Code
@@ -496,97 +537,37 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/280x180/f8fcff/18d26e?text=ROBOTICS+CHALLENGE" alt="Artpark Robotics Challenge Project">
-                        </div>
-                        <div class="project-card">
-                            <div class="project-content">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-header">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/280x180/f8fcff/18d26e?text=ROBOTICS+CHALLENGE" alt="Artpark Robotics Challenge Project">
+                            </div>
+                            <div class="project-info">
                                 <h4 class="project-title">Artpark Robotics Challenge</h4>
                                 <p class="project-description">
                                     Second place in nationwide robotics competition with computer vision, navigation, and control integration. 
-                                    Real-time trash detection using RGB-D cameras with ROS navigation stack for autonomous 
-                                    environmental interaction and task execution.
+                                    Real-time trash detection using RGB-D cameras with ROS navigation stack.
                                 </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-details">
+                                <ul>
+                                    <li>Autonomous environmental interaction and task execution</li>
+                                    <li>RGB-D camera integration for depth perception</li>
+                                    <li>ROS navigation stack implementation</li>
+                                    <li>Real-time computer vision processing</li>
+                                </ul>
                                 <div class="project-links">
                                     <a href="https://www.iiit.ac.in/team-cerebrus-robotics-research-center-rrc-secured-second-place-at-the-artpark-robotics-challenge-conducted-by-iisc-bangalores-innovation-hub-iiith-team-cerebrus-was-led-by-suraj-bonagiri/" target="_blank" class="project-link">
                                         <i class="fa fa-external-link"></i> Read More
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ======= Teaching Section ======= -->
-        <section id="teaching">
-            <div class="container" data-aos="fade-up">
-                <header class="section-header">
-                    <h3>Teaching</h3>
-                </header>
-
-                <!-- Teaching Philosophy -->
-                <div class="teaching-philosophy">
-                    <blockquote class="feynman-quote">
-                        "If you want to master something, teach it"
-                        <cite>— Richard Feynman</cite>
-                    </blockquote>
-                    <p class="teaching-intro">
-                        These words from the legendary Richard Feynman profoundly motivate me to find joy in learning something new with every experience. 
-                        I have been fortunate to work alongside professors as a Teaching Assistant for multiple courses at IIIT Hyderabad, where teaching 
-                        not only strengthened my conceptual understanding but provided opportunities to give back to the academic community.
-                    </p>
-                </div>
-
-                <!-- Teaching Experience -->
-                <div class="teaching-experience">
-                    <div class="course-grid">
-                        <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="course-header">
-                                <h4 class="course-title">Mobile Robotics</h4>
-                                <span class="course-code">CS7.503.M21</span>
-                            </div>
-                            <p class="course-description">
-                                The most renowned course of IIIT-H across international universities. Mobile Robotics provides students with 
-                                a comprehensive toolkit for research at the intersection of Robotics and Computer Vision, covering SLAM algorithms 
-                                and classical Computer Vision techniques.
-                            </p>
-                        </div>
-
-                        <div class="course-card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="course-header">
-                                <h4 class="course-title">RRC Summer School</h4>
-                                <span class="course-code">Teaching Program</span>
-                            </div>
-                            <p class="course-description">
-                                Taught students the fundamentals of classical Computer Vision and introduced modern AI-based methods 
-                                utilizing convolutional neural networks during this intensive summer program.
-                            </p>
-                        </div>
-
-                        <div class="course-card" data-aos="fade-up" data-aos-delay="300">
-                            <div class="course-header">
-                                <h4 class="course-title">Introduction to Coding Theory</h4>
-                                <span class="course-code">EC5.205.S21</span>
-                            </div>
-                            <p class="course-description">
-                                A fascinating subject building on Shannon's Theory of Communication, exploring the mathematical foundations 
-                                that underpin everyday communication systems.
-                            </p>
-                        </div>
-
-                        <div class="course-card" data-aos="fade-up" data-aos-delay="400">
-                            <div class="course-header">
-                                <h4 class="course-title">Music, Mind and Technology</h4>
-                                <span class="course-code">CS9.434.S22</span>
-                            </div>
-                            <p class="course-description">
-                                An interdisciplinary course using algorithms and mathematics to explore how music is perceived by individuals 
-                                and groups. Served as head TA, designing evaluations for over 60 graduate and undergraduate students.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -602,72 +583,71 @@
                     <h3>Publications</h3>
                 </header>
                 
-                <div class="publications-content">
-                    <!-- Publication 1 with its own carousel -->
-                    <div class="publication-item">
-                        <div class="publication-layout">
-                            <div class="publication-text">
-                                <h4 class="publication-title">
-                                    <a href='https://arxiv.org/pdf/2109.07227.pdf' target="_blank">
-                                        How Much do Lyrics Matter? Analysing Lyrical Simplicity Preferences for Individuals At Risk of Depression
-                                    </a>
-                                </h4>
-                                <p class="publication-description">
-                                    We address the dearth of research into the role of lyrical regularities in songs by using the 
-                                    LZ777 compression algorithm alongside a novel compression metric. Our study revealed that 
-                                    individuals at-risk for depression have a preference for songs with fewer lyrical regularities 
-                                    compared to No-Risk individuals.
-                                </p>
+                <!-- Publications Container -->
+                <div class="publications-cards-container">
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <div class="publication-image">
+                                <img src="https://via.placeholder.com/140x100/e8f4fd/18d26e?text=LYRICS+ANALYSIS" alt="Lyrics Analysis Publication">
                             </div>
-                            <div class="publication-figures">
-                                <div class="figure-carousel" id="carousel-pub1">
-                                    <div class="figure-slide active">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=LZ77+Compression+Analysis" 
-                                             alt="LZ77 compression analysis results">
-                                    </div>
-                                    <div class="figure-slide">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=Lyrical+Complexity+Distribution" 
-                                             alt="Lyrical complexity distribution">
-                                    </div>
-                                    <div class="figure-slide">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=Depression+Risk+Correlation" 
-                                             alt="Depression risk correlation graph">
-                                    </div>
+                            <div class="publication-info">
+                                <h4 class="publication-title">How Much do Lyrics Matter? Analysing Lyrical Simplicity Preferences for Individuals At Risk of Depression</h4>
+                                <p class="publication-description">
+                                    We address the dearth of research into the role of lyrical regularities in songs using the 
+                                    LZ777 compression algorithm alongside a novel compression metric.
+                                </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="publication-details">
+                                <ul>
+                                    <li>Novel LZ777 compression algorithm application for lyrical analysis</li>
+                                    <li>Comprehensive study on depression risk indicators in music preferences</li>
+                                    <li>Statistical analysis revealing preference patterns for lyrical regularities</li>
+                                    <li>Comparative study between at-risk and no-risk individuals</li>
+                                </ul>
+                                <div class="publication-links">
+                                    <a href="https://arxiv.org/pdf/2109.07227.pdf" target="_blank" class="publication-link">
+                                        <i class="fa fa-file-pdf-o"></i> Read Paper
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Publication 2 with its own carousel -->
-                    <div class="publication-item">
-                        <div class="publication-layout">
-                            <div class="publication-text">
-                                <h4 class="publication-title">
-                                    <a href='https://pubmed.ncbi.nlm.nih.gov/37471415/' target="_blank">
-                                        "Help! I need some music!": Analysing music discourse & depression on Reddit
-                                    </a>
-                                </h4>
+                    <div class="publication-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <div class="publication-image">
+                                <img src="https://via.placeholder.com/140x100/f0fff4/18d26e?text=REDDIT+ANALYSIS" alt="Reddit Music Analysis Publication">
+                            </div>
+                            <div class="publication-info">
+                                <h4 class="publication-title">"Help! I need some music!": Analysing music discourse & depression on Reddit</h4>
                                 <p class="publication-description">
                                     During the pandemic, social media activity significantly increased as people sought online 
-                                    communities sharing similar opinions and thought processes. Music sharing became a key 
-                                    interaction method. This study explored the intention behind sharing songs with negative 
-                                    mood connotations on internet forums.
+                                    communities sharing similar opinions and thought processes.
                                 </p>
+                                <a href="#" class="read-more-link" onclick="toggleCard(this); return false;">
+                                    <span class="link-text">More details</span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
                             </div>
-                            <div class="publication-figures">
-                                <div class="figure-carousel" id="carousel-pub2">
-                                    <div class="figure-slide active">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=Reddit+Post+Analysis" 
-                                             alt="Reddit post analysis visualization">
-                                    </div>
-                                    <div class="figure-slide">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=Music+Sharing+Patterns" 
-                                             alt="Music sharing behavior patterns">
-                                    </div>
-                                    <div class="figure-slide">
-                                        <img src="https://via.placeholder.com/280x200/f8f9fa/333333?text=Sentiment+Classification" 
-                                             alt="Sentiment classification results">
-                                    </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="publication-details">
+                                <ul>
+                                    <li>Analysis of music sharing behavior during pandemic social isolation</li>
+                                    <li>Investigation of negative mood connotations in shared music content</li>
+                                    <li>Reddit forum data mining and sentiment analysis techniques</li>
+                                    <li>Exploration of music as therapeutic communication medium</li>
+                                </ul>
+                                <div class="publication-links">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/37471415/" target="_blank" class="publication-link">
+                                        <i class="fa fa-external-link"></i> View Publication
+                                    </a>
                                 </div>
                             </div>
                         </div>
