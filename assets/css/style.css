@@ -515,16 +515,16 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s ease;
   margin: 8px 10px;
   color: #fff;
-  background: rgba(24, 210, 110, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(24, 210, 110, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(24, 210, 110, 0.3), 
-              0 2px 4px rgba(0, 0, 0, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(24, 210, 110, 0.4);
+  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.2), 
+              0 1px 2px rgba(0, 0, 0, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(24, 210, 110, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -536,15 +536,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .btn-get-started:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   color: #18d26e;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(24, 210, 110, 0.5), 
-              0 4px 8px rgba(0, 0, 0, 0.25),
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(24, 210, 110, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(24, 210, 110, 0.3), 
+              0 2px 4px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(24, 210, 110, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 #intro .btn-get-started:active {
@@ -2983,12 +2983,7 @@ section {
   margin-bottom: 16px;
 }
 
-.experience-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(24, 210, 110, 0.2);
-  transform: translateY(-5px);
-  border-color: rgba(24, 210, 110, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-}
+/* Removed hover effect for experience cards */
 
 .experience-card::before {
   content: '';
@@ -3641,12 +3636,7 @@ a.company-logo {
   margin-bottom: 16px;
 }
 
-#education .education-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(24, 210, 110, 0.2);
-  transform: translateY(-5px);
-  border-color: rgba(24, 210, 110, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-}
+/* Removed hover effect for education cards */
 
 #education .education-card .card-header {
   display: flex;
