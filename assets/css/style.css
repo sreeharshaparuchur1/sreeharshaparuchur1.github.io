@@ -6,32 +6,35 @@
 */
 
 /*--------------------------------------------------------------
-# Typography System - Clean & Consistent
+# Typography System - Apple Design Language
 --------------------------------------------------------------*/
 :root {
-  /* Primary Font Stack - Modern System Fonts */
-  --font-primary: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-accent: "Montserrat", var(--font-primary);
+  /* Apple San Francisco Font Stack */
+  --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
-  /* Typography Scale */
-  --fs-xs: 0.75rem;    /* 12px */
-  --fs-sm: 0.875rem;   /* 14px */
-  --fs-base: 1rem;     /* 16px */
-  --fs-lg: 1.125rem;   /* 18px */
-  --fs-xl: 1.25rem;    /* 20px */
-  --fs-2xl: 1.5rem;    /* 24px */
-  --fs-3xl: 1.875rem;  /* 30px */
-  --fs-4xl: 2.25rem;   /* 36px */
+  /* Apple Typography Scale */
+  --fs-caption2: 0.6875rem;  /* 11px - Caption 2 */
+  --fs-caption1: 0.75rem;    /* 12px - Caption 1 */
+  --fs-footnote: 0.8125rem;  /* 13px - Footnote */
+  --fs-subheadline: 0.9375rem; /* 15px - Subheadline */
+  --fs-callout: 1rem;        /* 16px - Callout */
+  --fs-body: 1.0625rem;      /* 17px - Body */
+  --fs-headline: 1.0625rem;  /* 17px - Headline */
+  --fs-title3: 1.25rem;      /* 20px - Title 3 */
+  --fs-title2: 1.375rem;     /* 22px - Title 2 */
+  --fs-title1: 1.75rem;      /* 28px - Title 1 */
+  --fs-largetitle: 2.125rem; /* 34px - Large Title */
   
-  /* Line Heights */
-  --lh-tight: 1.2;
-  --lh-normal: 1.5;
-  --lh-relaxed: 1.6;
+  /* Apple Line Heights */
+  --lh-tight: 1.08;    /* Apple's tight line height */
+  --lh-normal: 1.29;   /* Apple's normal line height */
+  --lh-relaxed: 1.47;  /* Apple's relaxed line height */
   
-  /* Letter Spacing */
-  --ls-tight: -0.025em;
-  --ls-normal: 0;
-  --ls-wide: 0.05em;
+  /* Apple Letter Spacing */
+  --ls-tight: -0.41px;   /* Large titles */
+  --ls-normal: -0.24px;  /* Titles */
+  --ls-wide: -0.08px;    /* Body text */
 }
 
 /*--------------------------------------------------------------
@@ -43,6 +46,10 @@ body {
   font-family: var(--font-primary);
   font-size: var(--fs-base);
   line-height: var(--lh-normal);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -63,131 +70,137 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   font-weight: 600;
   line-height: var(--lh-tight);
-  letter-spacing: var(--ls-tight);
+  letter-spacing: var(--ls-normal);
   margin: 0 0 1.25rem 0;
   padding: 0;
 }
 
-h1 { font-size: var(--fs-4xl); }
-h2 { font-size: var(--fs-3xl); }
-h3 { font-size: var(--fs-2xl); }
-h4 { font-size: var(--fs-xl); }
-h5 { font-size: var(--fs-lg); }
-h6 { font-size: var(--fs-base); }
+h1 { font-size: var(--fs-largetitle); font-weight: 700; letter-spacing: var(--ls-tight); }
+h2 { font-size: var(--fs-title1); font-weight: 600; }
+h3 { font-size: var(--fs-title2); font-weight: 600; }
+h4 { font-size: var(--fs-title3); font-weight: 600; }
+h5 { font-size: var(--fs-headline); font-weight: 600; }
+h6 { font-size: var(--fs-callout); font-weight: 600; }
 
-/* Typography Consistency Overrides */
+/* Apple Typography Consistency */
 .company-name, .institution-name {
-  font-family: var(--font-accent) !important;
-  font-size: var(--fs-lg) !important;
-  font-weight: 700 !important;
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-headline) !important;
+  font-weight: 600 !important;
   line-height: var(--lh-tight) !important;
-  letter-spacing: var(--ls-tight) !important;
+  letter-spacing: var(--ls-normal) !important;
 }
 
 .position-title, .degree-title, .job-title {
   font-family: var(--font-primary) !important;
-  font-size: var(--fs-sm) !important;
+  font-size: var(--fs-subheadline) !important;
   font-weight: 500 !important;
   line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
+  letter-spacing: var(--ls-wide) !important;
 }
 
 .project-title, .publication-title {
-  font-family: var(--font-accent) !important;
-  font-size: var(--fs-base) !important;
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-callout) !important;
   font-weight: 600 !important;
   line-height: var(--lh-tight) !important;
-  letter-spacing: var(--ls-tight) !important;
+  letter-spacing: var(--ls-normal) !important;
 }
 
 .project-description, .publication-description, .job-description, .education-description {
   font-family: var(--font-primary) !important;
-  font-size: var(--fs-xs) !important;
+  font-size: var(--fs-footnote) !important;
   font-weight: 400 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
+  line-height: var(--lh-relaxed) !important;
+  letter-spacing: var(--ls-wide) !important;
 }
 
 .read-more-link {
   font-family: var(--font-primary) !important;
-  font-size: var(--fs-xs) !important;
+  font-size: var(--fs-footnote) !important;
   font-weight: 500 !important;
   line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
-}
-
-/* Button Typography */
-.btn, .project-link, .publication-link {
-  font-family: var(--font-primary) !important;
-  font-size: var(--fs-xs) !important;
-  font-weight: 500 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
-}
-
-/* List Items */
-.job-description li, .education-description li, .project-details li, .publication-details li {
-  font-family: var(--font-primary) !important;
-  font-size: var(--fs-xs) !important;
-  font-weight: 400 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
-}
-
-/* Navigation Typography */
-.navbar-nav a, .nav-link, .navbar a {
-  font-family: var(--font-primary) !important;
-  font-size: var(--fs-sm) !important;
-  font-weight: 500 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
-}
-
-/* Date/Duration Typography */
-.employment-dates, .study-dates, .date-badge {
-  font-family: var(--font-primary) !important;
-  font-size: var(--fs-xs) !important;
-  font-weight: 500 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-normal) !important;
-}
-
-/* Subsection Headings */
-.subsection-heading {
-  font-family: var(--font-accent) !important;
-  font-size: var(--fs-base) !important;
-  font-weight: 600 !important;
-  line-height: var(--lh-tight) !important;
   letter-spacing: var(--ls-wide) !important;
 }
 
-/* Responsive Typography Adjustments */
+/* Apple Button Typography */
+.btn, .project-link, .publication-link {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-footnote) !important;
+  font-weight: 500 !important;
+  line-height: var(--lh-normal) !important;
+  letter-spacing: var(--ls-wide) !important;
+}
+
+/* Apple List Items */
+.job-description li, .education-description li, .project-details li, .publication-details li {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-footnote) !important;
+  font-weight: 400 !important;
+  line-height: var(--lh-relaxed) !important;
+  letter-spacing: var(--ls-wide) !important;
+}
+
+/* Apple Navigation Typography */
+.navbar-nav a, .nav-link, .navbar a {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-subheadline) !important;
+  font-weight: 500 !important;
+  line-height: var(--lh-normal) !important;
+  letter-spacing: var(--ls-wide) !important;
+}
+
+/* Apple Date/Duration Typography */
+.employment-dates, .study-dates, .date-badge {
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-caption1) !important;
+  font-weight: 500 !important;
+  line-height: var(--lh-normal) !important;
+  letter-spacing: var(--ls-wide) !important;
+}
+
+/* Apple Subsection Headings */
+.subsection-heading {
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-callout) !important;
+  font-weight: 600 !important;
+  line-height: var(--lh-tight) !important;
+  letter-spacing: var(--ls-normal) !important;
+}
+
+/* Apple Responsive Typography */
 @media (max-width: 768px) {
   :root {
-    --fs-xs: 0.6875rem;  /* 11px */
-    --fs-sm: 0.8125rem;  /* 13px */
-    --fs-base: 0.9375rem; /* 15px */
-    --fs-lg: 1.0625rem;  /* 17px */
-    --fs-xl: 1.1875rem;  /* 19px */
-    --fs-2xl: 1.375rem;  /* 22px */
-    --fs-3xl: 1.625rem;  /* 26px */
-    --fs-4xl: 2rem;      /* 32px */
+    --fs-caption2: 0.625rem;   /* 10px */
+    --fs-caption1: 0.6875rem;  /* 11px */
+    --fs-footnote: 0.75rem;    /* 12px */
+    --fs-subheadline: 0.875rem; /* 14px */
+    --fs-callout: 0.9375rem;   /* 15px */
+    --fs-body: 1rem;           /* 16px */
+    --fs-headline: 1rem;       /* 16px */
+    --fs-title3: 1.125rem;     /* 18px */
+    --fs-title2: 1.25rem;      /* 20px */
+    --fs-title1: 1.5rem;       /* 24px */
+    --fs-largetitle: 1.75rem;  /* 28px */
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --fs-xs: 0.625rem;   /* 10px */
-    --fs-sm: 0.75rem;    /* 12px */
-    --fs-base: 0.875rem; /* 14px */
-    --fs-lg: 1rem;       /* 16px */
-    --fs-xl: 1.125rem;   /* 18px */
-    --fs-2xl: 1.25rem;   /* 20px */
-    --fs-3xl: 1.5rem;    /* 24px */
-    --fs-4xl: 1.75rem;   /* 28px */
+    --fs-caption2: 0.5625rem;  /* 9px */
+    --fs-caption1: 0.625rem;   /* 10px */
+    --fs-footnote: 0.6875rem;  /* 11px */
+    --fs-subheadline: 0.8125rem; /* 13px */
+    --fs-callout: 0.875rem;    /* 14px */
+    --fs-body: 0.9375rem;      /* 15px */
+    --fs-headline: 0.9375rem;  /* 15px */
+    --fs-title3: 1rem;         /* 16px */
+    --fs-title2: 1.125rem;     /* 18px */
+    --fs-title1: 1.375rem;     /* 22px */
+    --fs-largetitle: 1.5rem;   /* 24px */
   }
 }
 
@@ -583,17 +596,17 @@ h6 { font-size: var(--fs-base); }
 #intro h2 {
   color: #fff;
   margin-bottom: 1.25rem;
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-largetitle);
   font-weight: 700;
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   line-height: var(--lh-tight);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: var(--ls-normal);
+  letter-spacing: var(--ls-tight);
 }
 
 @media (max-width: 768px) {
   #intro h2 {
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-title1);
   }
 }
 
@@ -601,10 +614,11 @@ h6 { font-size: var(--fs-base); }
   width: 80%;
   margin: 0 auto 1.875rem auto;
   color: #fff;
-  font-size: var(--fs-xl);
+  font-size: var(--fs-body);
   font-family: var(--font-primary);
+  font-weight: 400;
   line-height: var(--lh-relaxed);
-  letter-spacing: var(--ls-normal);
+  letter-spacing: var(--ls-wide);
 }
 
 @media (min-width: 1024px) {
@@ -1066,12 +1080,12 @@ section {
 /* Sections Header
 --------------------------------*/
 .section-header h3 {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-title1);
   color: #ffffff;
   text-transform: none;
   text-align: center;
   font-weight: 600;
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   line-height: var(--lh-tight);
   position: relative;
   padding-bottom: 0.5rem;
