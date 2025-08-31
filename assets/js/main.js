@@ -309,20 +309,32 @@
 
 // Cards Toggle Functionality (Global scope for onclick) - Works for experience, education, projects, and publications
 function toggleCard(link) {
+  // Prevent event bubbling
+  event.preventDefault();
+  event.stopPropagation();
+  
   const card = link.closest('.experience-card, .education-card, .project-card, .publication-card');
   const content = card.querySelector('.card-content');
   const linkText = link.querySelector('.link-text');
   const icon = link.querySelector('i');
   
+  // Ensure we're only affecting this specific card
+  if (!card || !content) {
+    console.error('Card or content not found');
+    return;
+  }
+  
   if (content.classList.contains('expanded')) {
     // Collapse the card
     content.classList.remove('expanded');
     link.classList.remove('expanded');
+    card.classList.remove('expanded');
     linkText.textContent = 'More details';
   } else {
     // Expand the card
     content.classList.add('expanded');
     link.classList.add('expanded');
+    card.classList.add('expanded');
     linkText.textContent = 'Less details';
   }
 }

@@ -127,7 +127,7 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 }
 
 /* Apple Button Typography */
-.btn, .project-link, .publication-link {
+.btn {
   font-family: var(--font-primary) !important;
   font-size: var(--fs-footnote) !important;
   font-weight: 500 !important;
@@ -1671,6 +1671,9 @@ section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  /* Ensure each card is independent */
+  contain: layout style;
+  isolation: isolate;
 }
 
 .project-card::before {
@@ -1773,6 +1776,12 @@ section {
   padding: 24px 28px;
 }
 
+/* Ensure only the specific project card expands */
+.project-card:not(.expanded) .card-content {
+  max-height: 0;
+  padding: 0 24px;
+}
+
 .project-details ul {
   list-style: none;
   padding: 0;
@@ -1802,35 +1811,39 @@ section {
 .project-links {
   display: flex;
   justify-content: flex-start;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 16px;
+  margin-top: 8px;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   color: #18d26e;
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--fs-footnote);
   font-weight: 500;
-  padding: 8px 12px;
-  border: 1px solid rgba(24, 210, 110, 0.4);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: rgba(24, 210, 110, 0.1);
+  font-family: var(--font-primary);
+  letter-spacing: var(--ls-wide);
+  transition: all 0.2s ease;
+  opacity: 0.8;
 }
 
 .project-link:hover {
-  background: rgba(24, 210, 110, 0.2);
   color: #ffffff;
   text-decoration: none;
-  transform: translateY(-1px);
-  border-color: rgba(24, 210, 110, 0.6);
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 .project-link i {
-  font-size: 11px;
+  font-size: 10px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.project-link:hover i {
+  opacity: 1;
 }
 
 /* Projects section read-more-link styling */
@@ -2115,7 +2128,6 @@ section {
   }
   
   .project-link {
-    padding: 6px 10px;
     font-size: 11px;
   }
 }
@@ -2167,7 +2179,6 @@ section {
   }
   
   .project-link {
-    padding: 5px 8px;
     font-size: 10px;
   }
 }
@@ -2447,35 +2458,39 @@ section {
 .publication-links {
   display: flex;
   justify-content: flex-start;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 16px;
+  margin-top: 8px;
 }
 
 .publication-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   color: #18d26e;
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--fs-footnote);
   font-weight: 500;
-  padding: 8px 12px;
-  border: 1px solid rgba(24, 210, 110, 0.4);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: rgba(24, 210, 110, 0.1);
+  font-family: var(--font-primary);
+  letter-spacing: var(--ls-wide);
+  transition: all 0.2s ease;
+  opacity: 0.8;
 }
 
 .publication-link:hover {
-  background: rgba(24, 210, 110, 0.2);
   color: #ffffff;
   text-decoration: none;
-  transform: translateY(-1px);
-  border-color: rgba(24, 210, 110, 0.6);
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 .publication-link i {
-  font-size: 11px;
+  font-size: 10px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.publication-link:hover i {
+  opacity: 1;
 }
 
 /* Publications section read-more-link styling */
@@ -4051,6 +4066,16 @@ a.company-logo {
 #education .education-card:hover {
   border-color: rgba(24, 210, 110, 0.6);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(24, 210, 110, 0.3);
+}
+
+#education .education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
 }
 
 #education .education-card .card-header {
