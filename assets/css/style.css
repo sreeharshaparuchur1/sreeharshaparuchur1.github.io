@@ -1026,7 +1026,7 @@ section {
 }
 
 #main .section-header h3::after {
-  background: #18d26e !important;
+  background: #f7d717 !important;
 }
 
 #main section {
@@ -1110,7 +1110,7 @@ section {
   display: block;
   width: 12px;
   height: 2px;
-  background: #18d26e;
+  background: #f7d717;
   bottom: 0;
   left: calc(50% - 6px);
 }
@@ -1152,7 +1152,7 @@ section {
   display: block;
   width: 24px;
   height: 2px;
-  background: #18d26e;
+  background: #f7d717;
   bottom: 0;
   left: calc(50% - 12px);
 }
@@ -1573,7 +1573,7 @@ section {
   content: "•";
   position: absolute;
   left: 0;
-  color: #18d26e;
+  color: #f7d717;
   font-weight: bold;
   font-size: 14px;
   top: 3px;
@@ -2120,7 +2120,7 @@ section {
   content: "•";
   position: absolute;
   left: 0;
-  color: #18d26e;
+  color: #f7d717;
   font-weight: bold;
   font-size: 14px;
   top: 3px;
