@@ -14,12 +14,12 @@
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
   /* Apple Typography Scale */
-  --fs-caption2: 0.6875rem;  /* 11px - Caption 2 */
-  --fs-caption1: 0.75rem;    /* 12px - Caption 1 */
-  --fs-footnote: 0.8125rem;  /* 13px - Footnote */
-  --fs-subheadline: 0.9375rem; /* 15px - Subheadline */
-  --fs-callout: 1rem;        /* 16px - Callout */
-  --fs-body: 1.0625rem;      /* 17px - Body */
+  --fs-caption2: 0.75rem;    /* 12px - Caption 2 */
+  --fs-caption1: 0.8125rem;  /* 13px - Caption 1 */
+  --fs-footnote: 0.9375rem;  /* 15px - Footnote */
+  --fs-subheadline: 1rem;    /* 16px - Subheadline */
+  --fs-callout: 1.0625rem;   /* 17px - Callout */
+  --fs-body: 1.125rem;       /* 18px - Body */
   --fs-headline: 1.0625rem;  /* 17px - Headline */
   --fs-title3: 1.25rem;      /* 20px - Title 3 */
   --fs-title2: 1.375rem;     /* 22px - Title 2 */
@@ -1392,11 +1392,12 @@ section {
 }
 
 .projects-intro {
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.6;
   color: #555;
   margin: 0;
   text-align: center;
+  letter-spacing: 0.1px;
 }
 
 .projects-intro a {
@@ -1468,7 +1469,7 @@ section {
 .project-card .project-image {
   flex: 0 0 auto;
   width: 200px;
-  height: 140px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1497,32 +1498,34 @@ section {
 .project-card .project-info {
   flex: 1;
   min-width: 0;
-  height: 140px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 4px 0;
 }
 
 .project-card .project-title {
   color: #18d26e;
   font-size: 16px;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 6px 0;
   line-height: 1.2;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .project-card .project-description {
   color: #e8e8e8;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 8px 0 0 0;
   font-weight: 400;
   flex: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  letter-spacing: 0.2px;
 }
 
 .project-card .card-content {
@@ -1649,8 +1652,9 @@ section {
   }
   
   .publication-card .publication-description {
-    font-size: 12px;
+    font-size: 14px;
     -webkit-line-clamp: 4;
+    line-height: 1.5;
   }
 }
 
@@ -1680,8 +1684,9 @@ section {
   }
   
   .publication-card .publication-description {
-    font-size: 11px;
-    -webkit-line-clamp: 3;
+    font-size: 13px;
+    -webkit-line-clamp: 4;
+    line-height: 1.5;
   }
   
   .publication-card .card-content.expanded {
@@ -1723,8 +1728,9 @@ section {
   }
   
   .publication-card .publication-description {
-    font-size: 10px;
-    -webkit-line-clamp: 2;
+    font-size: 12px;
+    -webkit-line-clamp: 3;
+    line-height: 1.4;
   }
   
   .publication-card .card-content.expanded {
@@ -1814,8 +1820,9 @@ section {
   }
   
   .project-card .project-description {
-    font-size: 12px;
-    -webkit-line-clamp: 4;
+    font-size: 14px;
+    -webkit-line-clamp: 3;
+    line-height: 1.5;
   }
 }
 
@@ -1830,7 +1837,8 @@ section {
   }
   
   .projects-intro {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.5;
   }
   
   .projects-cards-container {
@@ -1858,8 +1866,9 @@ section {
   }
   
   .project-card .project-description {
-    font-size: 11px;
+    font-size: 13px;
     -webkit-line-clamp: 3;
+    line-height: 1.5;
   }
   
   .project-card .card-content.expanded {
@@ -1882,7 +1891,8 @@ section {
   }
   
   .projects-intro {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.5;
   }
   
   .projects-cards-container {
@@ -1908,8 +1918,9 @@ section {
   }
   
   .project-card .project-description {
-    font-size: 10px;
+    font-size: 12px;
     -webkit-line-clamp: 2;
+    line-height: 1.4;
   }
   
   .project-card .card-content.expanded {
@@ -1989,12 +2000,12 @@ section {
 .publication-card .publication-image {
   flex: 0 0 auto;
   width: 200px;
-  height: 140px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 8px;
+  padding: 12px;
   border-radius: 16px;
   background: #ffffff;
   border: 2px solid #f0f3f6;
@@ -2011,7 +2022,7 @@ section {
 .publication-card .publication-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -2027,8 +2038,8 @@ section {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
 }
 
 .rotating-images .rotating-img.active {
@@ -2045,32 +2056,35 @@ section {
 .publication-card .publication-info {
   flex: 1;
   min-width: 0;
-  height: 140px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 6px 0;
 }
 
 .publication-card .publication-title {
   color: #18d26e;
   font-size: 16px;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 6px 0;
   line-height: 1.2;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .publication-card .publication-description {
   color: #e8e8e8;
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.6;
   margin: 0;
+  margin-top: 8px;
   font-weight: 400;
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  letter-spacing: 0.2px;
 }
 
 .publication-card .card-content {
@@ -2996,7 +3010,7 @@ a.company-logo {
 
 .employment-dates {
   flex: 0 0 auto;
-  font-size: 10px;
+  font-size: 12px;
   color: #ffffff;
   font-weight: 600;
   text-align: center;
@@ -3088,11 +3102,12 @@ a.company-logo {
 .job-description li {
   position: relative;
   padding-left: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #e8e8e8;
-  line-height: 1.5;
-  font-size: 12px;
+  line-height: 1.6;
+  font-size: 14px;
   font-weight: 400;
+  letter-spacing: 0.1px;
 }
 
 .job-description li::before {
@@ -3108,10 +3123,11 @@ a.company-logo {
 .job-description p {
   margin: 12px 0 0 0;
   color: #b8b8b8;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
   padding-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.1px;
 }
 
 .job-description strong {
@@ -3362,7 +3378,7 @@ a.company-logo {
   .employment-dates {
     top: 12px;
     right: 12px;
-    font-size: 11px;
+    font-size: 12px;
     padding-left: 10px;
   }
   
@@ -3384,7 +3400,8 @@ a.company-logo {
   }
   
   .job-description li {
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.5;
   }
   
   .job-description p {
