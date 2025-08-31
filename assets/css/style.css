@@ -1417,6 +1417,8 @@ section {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 0 15px;
+  /* Ensure grid items don't stretch to match row height */
+  align-items: start;
 }
 
 .project-card {
@@ -1432,6 +1434,8 @@ section {
   /* Ensure each card is independent */
   contain: layout style;
   isolation: isolate;
+  /* Force grid item to maintain its own height */
+  align-self: start;
 }
 
 .project-card::before {
@@ -1529,6 +1533,12 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.project-card.expanded .card-content.expanded {
+  max-height: 400px;
+  padding: 24px 28px;
+}
+
+/* Fallback rule for expanded content */
 .project-card .card-content.expanded {
   max-height: 400px;
   padding: 24px 28px;
@@ -1536,7 +1546,7 @@ section {
 
 /* Ensure only the specific project card expands */
 .project-card:not(.expanded) .card-content {
-  max-height: 0;
+  max-height: 0 !important;
   padding: 0 24px;
 }
 

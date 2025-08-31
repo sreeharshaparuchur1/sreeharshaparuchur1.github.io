@@ -280,6 +280,29 @@ function toggleCard(link, event) {
     return;
   }
   
+  // Special handling for project cards to prevent multiple expansions
+  const isProjectCard = card.classList.contains('project-card');
+  if (isProjectCard) {
+    // First, collapse all other project cards
+    const allProjectCards = document.querySelectorAll('.project-card');
+    allProjectCards.forEach(otherCard => {
+      if (otherCard !== card) {
+        const otherContent = otherCard.querySelector('.card-content');
+        const otherLink = otherCard.querySelector('.read-more-link');
+        const otherLinkText = otherLink?.querySelector('.link-text');
+        const otherIcon = otherLink?.querySelector('i');
+        
+        if (otherContent?.classList.contains('expanded')) {
+          otherContent.classList.remove('expanded');
+          otherLink?.classList.remove('expanded');
+          otherCard.classList.remove('expanded');
+          if (otherLinkText) otherLinkText.textContent = 'More details';
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        }
+      }
+    });
+  }
+  
   const isExpanded = content.classList.contains('expanded');
   
   if (isExpanded) {
