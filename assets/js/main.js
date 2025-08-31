@@ -336,3 +336,33 @@ $(document).ready(function() {
 
 
 // All card sections (experience, education, projects, publications) use the same toggle functionality
+
+// Publication Image Rotation Functionality
+function initPublicationImageRotation() {
+  const rotatingContainers = document.querySelectorAll('.rotating-images');
+  
+  rotatingContainers.forEach(container => {
+    const images = container.querySelectorAll('.rotating-img');
+    if (images.length <= 1) return; // Skip if only one image
+    
+    let currentIndex = 0;
+    
+    // Start rotation after page load
+    setInterval(() => {
+      // Fade out current image
+      images[currentIndex].classList.remove('active');
+      
+      // Move to next image
+      currentIndex = (currentIndex + 1) % images.length;
+      
+      // Fade in next image
+      images[currentIndex].classList.add('active');
+    }, 3000); // Change every 3 seconds
+  });
+}
+
+// Initialize image rotation when DOM is ready
+$(document).ready(function() {
+  // Add small delay to ensure images are loaded
+  setTimeout(initPublicationImageRotation, 500);
+});
