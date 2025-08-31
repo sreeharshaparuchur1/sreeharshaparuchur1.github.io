@@ -171,61 +171,15 @@
     offset: '80%'
   });
 
-  // jQuery counterUp (used in Facts section)
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
 
-  // Porfolio isotope and filter
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-item',
-    layoutMode: 'fitRows'
-  });
 
-  $('#portfolio-flters li').on('click', function() {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({
-      filter: $(this).data('filter')
-    });
-    aos_init();
-  });
-
-  // Initiate venobox (lightbox feature used in portofilo)
+  // Initiate venobox (lightbox feature used in publications)
   $(document).ready(function() {
     $('.venobox').venobox();
   });
 
-  // Clients carousel (uses the Owl Carousel library)
-  $(".clients-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      768: {
-        items: 4
-      },
-      900: {
-        items: 6
-      }
-    }
-  });
-
   // Testimonials carousel (uses the Owl Carousel library)
   $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
-
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
     dots: true,
     loop: true,
@@ -307,112 +261,55 @@
 
 })(jQuery);
 
-// Cards Toggle Functionality (Global scope for onclick) - Works for experience, education, projects, and publications
-function toggleCard(link) {
-  // Prevent event bubbling
-  event.preventDefault();
-  event.stopPropagation();
+// Cards Toggle Functionality - Works for experience, education, projects, and publications
+function toggleCard(link, event) {
+  // Prevent event bubbling if event is passed
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
   
   const card = link.closest('.experience-card, .education-card, .project-card, .publication-card');
-  const content = card.querySelector('.card-content');
+  const content = card?.querySelector('.card-content');
   const linkText = link.querySelector('.link-text');
   const icon = link.querySelector('i');
   
   // Ensure we're only affecting this specific card
   if (!card || !content) {
-    console.error('Card or content not found');
+    console.error('Card or content not found for:', link);
     return;
   }
   
-  if (content.classList.contains('expanded')) {
+  const isExpanded = content.classList.contains('expanded');
+  
+  if (isExpanded) {
     // Collapse the card
     content.classList.remove('expanded');
     link.classList.remove('expanded');
     card.classList.remove('expanded');
-    linkText.textContent = 'More details';
+    if (linkText) linkText.textContent = 'More details';
+    if (icon) icon.style.transform = 'rotate(0deg)';
   } else {
     // Expand the card
     content.classList.add('expanded');
     link.classList.add('expanded');
     card.classList.add('expanded');
-    linkText.textContent = 'Less details';
+    if (linkText) linkText.textContent = 'Less details';
+    if (icon) icon.style.transform = 'rotate(180deg)';
   }
 }
 
-
-
-// Close other expanded cards when opening a new one (optional UX enhancement)
-function toggleCardExclusive(link) {
-  const currentCard = link.closest('.experience-card, .education-card, .project-card, .publication-card');
-  const allCards = document.querySelectorAll('.experience-card, .education-card, .project-card, .publication-card');
-  
-  // Close all other cards
-  allCards.forEach(card => {
-    if (card !== currentCard) {
-      const content = card.querySelector('.card-content');
-      const cardLink = card.querySelector('.read-more-link');
-      const linkText = cardLink.querySelector('.link-text');
-      
-      if (content.classList.contains('expanded')) {
-        content.classList.remove('expanded');
-        cardLink.classList.remove('expanded');
-        linkText.textContent = 'More details';
-      }
-    }
+// Event delegation for card toggle functionality
+$(document).ready(function() {
+  $(document).on('click', '.read-more-link', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleCard(this, e);
   });
-  
-  // Toggle current card
-  toggleCard(link);
-}
-
-// Publication Figure Carousels - Auto-rotating every 3 seconds
-class PublicationCarousel {
-  constructor(carouselId) {
-    this.carousel = document.getElementById(carouselId);
-    this.slides = this.carousel ? this.carousel.getElementsByClassName('figure-slide') : [];
-    this.currentIndex = 0;
-    this.init();
-  }
-
-  init() {
-    if (this.slides.length > 0) {
-      this.showSlide(0);
-      this.startAutoRotation();
-    }
-  }
-
-  showSlide(index) {
-    // Hide all slides
-    for (let i = 0; i < this.slides.length; i++) {
-      this.slides[i].classList.remove('active');
-    }
-    
-    // Show current slide
-    if (this.slides[index]) {
-      this.slides[index].classList.add('active');
-      this.currentIndex = index;
-    }
-  }
-
-  nextSlide() {
-    const nextIndex = (this.currentIndex + 1) % this.slides.length;
-    this.showSlide(nextIndex);
-  }
-
-  startAutoRotation() {
-    if (this.slides.length > 1) {
-      setInterval(() => {
-        this.nextSlide();
-      }, 3000); // 3 seconds
-    }
-  }
-}
-
-// Initialize carousels when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize each publication carousel
-  new PublicationCarousel('carousel-pub1');
-  new PublicationCarousel('carousel-pub2');
 });
 
-// Education section now uses same toggle functionality as experience cards
+
+
+
+
+// All card sections (experience, education, projects, publications) use the same toggle functionality

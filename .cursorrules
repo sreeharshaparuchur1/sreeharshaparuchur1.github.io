@@ -44,7 +44,6 @@ Keep token usage minimal. Do NOT load large or irrelevant files. Only modify the
 - “Review the project” = summarize ONLY from index.html, style.css, bootstrap.js (plus small images if relevant).
 - If a change requires disallowed files or new assets, STOP and ask permission.
 - Do NOT fetch remote content or upgrade libs without explicit permission.
-- Avoid vendor/minified code; if unavoidable, read a tiny, relevant slice.
 
 ## Editing style
 - Keep diffs minimal/localized. No broad reformatting.
