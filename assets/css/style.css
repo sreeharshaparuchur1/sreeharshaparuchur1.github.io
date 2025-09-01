@@ -308,6 +308,137 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   }
 }
 
+/*--------------------------------------------------------------
+# Frosted Glass Section Compartmentalization
+--------------------------------------------------------------*/
+
+/* Frosted Glass Variables */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --glass-blur: 12px;
+  --glass-radius: 20px;
+  --glass-padding: 3rem;
+  --glass-margin: 2rem;
+}
+
+/* Main Section Glass Container */
+.section-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-shadow);
+  margin: var(--glass-margin) auto;
+  padding: var(--glass-padding);
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+}
+
+/* Glass Container Before Overlay */
+.section-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 20%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0.4) 80%, 
+    transparent 100%);
+  border-radius: var(--glass-radius) var(--glass-radius) 0 0;
+}
+
+/* Section Header Enhancement for Glass */
+.section-glass .section-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-glass .section-header h3 {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+/* Subtle Inner Glow for Glass Sections */
+.section-glass::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: calc(var(--glass-radius) - 2px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+/* Glass Hover Effect */
+.section-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Glass Design */
+@media (max-width: 768px) {
+  :root {
+    --glass-padding: 2rem;
+    --glass-margin: 1.5rem;
+    --glass-radius: 16px;
+  }
+  
+  .section-glass {
+    margin: var(--glass-margin) 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --glass-padding: 1.5rem;
+    --glass-margin: 1rem;
+    --glass-radius: 12px;
+    --glass-blur: 8px;
+  }
+  
+  .section-glass {
+    margin: var(--glass-margin) 0.5rem;
+  }
+}
+
+/* Glass Section Content Enhancements */
+.section-glass .experience-container,
+.section-glass .education-container,
+.section-glass .projects-cards-container,
+.section-glass .publications-cards-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure cards maintain their styling within glass sections */
+.section-glass .experience-card,
+.section-glass .education-card,
+.section-glass .project-card,
+.section-glass .publication-card,
+.section-glass .article-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass compatibility with existing backgrounds */
+.section-glass {
+  /* Override section background inside glass */
+  background: var(--glass-bg) !important;
+}
+
 /* Apple Navigation Typography */
 .navbar-nav a, .nav-link, .navbar a {
   font-family: var(--font-primary) !important;
@@ -1132,6 +1263,22 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 section {
   overflow: hidden;
   padding: 25px 0;
+}
+
+/* Sections with glass containers need adjusted padding */
+section:has(.section-glass) {
+  padding: 40px 0;
+}
+
+/* Fallback for browsers that don't support :has() */
+#experience,
+#education,
+#projects,
+#publications,
+#contact,
+#blogs,
+#testimonials {
+  padding: 40px 0;
 }
 
 /* Main sections background after landing page */
