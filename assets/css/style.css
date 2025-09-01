@@ -35,6 +35,25 @@
   --ls-tight: -0.41px;   /* Large titles */
   --ls-normal: -0.24px;  /* Titles */
   --ls-wide: -0.08px;    /* Body text */
+
+  /* Consistent Dropdown Typography Variables */
+  --dropdown-link-font: var(--font-primary);
+  --dropdown-link-size: var(--fs-footnote);
+  --dropdown-link-weight: 500;
+  --dropdown-link-line-height: var(--lh-normal);
+  --dropdown-link-letter-spacing: var(--ls-wide);
+  
+  --dropdown-content-font: var(--font-primary);
+  --dropdown-content-size: var(--fs-footnote);
+  --dropdown-content-weight: 400;
+  --dropdown-content-line-height: var(--lh-relaxed);
+  --dropdown-content-letter-spacing: var(--ls-wide);
+  
+  --dropdown-list-font: var(--font-primary);
+  --dropdown-list-size: var(--fs-footnote);
+  --dropdown-list-weight: 400;
+  --dropdown-list-line-height: var(--lh-relaxed);
+  --dropdown-list-letter-spacing: var(--ls-wide);
 }
 
 /*--------------------------------------------------------------
@@ -118,13 +137,7 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   letter-spacing: var(--ls-wide) !important;
 }
 
-.read-more-link {
-  font-family: var(--font-primary) !important;
-  font-size: var(--fs-footnote) !important;
-  font-weight: 500 !important;
-  line-height: var(--lh-normal) !important;
-  letter-spacing: var(--ls-wide) !important;
-}
+/* Read-more links now use unified dropdown typography variables */
 
 /* Apple Button Typography */
 .btn {
@@ -142,6 +155,157 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   font-weight: 400 !important;
   line-height: var(--lh-relaxed) !important;
   letter-spacing: var(--ls-wide) !important;
+}
+
+/*--------------------------------------------------------------
+# Unified Dropdown Typography - Simple !important Approach
+--------------------------------------------------------------*/
+
+/* Universal Read-More Link Styling */
+.read-more-link {
+  font-family: var(--dropdown-link-font) !important;
+  font-size: var(--dropdown-link-size) !important;
+  font-weight: var(--dropdown-link-weight) !important;
+  line-height: var(--dropdown-link-line-height) !important;
+  letter-spacing: var(--dropdown-link-letter-spacing) !important;
+  color: #18d26e !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  transition: all 0.3s ease !important;
+  margin-top: 8px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.read-more-link:hover {
+  color: #13c162 !important;
+  text-decoration: none !important;
+}
+
+.read-more-link i {
+  transition: transform 0.3s ease !important;
+  font-size: calc(var(--dropdown-link-size) * 0.8) !important;
+}
+
+.read-more-link.expanded i {
+  transform: rotate(180deg) !important;
+}
+
+/* Universal Dropdown Content */
+.card-content {
+  font-family: var(--dropdown-content-font) !important;
+}
+
+/* Universal List Items - All Dropdowns */
+.card-content ul li,
+.job-description li,
+.education-description li, 
+.project-details li,
+.publication-details li,
+.teaching-course {
+  font-family: var(--dropdown-list-font) !important;
+  font-size: var(--dropdown-list-size) !important;
+  font-weight: var(--dropdown-list-weight) !important;
+  line-height: var(--dropdown-list-line-height) !important;
+  letter-spacing: var(--dropdown-list-letter-spacing) !important;
+}
+
+/* Universal Bullet Points - All Yellow */
+.card-content ul li::before,
+.job-description li::before,
+.education-description li::before,
+.project-details li::before,
+.publication-details li::before {
+  content: "•" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: #f7d717 !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  top: 3px !important;
+}
+
+/* Universal Paragraphs - All Dropdowns */
+.card-content p,
+.job-description p,
+.education-description p,
+.project-description,
+.publication-description {
+  font-family: var(--dropdown-content-font) !important;
+  font-size: var(--dropdown-content-size) !important;
+  font-weight: var(--dropdown-content-weight) !important;
+  line-height: var(--dropdown-content-line-height) !important;
+  letter-spacing: var(--dropdown-content-letter-spacing) !important;
+}
+
+/* Universal Strong/Bold Text */
+.card-content strong,
+.job-description strong,
+.education-description strong,
+.project-details strong,
+.publication-details strong,
+.teaching-course strong {
+  font-family: var(--dropdown-content-font) !important;
+  font-size: var(--dropdown-content-size) !important;
+  font-weight: 600 !important;
+  line-height: var(--dropdown-content-line-height) !important;
+  letter-spacing: var(--dropdown-content-letter-spacing) !important;
+}
+
+/* Universal Headers */
+.card-content h5,
+.education-section h5,
+.job-description h5 {
+  font-family: var(--font-display) !important;
+  font-size: calc(var(--dropdown-content-size) * 1.1) !important;
+  font-weight: 600 !important;
+  line-height: var(--lh-tight) !important;
+  letter-spacing: var(--ls-normal) !important;
+}
+
+/* Responsive Dropdown Typography */
+@media (max-width: 768px) {
+  .read-more-link {
+    margin-top: 6px !important;
+  }
+  
+  .card-content ul li::before,
+  .job-description li::before,
+  .education-description li::before,
+  .project-details li::before,
+  .publication-details li::before {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .read-more-link {
+    margin-top: 5px !important;
+  }
+  
+  .card-content ul li,
+  .job-description li,
+  .education-description li, 
+  .project-details li,
+  .publication-details li,
+  .teaching-course {
+    line-height: 1.4 !important;
+  }
+  
+  .card-content p,
+  .job-description p,
+  .education-description p {
+    line-height: 1.4 !important;
+  }
+  
+  .card-content ul li::before,
+  .job-description li::before,
+  .education-description li::before,
+  .project-details li::before,
+  .publication-details li::before {
+    font-size: 11px !important;
+  }
 }
 
 /* Apple Navigation Typography */
@@ -185,7 +349,14 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
     --fs-title2: 1.25rem;      /* 20px */
     --fs-title1: 1.5rem;       /* 24px */
     --fs-largetitle: 1.75rem;  /* 28px */
+
+    /* Update dropdown typography for tablet */
+    --dropdown-link-size: var(--fs-footnote);
+    --dropdown-content-size: var(--fs-footnote);
+    --dropdown-list-size: var(--fs-footnote);
   }
+
+  /* Responsive typography now handled by unified dropdown styles */
 }
 
 @media (max-width: 480px) {
@@ -201,7 +372,14 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
     --fs-title2: 1.125rem;     /* 18px */
     --fs-title1: 1.375rem;     /* 22px */
     --fs-largetitle: 1.5rem;   /* 24px */
+
+    /* Update dropdown typography for mobile */
+    --dropdown-link-size: var(--fs-footnote);
+    --dropdown-content-size: var(--fs-footnote);
+    --dropdown-list-size: var(--fs-footnote);
   }
+
+  /* Responsive typography now handled by unified dropdown styles */
 }
 
 /* Back to top button */
@@ -887,7 +1065,7 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 }
 
 #education .education-card .card-content.expanded {
-  max-height: 450px;
+  max-height: 600px;
   padding: 12px 18px;
 }
 
@@ -946,32 +1124,7 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   font-weight: 600;
 }
 
-#education .education-card .read-more-link {
-  color: #18d26e !important;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500 !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.3s ease;
-  margin-top: 8px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-}
-
-#education .education-card .read-more-link:hover {
-  color: #13c162 !important;
-  text-decoration: none;
-}
-
-#education .education-card .read-more-link i {
-  transition: transform 0.3s ease;
-  font-size: 12px;
-}
-
-#education .education-card .read-more-link.expanded i {
-  transform: rotate(180deg);
-}
+/* Education read-more-link now uses universal styling */
 
 /*--------------------------------------------------------------
 # Sections
@@ -1772,16 +1925,7 @@ section {
   opacity: 1;
 }
 
-/* Projects section read-more-link styling */
-.project-card .read-more-link {
-  color: #18d26e !important;
-  font-weight: 500 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-}
-
-.project-card .read-more-link:hover {
-  color: #13c162;
-}
+/* Projects read-more-link now uses universal styling */
 
 
 
@@ -2319,16 +2463,7 @@ section {
   opacity: 1;
 }
 
-/* Publications section read-more-link styling */
-.publication-card .read-more-link {
-  color: #18d26e !important;
-  font-weight: 500 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-}
-
-.publication-card .read-more-link:hover {
-  color: #13c162;
-}
+/* Publications read-more-link now uses universal styling */
 
 
 
@@ -2936,14 +3071,16 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  font-size: 13px;
-  font-weight: 400;
+  font-family: var(--dropdown-content-font) !important;
+  font-size: var(--dropdown-content-size) !important;
+  font-weight: var(--dropdown-content-weight) !important;
+  line-height: var(--dropdown-content-line-height) !important;
+  letter-spacing: var(--dropdown-content-letter-spacing) !important;
   color: white;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
   margin: 0;
   padding: 0 18px;
-  line-height: 1.3;
   font-style: normal;
   will-change: opacity;
   backface-visibility: hidden;
@@ -3198,33 +3335,7 @@ a.company-logo {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
-.read-more-link {
-  color: #18d26e;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.read-more-link:hover {
-  color: #13c162;
-  border-bottom: 1px solid #18d26e;
-  text-decoration: none;
-}
-
-.read-more-link i {
-  transition: transform 0.3s ease;
-  font-size: 11px;
-  margin-left: 4px;
-}
-
-.read-more-link.expanded i {
-  transform: rotate(180deg);
-}
+/* Legacy read-more-link styles - replaced by unified typography above */
 
 /* Scoped card-content rules for experience cards only */
 .experience-card .card-content {
@@ -3269,7 +3380,7 @@ a.company-logo {
   content: "•";
   position: absolute;
   left: 0;
-  color: #18d26e;
+  color: #f7d717;
   font-weight: bold;
   font-size: 14px;
   top: 3px;
@@ -3425,15 +3536,7 @@ a.company-logo {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#experience .read-more-link {
-  color: #18d26e !important;
-  font-weight: 500 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-}
-
-#experience .read-more-link:hover {
-  color: #13c162;
-}
+/* Experience read-more-link now uses universal styling */
 
   .logo-placeholder {
     font-size: 14px;
@@ -3545,9 +3648,7 @@ a.company-logo {
     font-size: 14px; /* Reduced from 15px */
   }
   
-  .read-more-link {
-    font-size: 13px;
-  }
+  /* read-more-link inherits from unified dropdown typography */
   
   .experience-card .card-content.expanded {
     padding: 12px 10px; /* Further reduced */
@@ -3590,7 +3691,7 @@ a.company-logo {
 /* Rotating Highlights Responsive (restored) */
 @media (max-width: 768px) {
   .rotating-highlight {
-    font-size: 18px;
+    font-size: var(--dropdown-content-size) !important;
     padding: 0 15px;
   }
   
@@ -3606,7 +3707,7 @@ a.company-logo {
 
 @media (max-width: 480px) {
   .rotating-highlight {
-    font-size: 16px;
+    font-size: var(--dropdown-content-size) !important;
     padding: 0 10px;
   }
   
@@ -3857,7 +3958,7 @@ a.company-logo {
   }
   
   #education .education-card .card-content.expanded {
-    max-height: 280px;
+    max-height: 420px;
     padding: 10px 12px;
   }
   
@@ -3905,7 +4006,7 @@ a.company-logo {
   }
   
   #education .education-card .card-content.expanded {
-    max-height: 250px;
+    max-height: 380px;
     padding: 8px 10px;
   }
   
