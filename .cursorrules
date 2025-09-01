@@ -1,0 +1,155 @@
+# Cursor Rules for my portfolio site
+# Mode: Minimalist • Modern • Portfolio-focused
+
+## Goal
+Keep token usage minimal. Do NOT load large or irrelevant files. Only modify the key front-end files. Bias toward clean, accessible, fast UI.
+
+## Read scope (allow)
+- index.html
+- style.css
+- bootstrap.js
+- images/**/*.{png,jpg,jpeg,svg,gif,webp,avif}   # READ-ONLY (for dimensions/alt text checks)
+
+## Write scope (strict)
+- index.html
+- style.css
+- bootstrap.js
+# Do not create, delete, or edit any other files.
+
+## Conditional single-file allow
++ public/favicon.ico    # READ-ONLY
+
+## Hard excludes (NEVER READ)
+- node_modules/**
+- .git/**
+- dist/**
+- build/**
+- .next/**
+- .cache/**
+- coverage/**
+- assets/**
+- public/**                           # (except favicon above)
+- **/*.{mp4,mov,mkv,avi,zip,tar,gz,7z,mp3,wav,flac,pdf,psd,ai}
+- **/*.map
+- **/*.lock
+- **/*.{ttf,otf,woff,woff2}
+- **/*.{blend,fbx,glb,gltf,stl}
+- **/*.{csv,jsonl,parquet}
+- **/.DS_Store
+- **/Thumbs.db
+
+## Token discipline
+- Prefer local reasoning. Skip files > 500KB.
+- Do NOT recursively scan directories unless path matches an allow-list.
+- “Review the project” = summarize ONLY from index.html, style.css, bootstrap.js (plus small images if relevant).
+- If a change requires disallowed files or new assets, STOP and ask permission.
+- Do NOT fetch remote content or upgrade libs without explicit permission.
+
+## Editing style
+- Keep diffs minimal/localized. No broad reformatting.
+- Preserve existing semantics and structure; avoid stylistic churn.
+- For non-trivial changes, include a short, clear diff message (what/why).
+- Use HTML comments to mark edit blocks so future diffs stay focused:
+  <!-- @cursor-start: <short-purpose> --> ... <!-- @cursor-end -->
+
+## Design assistant behavior (NEW)
+- Favor minimalist visual language: ample whitespace, strong hierarchy, subtle motion.
+- Propose at most TWO variant options per change, embedded as commented snippets (no new files).
+- Prefer utility-like, composable CSS over one-off styles; avoid duplication.
+- If design requires assets (icons/illustrations), suggest system emoji/unicode or CSS shapes first; otherwise ASK before adding files.
+
+## Accessibility (A11y) guardrails (NEW)
+- Enforce semantic HTML: <header>, <main>, <section>, <footer>, <nav>, <figure>, <figcaption>.
+- All interactive elements must be <button>, <a>, or form controls; no <div role="button"> unless justified in a diff message.
+- Ensure color-contrast ≥ 4.5:1 for text; if not, adjust CSS variables and explain in diff message.
+- Add skip links: a visually-hidden “Skip to content” anchor at top.
+- Respect reduced motion: wrap non-essential animations in
+  @media (prefers-reduced-motion: no-preference) { /* animations */ }
+- Images: require alt text. Decorative images must have alt="".
+
+## Performance budgets (NEW)
+- Avoid layout thrashers in JS (repeated sync reads/writes); batch with requestAnimationFrame.
+- No blocking webfonts; use system stack in CSS (see Typography below).
+- Images: prefer width/height attributes and CSS object-fit; avoid 4K assets; suggest WebP if existing size > 300KB (do not transform yourself).
+- Cap total added CSS to ≤ 200 lines per PR unless explicitly approved.
+- No inline <style> or style="" attributes; consolidate in style.css.
+
+## Information architecture (NEW)
+- Keep top-level sections limited and scannable: {Hero, About, Experience/Projects, Selected Work, Contact}.
+- Each section should start with a single <h2> and a short intro (≤ 2 lines).
+- Prefer cards or simple lists; avoid carousels and heavy components.
+
+## CSS architecture & tokens (NEW)
+- Define and reuse CSS variables in :root; allow edits in style.css only.
+  :root {
+    /* Brand */
+    --bg: #0b0c0f;           /* or current */
+    --fg: #e6e7eb;
+    --muted: #9aa0aa;
+    --accent: #5b8cff;       /* single accent */
+    /* Layout */
+    --maxw: 72rem;
+    --radius: 14px;
+    --gap: 1.25rem;
+    /* Typography scale */
+    --fs-900: clamp(2.25rem, 4vw, 3rem);
+    --fs-700: clamp(1.5rem, 2.5vw, 2rem);
+    --fs-400: 1rem;
+    --lh: 1.6;
+  }
+- Use a system font stack for speed:
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+- Limit selector depth to 3; avoid !important.
+- Naming: prefer BEM-ish or low-specificity utilities (e.g., .container, .grid, .btn, .tag).
+- Provide responsive rules at these breakpoints only:
+  @media (max-width: 960px) { ... }
+  @media (max-width: 640px) { ... }
+
+## Layout patterns (NEW)
+- Container rule: .container { max-width: var(--maxw); margin-inline: auto; padding-inline: 1rem; }
+- Grid helper: .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(12, 1fr); }
+  Use span classes (e.g., .col-6) in CSS, not inline styles.
+- Spacing scale: use multiples of 4px; round to 2 decimals in rems.
+
+## Motion & micro-interactions (NEW)
+- Keep transitions ≤ 180ms for most UI; 240ms for larger elements.
+- Use transform/opacity; avoid animating layout properties (top/left/width/height).
+- Hover/focus states must be distinct in both color and outline.
+
+## JavaScript behavior (NEW)
+- Keep JS idempotent; re-runnable without duplicating listeners or DOM.
+- Defer non-critical JS; attach listeners after DOMContentLoaded.
+- Route all UI tweaks through bootstrap.js; do not introduce new files.
+- Avoid global namespace pollution; use IIFE or a single app namespace.
+
+## SEO & metadata (NEW)
+- Ensure <title>, meta[name="description"], canonical link, and Open Graph/Twitter tags exist in index.html.
+- Add JSON-LD Organization/Person if helpful, but keep within index.html only; no external fetches.
+
+## Content heuristics (NEW)
+- Hero: one-liner value prop (≤ 12 words) + 1 CTA button + 1 secondary link.
+- Project cards: title, 1-sentence impact, 3 compact bullets (problem → approach → outcome).
+- Avoid walls of text; prefer lists and short paragraphs.
+
+## Review checklists Cursor should run mentally before proposing changes (NEW)
+- A11y: headings order valid? landmarks present? focus ring visible?
+- Perf: any added oversized images/CSS? fonts system-only? scripts deferred?
+- Readability: line length 60–80ch on desktop? adequate spacing?
+- Consistency: colors/spacing/typography tokens reused? no duplicates?
+
+## Bootstrap & scripts guidance
+- Assume frontend behavior is defined in bootstrap.js; edit there first.
+- Do NOT add build steps, bundlers, or dependencies.
+- Do NOT inject external CDNs/scripts unless explicitly approved.
+
+## Images policy
+- READ-ONLY for reference (dimensions/alt). Do NOT inline/compress/transform.
+- If optimization is beneficial, suggest exact filenames + target sizes in a comment; do not modify files.
+
+## Commit/diff messages (NEW)
+- Prefix: [Design], [A11y], [Perf], or [Content].
+- Keep subject ≤ 72 chars, body ≤ 5 lines, include rationale + before/after summary.
+
+## Safety rails
+- If rules conflict, the stricter rule wins (deny > allow).
+- When in
