@@ -323,36 +323,30 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   --glass-margin: 2rem;
 }
 
-/* Main Section Glass Container */
+/* Main Section Glass Container - Updated to match articles-subsection style */
 .section-glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  border-radius: var(--glass-radius);
-  box-shadow: var(--glass-shadow);
-  margin: var(--glass-margin) auto;
-  padding: var(--glass-padding);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 32px;
+  margin: 32px auto;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   max-width: 1200px;
 }
 
-/* Glass Container Before Overlay */
+/* Glass Container Before Overlay - Updated to match articles-subsection style */
 .section-glass::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.4) 20%, 
-    rgba(255, 255, 255, 0.6) 50%, 
-    rgba(255, 255, 255, 0.4) 80%, 
-    transparent 100%);
-  border-radius: var(--glass-radius) var(--glass-radius) 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
+  border-radius: 20px 20px 0 0;
 }
 
 /* Section Header Enhancement for Glass */
@@ -390,27 +384,26 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 
 /* Responsive Glass Design */
 @media (max-width: 768px) {
-  :root {
-    --glass-padding: 2rem;
-    --glass-margin: 1.5rem;
-    --glass-radius: 16px;
+  .section-glass {
+    padding: 24px;
+    margin: 24px auto;
+    border-radius: 16px;
   }
   
-  .section-glass {
-    margin: var(--glass-margin) 1rem;
+  .section-glass::before {
+    border-radius: 16px 16px 0 0;
   }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --glass-padding: 1.5rem;
-    --glass-margin: 1rem;
-    --glass-radius: 12px;
-    --glass-blur: 8px;
+  .section-glass {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
   }
   
-  .section-glass {
-    margin: var(--glass-margin) 0.5rem;
+  .section-glass::before {
+    border-radius: 12px 12px 0 0;
   }
 }
 
@@ -1521,27 +1514,187 @@ section:has(.section-glass) {
   margin-top: 40px;
 }
 
-.articles-subsection {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 32px;
-  margin-bottom: 32px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+/* Media Page Articles - Custom sizing optimized for square blog images */
+#blogs .publications-cards-container {
+  max-width: 1300px;
+  gap: 32px;
 }
 
-.articles-subsection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
-  border-radius: 20px 20px 0 0;
+/* Media Page Articles - Custom sizing to match original article scale */
+#blogs .publication-card .publication-image {
+  width: 220px;
+  height: 220px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+#blogs .publication-card .publication-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+#blogs .publication-card .publication-info {
+  height: 220px;
+}
+
+#blogs .publication-card .publication-title {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+}
+
+#blogs .publication-card .publication-description {
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-line-clamp: 5;
+}
+
+#blogs .publication-card .card-content.expanded {
+  max-height: 450px;
+  padding: 24px 28px;
+}
+
+#blogs .publication-details li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+#blogs .publication-link {
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgba(24, 210, 110, 0.1);
+  border: 1px solid rgba(24, 210, 110, 0.3);
+  transition: all 0.3s ease;
+}
+
+#blogs .publication-link:hover {
+  background: rgba(24, 210, 110, 0.2);
+  border-color: rgba(24, 210, 110, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Media Page Writing Philosophy - Better spacing */
+#blogs .writing-philosophy {
+  margin: 20px auto 45px auto;
+  max-width: 800px;
+}
+
+#blogs .writing-intro {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+#blogs .writing-journey {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Media Page Subsection Heading - Larger since it's standalone */
+#blogs .subsection-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  padding: 12px 24px;
+}
+
+@media (max-width: 768px) {
+  #blogs .subsection-heading {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+  }
+  
+  #blogs .writing-intro {
+    font-size: 16px;
+  }
+  
+  #blogs .writing-journey {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #blogs .subsection-heading {
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    padding: 8px 16px;
+  }
+  
+  #blogs .writing-intro {
+    font-size: 15px;
+  }
+  
+  #blogs .writing-journey {
+    font-size: 14px;
+  }
+}
+
+/* Media Page Articles Responsive */
+@media (max-width: 1024px) {
+  #blogs .publication-card .card-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 24px;
+  }
+  
+  #blogs .publication-card .publication-image {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #blogs .publication-card .publication-image {
+    height: 240px;
+  }
+  
+  #blogs .publication-card .publication-title {
+    font-size: 15px;
+  }
+  
+  #blogs .publication-card .publication-description {
+    font-size: 14px;
+    -webkit-line-clamp: 3;
+  }
+  
+  #blogs .publication-card .card-content.expanded {
+    max-height: 420px;
+    padding: 18px 24px;
+  }
+  
+  #blogs .publication-details li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  #blogs .publication-card .publication-image {
+    height: 200px;
+  }
+  
+  #blogs .publication-card .publication-title {
+    font-size: 14px;
+  }
+  
+  #blogs .publication-card .publication-description {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+  
+  #blogs .publication-card .card-content.expanded {
+    max-height: 380px;
+    padding: 16px 20px;
+  }
+  
+  #blogs .publication-details li {
+    font-size: 12px;
+  }
 }
 
 .subsection-heading {
@@ -1695,10 +1848,7 @@ section:has(.section-glass) {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .articles-subsection {
-    padding: 24px;
-    margin-bottom: 24px;
-  }
+  /* Articles now use publications styling */
   
   .articles-cards-container {
     grid-template-columns: 1fr;
@@ -1721,14 +1871,7 @@ section:has(.section-glass) {
 }
 
 @media (max-width: 768px) {
-  .articles-subsection {
-    padding: 20px;
-    border-radius: 16px;
-  }
-  
-  .articles-subsection::before {
-    border-radius: 16px 16px 0 0;
-  }
+  /* Articles now use publications styling */
   
   .articles-cards-container {
     padding: 0;
