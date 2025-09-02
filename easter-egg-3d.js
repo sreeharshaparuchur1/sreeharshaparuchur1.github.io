@@ -24,19 +24,8 @@ class EasterEgg3D {
     }
 
     init() {
-        // Wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', () => {
-            this.setupTrigger();
-        });
-        
-        // If DOM is already loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                this.setupTrigger();
-            });
-        } else {
-            this.setupTrigger();
-        }
+        // Only initialize if explicitly called (lazy loading)
+        // Auto-initialization removed for performance
     }
 
     setupTrigger() {
@@ -418,5 +407,5 @@ class EasterEgg3D {
     }
 }
 
-// Initialize the easter egg
-new EasterEgg3D(); 
+// Easter egg initialization moved to lazy loader
+// No auto-initialization for performance 
