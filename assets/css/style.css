@@ -2493,6 +2493,99 @@ section:has(.section-glass) {
   }
 }
 
+/* Minimalist Projects Archive Link */
+.projects-archive-link {
+  text-align: center;
+  margin-top: 32px;
+  padding: 0;
+}
+
+.archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e8e8e8;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: var(--fs-footnote);
+  font-weight: 500;
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-wide);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.archive-link:hover {
+  color: #18d26e;
+  text-decoration: none;
+  opacity: 1;
+  border-bottom-color: rgba(24, 210, 110, 0.3);
+  transform: translateX(2px);
+}
+
+.archive-link i {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.archive-link:hover i {
+  transform: translateX(2px);
+}
+
+/* Minimalist Back Link */
+.projects-back-link {
+  text-align: center;
+  margin-top: 32px;
+  padding: 20px 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e8e8e8;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: var(--fs-footnote);
+  font-weight: 500;
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-wide);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.back-link:hover {
+  color: #18d26e;
+  text-decoration: none;
+  opacity: 1;
+  border-bottom-color: rgba(24, 210, 110, 0.3);
+  transform: translateX(-2px);
+}
+
+.back-link i {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover i {
+  transform: translateX(-2px);
+}
+
+/* Responsive Navigation Links */
+@media (max-width: 640px) {
+  .projects-archive-link,
+  .projects-back-link {
+    margin-top: 24px;
+  }
+  
+  .archive-link,
+  .back-link {
+    font-size: 12px;
+  }
+}
+
 /* Projects read-more-link now uses universal styling */
 
 
