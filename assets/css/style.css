@@ -184,7 +184,6 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   gap: 4px !important;
   transition: all 0.3s ease !important;
   margin-top: 8px !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 .read-more-link:hover {
@@ -366,7 +365,6 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 
 .section-glass .section-header h3 {
   color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
 }
 
@@ -1088,7 +1086,6 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #intro .tagline {
@@ -1330,7 +1327,6 @@ section:has(.section-glass) {
 /* Dark theme for main sections */
 #main .section-header h3 {
   color: #ffffff !important;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 1) !important;
 }
 
 #main .section-header h3::before {
@@ -1832,7 +1828,6 @@ section:has(.section-glass) {
   font-weight: 600;
   margin: 0 0 6px 0;
   line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .article-card .article-description {
@@ -2133,10 +2128,10 @@ section:has(.section-glass) {
   color: #18d26e;
   font-size: var(--fs-title2);
   font-weight: 600;
-  margin: 0;
-  line-height: var(--lh-tight);
-  letter-spacing: var(--ls-normal);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin: 0 0 6px 0;                  /* keep main’s bottom spacing */
+  line-height: var(--lh-tight, 1.2);   /* use token, fall back to 1.2 */
+  letter-spacing: var(--ls-normal);    /* keep your branch’s tracking */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* keep your shadow */
 }
 
 .project-card .project-description {
@@ -3041,7 +3036,6 @@ section:has(.section-glass) {
   font-weight: 600;
   margin: 0 0 6px 0;
   line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .publication-card .publication-description {
@@ -3970,7 +3964,6 @@ a.company-logo {
   margin: 0 0 6px 0;
   line-height: 1.4;
   letter-spacing: 0.1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .employment-dates {
@@ -3995,17 +3988,14 @@ a.company-logo {
 #experience .position-title {
   color: #18d26e !important;
   font-weight: 600 !important;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
 }
 
 #experience .job-description p {
   color: #b8b8b8 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 #experience .job-description strong {
   color: #ffffff !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
 /* Legacy read-more-link styles - replaced by unified typography above */
@@ -4142,7 +4132,6 @@ a.company-logo {
 /* Experience section readability improvements for background image */
 #experience .section-header h3 {
   color: #ffffff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
   font-weight: 700;
 }
 
@@ -4152,13 +4141,11 @@ a.company-logo {
 
 #experience .rotating-highlight {
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   font-weight: 500;
 }
 
 #experience .subsection-heading {
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
   font-weight: 600;
@@ -4182,13 +4169,11 @@ a.company-logo {
 #experience .job-title {
   color: #18d26e !important;
   font-weight: 600;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 #experience .job-description li {
   color: #e8e8e8 !important;
   font-weight: 500;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #experience .job-description p {
@@ -4201,7 +4186,6 @@ a.company-logo {
   border: 1px solid rgba(24, 210, 110, 1);
   color: #ffffff;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #experience .card-content {
@@ -4541,7 +4525,6 @@ a.company-logo {
   margin: 0 0 6px 0;
   line-height: 1.4;
   letter-spacing: 0.1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
 }
 
 #education .education-card .study-dates {
