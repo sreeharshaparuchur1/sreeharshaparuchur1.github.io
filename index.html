@@ -69,6 +69,9 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-transparent">
         <div class="container-fluid">
@@ -137,7 +140,7 @@
             <div class="container section-glass" data-aos="fade-up">
                 <header class="section-header">
                     <h3>Experience</h3>
-                </header>
+                </header>       
                 <div class="experience-highlights">
                     <div class="highlight-container">
                         <p class="rotating-highlight active">Published researcher with 2+ years in AI, robotics, and multimodal perception.</p>
@@ -430,7 +433,7 @@
         <section id="projects">
             <div class="container section-glass" data-aos="fade-up">
                 <header class="section-header">
-                    <h3>Major Projects</h3>
+                    <h3>Projects</h3>
                 </header>
 
                 <!-- Projects Philosophy -->
@@ -439,18 +442,18 @@
                         "The only problem without a solution is an improperly phrased one"
                     </blockquote>
                     <p class="projects-intro">
-                        Explore my portfolio of technical projects spanning computer vision, robotics, and machine learning. 
+                        Explore selected highlights from my technical portfolio spanning computer vision, robotics, and machine learning. 
                         Each project represents a deep dive into cutting-edge technologies and methodologies. 
-                        Check out my <a href="https://github.com/sreeharshaparuchur1" target="_blank">GitHub</a> for more projects and code implementations.
+                        <a href="projects.html" class="projects-link-inline">View all projects →</a> or check out my <a href="https://github.com/sreeharshaparuchur1" target="_blank">GitHub</a> for code implementations.
                     </p>
                 </div>
 
                 <!-- Projects Container -->
-                <div class="projects-cards-container">
+                <div class="projects-cards-container featured-projects-grid">
                     <div class="project-card" id="project-stereo" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-header">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/e8f4fd/18d26e?text=STEREO+RECONSTRUCTION" alt="Dense Stereo Reconstruction Project">
+                                <img src="https://via.placeholder.com/600x400/1a1a2e/16a085?text=STEREO+VISION" alt="Dense Stereo Reconstruction Project">
                             </div>
                             <div class="project-info">
                                 <h4 class="project-title">Dense Stereo Reconstruction in Real-time</h4>
@@ -484,7 +487,7 @@
                     <div class="project-card" id="project-translation" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-header">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/f0fff4/18d26e?text=NEURAL+TRANSLATION" alt="Neural Machine Translation Project">
+                                <img src="https://via.placeholder.com/600x400/2c3e50/3498db?text=NLP+MODEL" alt="Neural Machine Translation Project">
                             </div>
                             <div class="project-info">
                                 <h4 class="project-title">Neural Machine Translation</h4>
@@ -518,7 +521,7 @@
                     <div class="project-card" id="project-pose-graph" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-header">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/e8f9ec/18d26e?text=POSE+GRAPH+SLAM" alt="Pose Graph Optimization Project">
+                                <img src="https://via.placeholder.com/600x400/34495e/e74c3c?text=SLAM+GRAPH" alt="Pose Graph Optimization Project">
                             </div>
                             <div class="project-info">
                                 <h4 class="project-title">Pose-Graph Optimization</h4>
@@ -552,7 +555,7 @@
                     <div class="project-card" id="project-artpark" data-aos="fade-up" data-aos-delay="400">
                         <div class="card-header">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/f8fcff/18d26e?text=ROBOTICS+CHALLENGE" alt="Artpark Robotics Challenge Project">
+                                <img src="https://via.placeholder.com/600x400/8e44ad/f39c12?text=ROBOT+AI" alt="Artpark Robotics Challenge Project">
                             </div>
                             <div class="project-info">
                                 <h4 class="project-title">Artpark Robotics Challenge</h4>
@@ -583,143 +586,15 @@
                         </div>
                     </div>
 
-                    <!-- @cursor-start: resume-projects-addition -->
-                    <div class="project-card" id="project-ar-surgery" data-aos="fade-up" data-aos-delay="500">
-                        <div class="card-header">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/fff5f5/18d26e?text=AR+SURGERY" alt="Augmented Reality Knee Surgery Project">
-                            </div>
-                            <div class="project-info">
-                                <h4 class="project-title">Augmented-Reality and Robot Assisted Knee Surgery</h4>
-                                <p class="project-description">
-                                    Comprehensive system development for AR-guided robotic knee surgery. Gathered requirements from user studies, 
-                                    market analysis, and medical professionals to inform system architecture and implementation.
-                                </p>
-                                <a href="#" class="read-more-link">
-                                    <span class="link-text">More details</span>
-                                    <i class="fa fa-chevron-down"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="project-details">
-                                <ul>
-                                    <li>Apple Vision Pro integration for 3D spatial computing</li>
-                                    <li>ICP-based bone model detection and tracking</li>
-                                    <li>Real-time 3D and RGB information processing</li>
-                                    <li>Medical robotics system integration</li>
-                                </ul>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fa fa-external-link"></i> Website
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" id="project-3d-foundation" data-aos="fade-up" data-aos-delay="600">
-                        <div class="card-header">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/f0f8ff/18d26e?text=3D+FOUNDATION" alt="3D Foundation Models Project">
-                            </div>
-                            <div class="project-info">
-                                <h4 class="project-title">3D Foundation-Models for Monocular Video Reconstruction</h4>
-                                <p class="project-description">
-                                    Advanced 3D reconstruction system using foundation model embeddings with semantic-geometric feature fusion. 
-                                    Implemented cross-attention mechanisms for enhanced camera extrinsics recovery.
-                                </p>
-                                <a href="#" class="read-more-link">
-                                    <span class="link-text">More details</span>
-                                    <i class="fa fa-chevron-down"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="project-details">
-                                <ul>
-                                    <li>DINOv2 and Depth Anything foundation model integration</li>
-                                    <li>Hierarchical state representation for temporal consistency</li>
-                                    <li>DUST3R-style architecture for robust 3D reconstruction</li>
-                                    <li>Adaptive keyframe selection with confidence-aware refinement</li>
-                                </ul>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fa fa-file-pdf-o"></i> Report
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" id="project-depth-disparity" data-aos="fade-up" data-aos-delay="700">
-                        <div class="card-header">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/f5f0ff/18d26e?text=DEPTH+ESTIMATION" alt="Neural Depth Disparity Estimation Project">
-                            </div>
-                            <div class="project-info">
-                                <h4 class="project-title">Neural-Assisted Depth Disparity Estimation</h4>
-                                <p class="project-description">
-                                    Developed coarse-to-fine network architecture for OAK-D Pro stereo camera system. 
-                                    Achieved top 25 ranking internationally in Luxonis Hackathon competition.
-                                </p>
-                                <a href="#" class="read-more-link">
-                                    <span class="link-text">More details</span>
-                                    <i class="fa fa-chevron-down"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="project-details">
-                                <ul>
-                                    <li>Real-world disparity estimation quality optimization</li>
-                                    <li>Onboard compute and FPS constraint optimization</li>
-                                    <li>Coarse-to-fine neural network architecture</li>
-                                    <li>International hackathon competition success</li>
-                                </ul>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fa fa-github"></i> View Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" id="project-music-mental-health" data-aos="fade-up" data-aos-delay="800">
-                        <div class="card-header">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/280x180/fff8f0/18d26e?text=MUSIC+AI" alt="Music Mental Health Project">
-                            </div>
-                            <div class="project-info">
-                                <h4 class="project-title">Music, Mental Health, and Representation Learning</h4>
-                                <p class="project-description">
-                                    Applied BERT-based sentiment analysis and k-means clustering to uncover nuanced relationships 
-                                    between language patterns and acoustic music features during COVID-19 pandemic.
-                                </p>
-                                <a href="#" class="read-more-link">
-                                    <span class="link-text">More details</span>
-                                    <i class="fa fa-chevron-down"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="project-details">
-                                <ul>
-                                    <li>Mental health subreddit data mining and analysis</li>
-                                    <li>BERT-based sentiment analysis implementation</li>
-                                    <li>K-means clustering for pattern discovery</li>
-                                    <li>Acoustic feature extraction and correlation analysis</li>
-                                </ul>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fa fa-file-pdf-o"></i> Publication
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- @cursor-end -->
+                </div>
+
+                <!-- Archive Projects Link -->
+                <div class="projects-archive-link" data-aos="fade-up" data-aos-delay="700">
+                    <a href="projects.html" class="archive-link">
+                        <span>View Archive</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -855,9 +730,8 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     
-    <!-- @cursor-start: easter-egg-3d -->
-    <!-- 3D Easter Egg - Loads only when quote is clicked -->
-    <script src="easter-egg-3d.js"></script>
+    <!-- @cursor-start: easter-egg-lazy-loader -->
+    <!-- 3D Easter Egg - Lazy loaded only when quote is clicked (desktop only) -->
     <!-- @cursor-end -->
 
 </body>

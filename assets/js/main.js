@@ -366,3 +366,96 @@ $(document).ready(function() {
   // Add small delay to ensure images are loaded
   setTimeout(initPublicationImageRotation, 500);
 });
+
+// Easter Egg Lazy Loader - Desktop Only
+function initEasterEggLazyLoader() {
+  // Check if device is mobile
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                   window.innerWidth <= 768 || 
+                   ('ontouchstart' in window);
+  
+  if (isMobile) {
+    console.log('Easter egg disabled on mobile devices for performance');
+    return;
+  }
+  
+  const quoteElement = document.querySelector('.connect-quote');
+  if (!quoteElement) return;
+  
+  // Style the quote as clickable
+  quoteElement.style.cursor = 'pointer';
+  quoteElement.style.userSelect = 'none';
+  quoteElement.style.transition = 'all 0.3s ease';
+  
+  let easterEggLoaded = false;
+  let easterEggInstance = null;
+  
+  quoteElement.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (easterEggLoaded && easterEggInstance) {
+      // If already loaded, just launch
+      easterEggInstance.setupTrigger();
+      easterEggInstance.launch();
+      return;
+    }
+    
+    // Load the easter egg script dynamically
+    console.log('Loading easter egg...');
+    const script = document.createElement('script');
+    script.src = 'easter-egg-3d.js';
+    script.onload = function() {
+      console.log('Easter egg loaded successfully');
+      easterEggLoaded = true;
+      
+      // Create and initialize the easter egg
+      if (typeof EasterEgg3D !== 'undefined') {
+        easterEggInstance = new EasterEgg3D();
+        easterEggInstance.setupTrigger();
+        easterEggInstance.launch();
+      }
+    };
+    script.onerror = function() {
+      console.error('Failed to load easter egg');
+    };
+    document.head.appendChild(script);
+  });
+}
+
+// Smooth Scroll Progress Indicator
+let ticking = false;
+
+function updateScrollProgress() {
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (!scrollProgress) return;
+  
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercent = Math.min((scrollTop / docHeight) * 100, 100);
+  
+  scrollProgress.style.width = scrollPercent + '%';
+}
+
+function requestScrollUpdate() {
+  if (!ticking) {
+    requestAnimationFrame(updateScrollProgress);
+    ticking = true;
+  }
+}
+
+function resetTicking() {
+  ticking = false;
+}
+
+// Initialize scroll progress when DOM is ready
+$(document).ready(function() {
+  // Smooth scroll progress with requestAnimationFrame
+  $(window).on('scroll', function() {
+    requestScrollUpdate();
+    setTimeout(resetTicking, 16); // ~60fps
+  });
+  
+  // Initialize easter egg lazy loader
+  initEasterEggLazyLoader();
+});
