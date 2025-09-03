@@ -768,13 +768,21 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   top: 15px;
   z-index: 9998;
   border: 0;
-  background: none;
+  background: rgba(0, 0, 0, 0.7); /* Add background for better visibility */
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
   line-height: 1;
   cursor: pointer;
-  text-align: right;
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .mobile-nav-toggle i {
@@ -783,18 +791,21 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 
 .mobile-nav {
   position: fixed;
-  top: 55px;
+  top: 70px; /* Increased from 55px to avoid overlap */
   right: 15px;
   bottom: 15px;
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background: #fff;
-  transition: ease-in-out 0.2s;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: ease-in-out 0.3s;
   opacity: 0;
   visibility: hidden;
-  border-radius: 10px;
-  padding: 10px 0;
+  border-radius: 16px;
+  padding: 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-nav * {
@@ -1024,6 +1035,11 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
               0 1px 2px rgba(0, 0, 0, 0.15),
               inset 0 1px 0 rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(24, 210, 110, 0.3);
+  /* Mobile-first responsive text wrapping */
+  white-space: nowrap;
+  text-align: center;
+  max-width: calc(50% - 20px); /* Ensure buttons don't overflow */
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -1062,6 +1078,8 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   object-fit: cover;
   object-position: center;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1; /* Ensure it stays behind navigation */
 }
 
 @media (max-width: 768px) {
@@ -2128,9 +2146,9 @@ section:has(.section-glass) {
   color: #18d26e;
   font-size: var(--fs-title2);
   font-weight: 600;
-  margin: 0 0 6px 0;                  /* keep main’s bottom spacing */
+  margin: 0 0 6px 0;                  /* keep main's bottom spacing */
   line-height: var(--lh-tight, 1.2);   /* use token, fall back to 1.2 */
-  letter-spacing: var(--ls-normal);    /* keep your branch’s tracking */
+  letter-spacing: var(--ls-normal);    /* keep your branch's tracking */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* keep your shadow */
 }
 
@@ -4188,10 +4206,7 @@ a.company-logo {
   font-weight: 600;
 }
 
-#experience .card-content {
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
+/* Removed duplicate - replaced with mobile-friendly dark background above */
 
 /* Experience read-more-link now uses universal styling */
 
@@ -4692,4 +4707,478 @@ a.company-logo {
   font-weight: 700 !important;
   text-decoration: none !important;
 }
+
+/* @cursor-start: Mobile responsiveness critical fixes */
+
+/* ===== CRITICAL MOBILE FIXES ===== */
+
+/* Fix 1: Remove white background from experience card content on mobile */
+#experience .card-content {
+  background: rgba(0, 0, 0, 0.15) !important; /* Dark background instead of white */
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Fix 2 & 3: Profile picture and button fixes applied to existing styles above */
+
+/* Fix 4 & 5: Mobile navigation and intro layout fixes applied to existing styles above */
+
+/* ===== COMPREHENSIVE MOBILE RESPONSIVE IMPROVEMENTS ===== */
+
+/* Mobile tablet responsive (max-width: 960px) */
+@media (max-width: 960px) {
+  #intro .btn-get-started {
+    font-size: 13px;
+    padding: 10px 24px;
+    margin: 6px 8px;
+    max-width: calc(50% - 16px);
+  }
+  
+  #intro .carousel-container {
+    left: 30px;
+    right: 30px;
+    top: 80px;
+  }
+  
+  .mobile-nav-toggle {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .mobile-nav {
+    top: 80px;
+    right: 20px;
+    left: 20px;
+  }
+}
+
+/* Mobile standard responsive (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Resume buttons - stack vertically on small screens */
+  #intro .btn-get-started {
+    font-size: 12px;
+    padding: 10px 20px;
+    margin: 6px auto;
+    display: block;
+    max-width: 280px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  /* Profile picture adjustments */
+  #intro .profile-picture {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  /* Intro section spacing */
+  #intro .carousel-container {
+    left: 20px;
+    right: 20px;
+    top: 70px;
+    padding: 15px 0;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-nav-toggle {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .mobile-nav {
+    top: 75px;
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+    padding: 15px 0;
+  }
+  
+  /* Intro text adjustments */
+  #intro .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  #intro .intro-about {
+    max-width: 95%;
+    margin: 15px auto 20px auto;
+  }
+  
+  #intro .intro-about p {
+    font-size: 13px;
+    padding: 12px 16px;
+    line-height: 1.5;
+  }
+  
+  /* Header title responsive */
+  #header .logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Mobile small responsive (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Resume buttons - smaller and full width */
+  #intro .btn-get-started {
+    font-size: 11px;
+    padding: 8px 16px;
+    margin: 5px auto;
+    max-width: 240px;
+    width: 85%;
+  }
+  
+  /* Profile picture - smaller */
+  #intro .profile-picture {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+  }
+  
+  /* Intro section - tighter spacing */
+  #intro .carousel-container {
+    left: 15px;
+    right: 15px;
+    top: 60px;
+    padding: 10px 0;
+  }
+  
+  /* Mobile navigation - smaller */
+  .mobile-nav-toggle {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .mobile-nav {
+    top: 65px;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+    padding: 10px 0;
+  }
+  
+  /* Text adjustments */
+  #intro h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  #intro .subtitle {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  
+  #intro .intro-about {
+    margin: 10px auto 15px auto;
+  }
+  
+  #intro .intro-about p {
+    font-size: 12px;
+    padding: 10px 12px;
+    line-height: 1.4;
+  }
+  
+  /* Header - even smaller */
+  #header .logo {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Extra small devices (max-width: 360px) */
+@media (max-width: 360px) {
+  #intro .btn-get-started {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin: 4px auto;
+    max-width: 200px;
+    width: 80%;
+  }
+  
+  #intro .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+  
+  #intro h2 {
+    font-size: 20px;
+  }
+  
+  #intro .subtitle {
+    font-size: 12px;
+  }
+  
+  #intro .intro-about p {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  
+  .mobile-nav-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  #header .logo {
+    font-size: 16px;
+  }
+}
+
+/* @cursor-end */
+
+/* @cursor-start: Device-specific optimizations */
+
+/* ===== DEVICE-SPECIFIC OPTIMIZATIONS ===== */
+
+/* Google Pixel Phone Optimization (360-414px typical) */
+@media (max-width: 414px) and (min-width: 360px) {
+  /* Pixel-specific intro optimizations */
+  #intro .btn-get-started {
+    font-size: 11px;
+    padding: 10px 18px;
+    margin: 4px auto;
+    max-width: 260px;
+    width: 88%;
+    border-radius: 12px;
+  }
+  
+  #intro .profile-picture {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 18px;
+  }
+  
+  #intro h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  #intro .subtitle {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  
+  #intro .intro-about p {
+    font-size: 11px;
+    padding: 10px 14px;
+    line-height: 1.45;
+  }
+  
+  /* Pixel-specific card layouts */
+  .experience-card .card-header,
+  .project-card .card-header,
+  .publication-card .card-header {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  
+  .company-logo {
+    width: 100px;
+    height: 60px;
+    padding: 6px 8px;
+  }
+  
+  /* Pixel navigation */
+  .mobile-nav-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .mobile-nav {
+    top: 60px;
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    border-radius: 12px;
+    padding: 12px 0;
+  }
+}
+
+/* iPad Portrait Optimization (768px) */
+@media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
+  /* iPad portrait-specific layout */
+  #intro .btn-get-started {
+    font-size: 14px;
+    padding: 12px 28px;
+    margin: 8px 12px;
+    max-width: 320px;
+    display: inline-block;
+    width: auto;
+  }
+  
+  #intro .profile-picture {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 25px;
+  }
+  
+  #intro h2 {
+    font-size: 28px;
+  }
+  
+  #intro .subtitle {
+    font-size: 16px;
+  }
+  
+  #intro .intro-about p {
+    font-size: 15px;
+    padding: 18px 24px;
+  }
+  
+  /* iPad card optimizations */
+  .experience-container,
+  .education-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+  }
+  
+  .experience-card .card-header,
+  .project-card .card-header {
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 24px;
+  }
+  
+  .company-logo {
+    width: 100px;
+    height: 70px;
+  }
+  
+  /* iPad navigation - hidden as it uses desktop nav */
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* iPad Landscape Optimization (1024px+) */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  /* iPad landscape - use desktop layout but optimize spacing */
+  #intro .btn-get-started {
+    font-size: 14px;
+    padding: 14px 30px;
+    margin: 8px 10px;
+  }
+  
+  #intro .profile-picture {
+    width: 260px;
+    height: 260px;
+  }
+  
+  /* Maintain two-column layout but reduce gaps */
+  .experience-container,
+  .education-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 900px;
+  }
+  
+  .projects-cards-container,
+  .publications-cards-container {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    gap: 25px;
+  }
+}
+
+/* MacBook 13" Optimization (1280-1440px typical) */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  /* MacBook 13" - optimal desktop experience */
+  #intro .btn-get-started {
+    font-size: 14px;
+    padding: 14px 32px;
+    margin: 8px 10px;
+  }
+  
+  #intro .profile-picture {
+    width: 280px;
+    height: 280px;
+  }
+  
+  /* Perfect two-column layouts */
+  .experience-container,
+  .education-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+  }
+  
+  .projects-cards-container,
+  .publications-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    gap: 30px;
+  }
+  
+  /* Optimize section spacing */
+  section {
+    padding: 35px 0;
+  }
+  
+  .section-glass {
+    max-width: 1100px;
+    padding: 36px;
+  }
+}
+
+/* Accessibility and Touch Improvements for Mobile */
+@media (max-width: 768px) {
+  /* Ensure touch targets are at least 44px */
+  .read-more-link,
+  .project-link,
+  .publication-link,
+  .social-link {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+  }
+  
+  /* Improve card touch areas */
+  .experience-card .card-header,
+  .project-card .card-header,
+  .publication-card .card-header {
+    min-height: 80px;
+    touch-action: manipulation;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* High DPI Display Optimization (Retina, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders and shadows for high DPI */
+  .experience-card,
+  .project-card,
+  .publication-card,
+  .section-glass {
+    border-width: 0.5px;
+  }
+  
+  .profile-picture {
+    border-width: 1.5px;
+  }
+  
+  /* Crisper text shadows */
+  .project-title,
+  #intro h2 {
+    text-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* @cursor-end */
 
