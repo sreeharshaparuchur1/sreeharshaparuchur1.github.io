@@ -452,6 +452,22 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   letter-spacing: var(--ls-wide) !important;
 }
 
+
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #18d26e, #13c162, #f7d717);
+  z-index: 9999;
+  transition: none;
+  box-shadow: 0 1px 4px rgba(24, 210, 110, 0.4);
+  will-change: width;
+}
+
 /* Apple Date/Duration Typography */
 .employment-dates, .study-dates, .date-badge {
   font-family: var(--font-primary) !important;
@@ -1039,36 +1055,28 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
 
 /* Profile Picture Styling */
 #intro .profile-picture {
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  border: 4px solid #18d26e;
+  border: 3px solid rgba(255, 255, 255, 0.8);
   margin: 0 auto 25px auto;
   display: block;
   object-fit: cover;
   object-position: center;
-  box-shadow: 0 8px 32px rgba(24, 210, 110, 0.3);
-  transition: all 0.3s ease;
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-#intro .profile-picture:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 48px rgba(24, 210, 110, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {
   #intro .profile-picture {
-    width: 140px;
-    height: 140px;
+    width: 220px;
+    height: 220px;
   }
 }
 
 @media (max-width: 480px) {
   #intro .profile-picture {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
   }
 }
 

@@ -423,7 +423,39 @@ function initEasterEggLazyLoader() {
   });
 }
 
-// Initialize easter egg lazy loader when DOM is ready
+// Smooth Scroll Progress Indicator
+let ticking = false;
+
+function updateScrollProgress() {
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (!scrollProgress) return;
+  
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercent = Math.min((scrollTop / docHeight) * 100, 100);
+  
+  scrollProgress.style.width = scrollPercent + '%';
+}
+
+function requestScrollUpdate() {
+  if (!ticking) {
+    requestAnimationFrame(updateScrollProgress);
+    ticking = true;
+  }
+}
+
+function resetTicking() {
+  ticking = false;
+}
+
+// Initialize scroll progress when DOM is ready
 $(document).ready(function() {
+  // Smooth scroll progress with requestAnimationFrame
+  $(window).on('scroll', function() {
+    requestScrollUpdate();
+    setTimeout(resetTicking, 16); // ~60fps
+  });
+  
+  // Initialize easter egg lazy loader
   initEasterEggLazyLoader();
 });
