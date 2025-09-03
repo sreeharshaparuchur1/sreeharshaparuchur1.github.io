@@ -59,6 +59,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background: #fff;
   color: #666666;
@@ -69,6 +74,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-width: 320px;
+  width: 100%;
+  position: relative;
 }
 
 a {
@@ -374,13 +383,15 @@ h6 { font-size: var(--fs-callout); font-weight: 600; }
   pointer-events: none;
 }
 
-/* Glass Hover Effect */
+/* Glass Hover Effect - Removed to prevent unwanted section hover effects */
+/* 
 .section-glass:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
+*/
 
 /* Responsive Glass Design */
 @media (max-width: 768px) {
@@ -1526,6 +1537,7 @@ section:has(.section-glass) {
   height: 220px;
   padding: 8px;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 #blogs .publication-card .publication-image img {
@@ -1575,6 +1587,20 @@ section:has(.section-glass) {
   background: rgba(24, 210, 110, 0.2);
   border-color: rgba(24, 210, 110, 0.5);
   transform: translateY(-1px);
+}
+
+/* Blogs publication card hover effects - matching unified system */
+#blogs .publication-card:hover {
+  border-color: rgba(24, 210, 110, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(24, 210, 110, 0.3);
+}
+
+#blogs .publication-card .publication-image img {
+  transition: transform 0.3s ease;
+}
+
+#blogs .publication-card:hover .publication-image img {
+  transform: scale(1.05);
 }
 
 /* Media Page Writing Philosophy - Better spacing */
@@ -2021,23 +2047,20 @@ section:has(.section-glass) {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
-  /* Ensure each card is independent */
-  contain: layout style;
-  isolation: isolate;
-  /* Force grid item to maintain its own height */
-  align-self: start;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
+/* Green accent line matching experience cards */
 .project-card::before {
   content: '';
   position: absolute;
@@ -2046,55 +2069,43 @@ section:has(.section-glass) {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, #18d26e, #13c162, #10a350);
-  border-radius: 16px 16px 0 0;
 }
 
+/* Subtle hover effect matching experience cards */
 .project-card:hover {
   border-color: rgba(24, 210, 110, 0.6);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(24, 210, 110, 0.2);
-  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(24, 210, 110, 0.3);
 }
 
 .project-card .card-header {
   display: flex;
-  padding: 24px 28px;
-  align-items: flex-start;
-  gap: 24px;
+  flex-direction: row;
+  padding: 32px;
   cursor: pointer;
   position: relative;
   background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 40px;
+  align-items: flex-start;
+  min-height: 280px;
 }
 
 .project-card .project-image {
-  flex: 0 0 auto;
-  width: 280px;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 12px;
-  border-radius: 16px;
-  background: #ffffff;
-  border: 2px solid #f0f3f6;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  flex: 0 0 55%;
+  height: 240px;
+  border-radius: 10px;
   overflow: hidden;
-}
-
-.project-card .project-image:hover {
-  border: 2px solid #18d26e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .project-card .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover .project-image img {
@@ -2103,35 +2114,34 @@ section:has(.section-glass) {
 
 .project-card .project-info {
   flex: 1;
-  min-width: 0;
-  height: 180px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 8px 0;
+  gap: 18px;
+  min-width: 0;
 }
 
 .project-card .project-title {
   color: #18d26e;
-  font-size: 16px;
+  font-size: var(--fs-title2);
   font-weight: 600;
-  margin: 0 0 6px 0;
-  line-height: 1.2;
+  margin: 0;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-normal);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .project-card .project-description {
   color: #e8e8e8;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 12px 0 0 0;
+  font-size: var(--fs-subheadline);
+  line-height: var(--lh-relaxed);
+  margin: 0;
   font-weight: 400;
-  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  letter-spacing: 0.3px;
+  letter-spacing: var(--ls-wide);
   opacity: 0.9;
 }
 
@@ -2144,14 +2154,14 @@ section:has(.section-glass) {
 }
 
 .project-card.expanded .card-content.expanded {
-  max-height: 400px;
-  padding: 24px 28px;
+  max-height: 350px;
+  padding: 24px;
 }
 
 /* Fallback rule for expanded content */
 .project-card .card-content.expanded {
-  max-height: 400px;
-  padding: 24px 28px;
+  max-height: 350px;
+  padding: 24px;
 }
 
 /* Ensure only the specific project card expands */
@@ -2315,26 +2325,22 @@ section:has(.section-glass) {
   transform: translateX(-4px);
 }
 
-/* Featured Projects Grid */
-.featured-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 24px;
-  align-items: start;
-  max-width: 1400px;
+/* Single Row Projects Grid - 2 Projects Per Viewport */
+.featured-projects-grid,
+.archive-projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 @media (max-width: 960px) {
-  .featured-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .featured-projects-grid {
-    gap: 16px;
+  .featured-projects-grid,
+  .archive-projects-grid {
+    gap: 24px;
+    max-width: 100%;
+    padding: 0 16px;
   }
 }
 
@@ -2371,57 +2377,62 @@ section:has(.section-glass) {
 @media (max-width: 960px) {
   .project-card .card-header {
     flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    padding: 24px;
+    gap: 24px;
+    min-height: auto;
   }
   
   .project-card .project-image {
+    flex: none;
     width: 100%;
-    max-width: 400px;
-    height: 220px;
-    margin: 0 auto;
+    height: 200px;
   }
   
   .project-card .project-info {
-    height: auto;
     padding: 0;
+    gap: 16px;
+  }
+  
+  .project-card .project-title {
+    font-size: var(--fs-headline);
   }
   
   .project-card .project-description {
-    -webkit-line-clamp: 3;
-    text-align: center;
+    font-size: var(--fs-footnote);
+    -webkit-line-clamp: 2;
   }
 }
 
 @media (max-width: 640px) {
   .project-card .card-header {
     padding: 20px;
-    gap: 16px;
+    gap: 20px;
   }
   
   .project-card .project-image {
-    height: 180px;
-    padding: 8px;
+    height: 160px;
+  }
+  
+  .project-card .project-info {
+    padding: 0;
+    gap: 14px;
   }
   
   .project-card .project-title {
-    font-size: 15px;
-    margin-bottom: 8px;
+    font-size: var(--fs-callout);
   }
   
   .project-card .project-description {
-    font-size: 14px;
+    font-size: var(--fs-footnote);
     -webkit-line-clamp: 2;
   }
   
-  .projects-navigation {
-    margin-top: 32px;
-    padding: 24px 0;
+  .project-card .card-content.expanded {
+    padding: 24px 20px;
   }
   
-  .btn-view-all-projects {
-    padding: 14px 28px;
-    font-size: var(--fs-subheadline);
+  .project-card:not(.expanded) .card-content {
+    padding: 0 20px;
   }
 }
 
@@ -2461,21 +2472,7 @@ section:has(.section-glass) {
   letter-spacing: 0.3px;
 }
 
-.archive-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 24px;
-  align-items: start;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 @media (max-width: 960px) {
-  .archive-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
   .archive-intro {
     font-size: var(--fs-subheadline);
     padding: 0 16px;
@@ -2925,7 +2922,8 @@ section:has(.section-glass) {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition: border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
@@ -2971,12 +2969,7 @@ section:has(.section-glass) {
   border: 2px solid #f0f3f6;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.publication-card .publication-image:hover {
-  border: 2px solid #18d26e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
+  overflow: hidden;
 }
 
 .publication-card .publication-image img {
@@ -2984,11 +2977,19 @@ section:has(.section-glass) {
   height: 100%;
   object-fit: contain;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.publication-card:hover .publication-image img {
+  transform: scale(1.05);
 }
 
 /* Rotating Images for Publications */
 .rotating-images {
   position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .rotating-images .rotating-img {
@@ -3000,6 +3001,7 @@ section:has(.section-glass) {
   transition: opacity 0.6s ease-in-out;
   width: calc(100% - 24px);
   height: calc(100% - 24px);
+  object-fit: contain;
 }
 
 .rotating-images .rotating-img.active {
@@ -3011,6 +3013,8 @@ section:has(.section-glass) {
   top: auto;
   left: auto;
   transform: none;
+  width: 100%;
+  height: 100%;
 }
 
 .publication-card .publication-info {
@@ -3780,7 +3784,8 @@ section:has(.section-glass) {
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   margin-bottom: 16px;
@@ -3828,21 +3833,15 @@ section:has(.section-glass) {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.company-logo:hover {
-  border: 2px solid #18d26e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
-}
-
 .company-logo img {
   width: 92%;
   height: 92%;
   object-fit: contain;
-  transition: all 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .experience-card:hover .company-logo img {
-  transform: scale(1.02);
+  transform: scale(1.08);
 }
 
 /* Specific styling for TCS logo to make it larger */
@@ -3850,10 +3849,11 @@ section:has(.section-glass) {
   width: 100% !important;
   height: 100% !important;
   transform: scale(1.3);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .experience-card:hover .company-logo img[src*="tcs-logo"] {
-  transform: scale(1.35);
+  transform: scale(1.40);
 }
 
 /* Specific styling for Mach9 logo to make it larger */
@@ -3861,10 +3861,11 @@ section:has(.section-glass) {
   width: 98% !important;
   height: 98% !important;
   transform: scale(1.2);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .experience-card:hover .company-logo img[src*="mach9-logo"] {
-  transform: scale(1.25);
+  transform: scale(1.30);
 }
 
 /* Specific styling for Bosch logo to make it larger */
@@ -3872,10 +3873,11 @@ section:has(.section-glass) {
   width: 96% !important;
   height: 96% !important;
   transform: scale(1.15);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .experience-card:hover .company-logo img[src*="bosch_logo"] {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 /* Specific styling for RRC logo to make it larger */
@@ -3883,10 +3885,11 @@ section:has(.section-glass) {
   width: 95% !important;
   height: 95% !important;
   transform: scale(1.1);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .experience-card:hover .company-logo img[src*="rrc_logo"] {
-  transform: scale(1.15);
+  transform: scale(1.20);
 }
 
 /* Specific styling for Precog logo to make it larger */
@@ -3894,10 +3897,11 @@ section:has(.section-glass) {
   width: 98% !important;
   height: 98% !important;
   transform: scale(1.25);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .experience-card:hover .company-logo img[src*="precog_logo"] {
-  transform: scale(1.3);
+  transform: scale(1.35);
 }
 
 /* Company name and logo link styling */
@@ -4430,7 +4434,8 @@ a.company-logo {
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   margin-bottom: 16px;
@@ -4478,29 +4483,24 @@ a.company-logo {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-#education .education-card .company-logo:hover {
-  border: 2px solid #18d26e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(24, 210, 110, 0.15);
-}
-
 /* Education section logo zoom effects on hover */
 #education .education-card:hover .company-logo img {
-  transform: scale(1.02);
+  transform: scale(1.08);
 }
 
 #education .education-card:hover .company-logo img[src*="cmu.jpeg"] {
-  transform: scale(1.15);
+  transform: scale(1.20);
 }
 
 #education .education-card:hover .company-logo img[src*="iiith.jpeg"] {
-  transform: scale(1.15);
+  transform: scale(1.20);
 }
 
 #education .education-card .company-logo img {
   width: 92%;
   height: 92%;
   object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* CMU logo - zoomed in for better visibility */
