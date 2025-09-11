@@ -6,7 +6,7 @@
     <meta name="author" content="Sreeharsha Paruchuri">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
       :root {
         --bg-color: #fafafa;
@@ -159,33 +159,7 @@
         opacity: 0.8;
       }
     </style>
-    <script>
-      function toggleTheme() {
-        const body = document.body;
-        const themeToggle = document.querySelector('.theme-toggle');
-        
-        if (body.getAttribute('data-theme') === 'dark') {
-          body.removeAttribute('data-theme');
-          themeToggle.textContent = '🌙';
-          localStorage.setItem('theme', 'light');
-        } else {
-          body.setAttribute('data-theme', 'dark');
-          themeToggle.textContent = '☀️';
-          localStorage.setItem('theme', 'dark');
-        }
-      }
-      
-      // Load saved theme preference
-      document.addEventListener('DOMContentLoaded', function() {
-        const savedTheme = localStorage.getItem('theme');
-        const themeToggle = document.querySelector('.theme-toggle');
-        
-        if (savedTheme === 'dark') {
-          document.body.setAttribute('data-theme', 'dark');
-          themeToggle.textContent = '☀️';
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </head>
 
   <body>
