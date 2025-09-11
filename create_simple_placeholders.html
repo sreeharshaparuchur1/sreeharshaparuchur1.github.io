@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <h1>Placeholder Image Generator</h1>
+    <p>This will create placeholder images for Ishita's portfolio projects and logos.</p>
+    
+    <canvas id="canvas" width="160" height="160" style="border:1px solid #ccc; display:none;"></canvas>
+    
+    <div id="output"></div>
+    
+    <script>
+        const projects = [
+            { text: "Humanoid\nRobotics", filename: "humanoid_before.jpg" },
+            { text: "Humanoid\nRobotics", filename: "humanoid_after.jpg" },
+            { text: "LLM\nSelf-Correction", filename: "llm_before.jpg" },
+            { text: "LLM\nSelf-Correction", filename: "llm_after.jpg" },
+            { text: "Visual\nSLAM", filename: "vslam_before.jpg" },
+            { text: "Visual\nSLAM", filename: "vslam_after.jpg" },
+            { text: "Robotics\nSimulator", filename: "simulator_before.jpg" },
+            { text: "Robotics\nSimulator", filename: "simulator_after.jpg" },
+            { text: "Multi-Robot\nGUI", filename: "gui_before.jpg" },
+            { text: "Multi-Robot\nGUI", filename: "gui_after.jpg" },
+            { text: "Warehouse\nSystem", filename: "warehouse_before.jpg" },
+            { text: "Warehouse\nSystem", filename: "warehouse_after.jpg" },
+            { text: "Speech\nRecognition", filename: "asr_before.jpg" },
+            { text: "Speech\nRecognition", filename: "asr_after.jpg" },
+            { text: "Face\nRecognition", filename: "face_before.jpg" },
+            { text: "Face\nRecognition", filename: "face_after.jpg" },
+            { text: "Music\nSegmentation", filename: "music_before.jpg" },
+            { text: "Music\nSegmentation", filename: "music_after.jpg" }
+        ];
+        
+        const logos = [
+            { text: "CMU\nRobotics\nInstitute", filename: "cmu_logo.png", bgColor: "#8B0000", textColor: "#FFFFFF" },
+            { text: "LNMIIT\nJaipur", filename: "lnmiit_logo.png", bgColor: "#1E3A8A", textColor: "#FFFFFF" },
+            { text: "Addverb\nTechnologies", filename: "addverb_logo.png", bgColor: "#059669", textColor: "#FFFFFF" },
+            { text: "Google", filename: "google_logo.png", bgColor: "#4285F4", textColor: "#FFFFFF" }
+        ];
+        
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const output = document.getElementById('output');
+        
+        // Create project images
+        projects.forEach((project, index) => {
+            // Clear canvas
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fillRect(0, 0, 160, 160);
+            
+            // Add border
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(1, 1, 158, 158);
+            
+            // Add text
+            ctx.fillStyle = '#666';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const lines = project.text.split('\n');
+            const lineHeight = 18;
+            const startY = 80 - (lines.length - 1) * lineHeight / 2;
+            
+            lines.forEach((line, i) => {
+                ctx.fillText(line, 80, startY + i * lineHeight);
+            });
+            
+            // Convert to data URL
+            const dataURL = canvas.toDataURL('image/jpeg', 0.8);
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.download = project.filename;
+            link.href = dataURL;
+            link.textContent = `Download ${project.filename}`;
+            link.style.display = 'block';
+            link.style.margin = '10px 0';
+            link.style.padding = '5px';
+            link.style.backgroundColor = '#f0f0f0';
+            link.style.textDecoration = 'none';
+            link.style.color = '#333';
+            link.style.borderRadius = '3px';
+            
+            output.appendChild(link);
+        });
+        
+        // Create logo images
+        logos.forEach((logo, index) => {
+            // Clear canvas
+            ctx.fillStyle = logo.bgColor;
+            ctx.fillRect(0, 0, 160, 160);
+            
+            // Add border
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(2, 2, 156, 156);
+            
+            // Add text
+            ctx.fillStyle = logo.textColor;
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const lines = logo.text.split('\n');
+            const lineHeight = 20;
+            const startY = 80 - (lines.length - 1) * lineHeight / 2;
+            
+            lines.forEach((line, i) => {
+                ctx.fillText(line, 80, startY + i * lineHeight);
+            });
+            
+            // Convert to data URL
+            const dataURL = canvas.toDataURL('image/png', 0.9);
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.download = logo.filename;
+            link.href = dataURL;
+            link.textContent = `Download ${logo.filename} (${logo.text.replace(/\n/g, ' ')})`;
+            link.style.display = 'block';
+            link.style.margin = '10px 0';
+            link.style.padding = '8px';
+            link.style.backgroundColor = logo.bgColor;
+            link.style.textDecoration = 'none';
+            link.style.color = logo.textColor;
+            link.style.borderRadius = '5px';
+            link.style.fontWeight = 'bold';
+            
+            output.appendChild(link);
+        });
+        
+        // Create profile photo placeholder
+        ctx.fillStyle = '#d4e6f1';
+        ctx.fillRect(0, 0, 160, 160);
+        ctx.strokeStyle = '#85c1e9';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(2, 2, 156, 156);
+        
+        ctx.fillStyle = '#2e86c1';
+        ctx.font = 'bold 16px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Ishita', 80, 70);
+        ctx.fillText('Gupta', 80, 90);
+        
+        const profileDataURL = canvas.toDataURL('image/jpeg', 0.8);
+        const profileLink = document.createElement('a');
+        profileLink.download = 'IshitaGupta.jpg';
+        profileLink.href = profileDataURL;
+        profileLink.textContent = 'Download IshitaGupta.jpg (Profile Photo)';
+        profileLink.style.display = 'block';
+        profileLink.style.margin = '20px 0 10px 0';
+        profileLink.style.padding = '10px';
+        profileLink.style.backgroundColor = '#d4e6f1';
+        profileLink.style.textDecoration = 'none';
+        profileLink.style.color = '#2e86c1';
+        profileLink.style.borderRadius = '5px';
+        profileLink.style.fontWeight = 'bold';
+        
+        output.insertBefore(profileLink, output.firstChild);
+    </script>
+</body>
+</html> 

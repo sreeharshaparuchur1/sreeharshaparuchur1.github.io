@@ -1,0 +1,1058 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Sreeharsha Paruchuri</title>
+
+    <meta name="author" content="Sreeharsha Paruchuri">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+      :root {
+        --bg-color: #fafafa;
+        --text-color: #333;
+        --nav-bg: rgba(255, 255, 255, 0.95);
+        --nav-hover: #f0f0f0;
+        --border-color: #e0e0e0;
+        --link-color: #0066cc;
+        --highlight-bg: #ffffd0;
+        --table-bg: #ffffff;
+      }
+      
+      [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --nav-bg: rgba(26, 26, 26, 0.95);
+        --nav-hover: #404040;
+        --border-color: #404040;
+        --link-color: #66b3ff;
+        --highlight-bg: #2d2d2d;
+        --table-bg: #2d2d2d;
+      }
+      
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Navigation Bar Styles */
+      .nav-container {
+        position: sticky;
+        top: 0;
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        padding: 10px 0;
+      }
+      
+      .navbar {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 14px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        background-color: var(--nav-hover);
+      }
+      
+      .nav-link.active {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+      }
+      
+      .theme-toggle {
+        background: none;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        margin-left: 15px;
+        opacity: 0.8;
+        backdrop-filter: blur(10px);
+      }
+      
+      .theme-toggle:hover {
+        background-color: var(--nav-hover);
+        border-color: var(--text-color);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      
+      /* Timeline Styles */
+      .timeline-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      
+      .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .timeline-marker {
+        position: relative;
+        flex-shrink: 0;
+        width: 60px;
+        margin-right: 30px;
+        margin-top: 10px;
+      }
+      
+      .timeline-dot {
+        width: 16px;
+        height: 16px;
+        background-color: var(--link-color);
+        border-radius: 50%;
+        border: 3px solid var(--bg-color);
+        box-shadow: 0 0 0 3px var(--link-color);
+        z-index: 2;
+        position: relative;
+      }
+      
+      .timeline-line {
+        position: absolute;
+        left: 7px;
+        top: 16px;
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--link-color), transparent);
+        opacity: 0.4;
+      }
+      
+      .timeline-item:last-child .timeline-line {
+        display: none;
+      }
+      
+      .timeline-year {
+        position: absolute;
+        left: 25px;
+        top: -5px;
+        background-color: var(--link-color);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .timeline-content {
+        flex: 1;
+        background-color: var(--table-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .timeline-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--link-color), #66b3ff);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .timeline-content:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        transform: translateY(-3px);
+        border-color: var(--link-color);
+      }
+      
+      .timeline-content:hover::before {
+        opacity: 1;
+      }
+      
+      .timeline-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 20px;
+      }
+      
+      .company-logo {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        background-color: white;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        flex-shrink: 0;
+      }
+      
+      .timeline-title h3 {
+        margin: 0 0 8px 0;
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 600;
+      }
+      
+      .timeline-subtitle {
+        margin: 0 0 8px 0;
+        color: var(--text-color);
+        opacity: 0.8;
+        font-size: 14px;
+        font-style: italic;
+      }
+      
+      .timeline-role {
+        margin: 0 0 4px 0;
+        color: var(--link-color);
+        font-weight: 500;
+        font-size: 16px;
+      }
+      
+      .timeline-duration {
+        margin: 0;
+        color: var(--text-color);
+        opacity: 0.7;
+        font-size: 14px;
+      }
+      
+      .timeline-body {
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      
+      /* Compact Experience Styles */
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      
+      .experience-time {
+        color: var(--link-color);
+        font-weight: 500;
+        font-size: 14px;
+        background-color: var(--bg-color);
+        padding: 4px 8px;
+        border-radius: 12px;
+        border: 1px solid var(--link-color);
+      }
+      
+      .experience-subtitle {
+        color: var(--text-color);
+        opacity: 0.7;
+        font-size: 13px;
+        font-style: italic;
+        margin: 4px 0 8px 0;
+      }
+      
+      .experience-toggle {
+        margin: 8px 0;
+      }
+      
+      .experience-toggle a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 4px 8px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+      
+      .experience-toggle a:hover {
+        background-color: var(--link-color);
+        color: white;
+      }
+      
+      .experience-details {
+        margin-top: 12px;
+        padding: 12px;
+        background-color: var(--bg-color);
+        border-radius: 8px;
+        border-left: 3px solid var(--link-color);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+
+      
+      /* Card Styles */
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      
+      .experience-card {
+        background-color: var(--table-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .experience-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--link-color), #66b3ff);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border-color: var(--link-color);
+      }
+      
+      .experience-card:hover::before {
+        opacity: 1;
+      }
+      
+      .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+      }
+      
+      .card-logo {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        background-color: white;
+        padding: 6px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        flex-shrink: 0;
+      }
+      
+      .card-title h3 {
+        margin: 0 0 6px 0;
+        color: var(--text-color);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      
+      .card-subtitle {
+        margin: 0 0 6px 0;
+        color: var(--text-color);
+        opacity: 0.8;
+        font-size: 13px;
+        font-style: italic;
+      }
+      
+      .card-role {
+        margin: 0 0 3px 0;
+        color: var(--link-color);
+        font-weight: 500;
+        font-size: 14px;
+      }
+      
+      .card-duration {
+        margin: 0;
+        color: var(--text-color);
+        opacity: 0.7;
+        font-size: 12px;
+      }
+      
+      .card-body {
+        color: var(--text-color);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+      
+      /* Slideshow Styles */
+      .slideshow-container {
+        position: relative;
+        width: 100%;
+      }
+      
+      .slideshow {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+      
+      .slide.active {
+        display: block;
+      }
+      
+      .slide:nth-child(4) {
+        object-fit: contain;
+        transform: scale(0.8);
+      }
+      
+      .slideshow-dots {
+        text-align: center;
+        margin-top: 8px;
+      }
+      
+      .dot {
+        height: 6px;
+        width: 6px;
+        margin: 0 3px;
+        background-color: #ddd;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        opacity: 0.6;
+      }
+      
+      .dot.active, .dot:hover {
+        background-color: #999;
+        opacity: 1;
+      }
+      
+      /* Profile Picture Fix */
+      .profile-picture {
+        width: 200px !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 50% !important;
+        display: block !important;
+        margin: 0 auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Override table constraints */
+      .profile-picture-container {
+        width: 200px !important;
+        height: 200px !important;
+        overflow: hidden !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .profile-picture-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 50% !important;
+        transform: none !important;
+        max-width: none !important;
+        max-height: none !important;
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+      }
+      
+      /* Force table cell to not constrain image */
+      .profile-picture-container {
+        min-width: 200px !important;
+        min-height: 200px !important;
+        width: 200px !important;
+        height: 200px !important;
+        overflow: hidden !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+      }
+      
+      /* Ensure the table cell doesn't force dimensions */
+      td:has(.profile-picture-container) {
+        width: auto !important;
+        min-width: 200px !important;
+        max-width: none !important;
+      }
+      
+      /* New flexbox layout for about section */
+      .about-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      
+      .about-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 20px 0;
+      }
+      
+      .about-text {
+        flex: 1;
+        min-width: 0;
+      }
+      
+      /* Force square dimensions */
+      .profile-picture-container,
+      .profile-picture-container * {
+        aspect-ratio: 1 / 1 !important;
+      }
+      
+      .profile-picture-container {
+        flex-shrink: 0;
+        width: 280px !important;
+        height: 280px !important;
+        min-width: 280px !important;
+        min-height: 280px !important;
+        max-width: 280px !important;
+        max-height: 280px !important;
+        overflow: hidden;
+        border-radius: 12px;
+        display: block;
+        position: relative;
+        border: 3px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        background-color: var(--bg-color);
+      }
+      
+      .profile-picture-container img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center 30% !important;
+        border-radius: 12px;
+        transform: none !important;
+        max-width: none !important;
+        max-height: none !important;
+        min-width: none !important;
+        min-height: none !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .about-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        
+        .profile-picture-container {
+          order: -1;
+          margin-bottom: 20px;
+          width: 240px !important;
+          height: 240px !important;
+          min-width: 240px !important;
+          min-height: 240px !important;
+          max-width: 240px !important;
+          max-height: 240px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .profile-picture-container {
+          width: 200px !important;
+          height: 200px !important;
+          min-width: 200px !important;
+          min-height: 200px !important;
+          max-width: 200px !important;
+          max-height: 200px !important;
+        }
+      }
+      
+      /* Global reset for images */
+      img {
+        max-width: none !important;
+        max-height: none !important;
+        transform: none !important;
+      }
+    </style>
+    <script>
+      function toggleCourses(school) {
+        const shortSpan = document.getElementById(school + '-courses-short');
+        const fullSpan = document.getElementById(school + '-courses-full');
+        const toggleLink = document.getElementById(school + '-toggle');
+        
+        if (fullSpan.style.display === 'none') {
+          shortSpan.style.display = 'none';
+          fullSpan.style.display = 'inline';
+          toggleLink.textContent = 'Show less';
+        } else {
+          shortSpan.style.display = 'inline';
+          fullSpan.style.display = 'none';
+          toggleLink.textContent = 'Show more';
+        }
+      }
+      
+      function toggleExperience(company) {
+        const detailsDiv = document.getElementById(company + '-details');
+        const toggleLink = document.getElementById(company + '-toggle');
+        
+        if (detailsDiv.style.display === 'none') {
+          detailsDiv.style.display = 'block';
+          toggleLink.textContent = 'Hide Details';
+        } else {
+          detailsDiv.style.display = 'none';
+          toggleLink.textContent = 'View Details';
+        }
+      }
+      
+      function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        if (body.getAttribute('data-theme') === 'dark') {
+          body.removeAttribute('data-theme');
+          themeToggle.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.setAttribute('data-theme', 'dark');
+          themeToggle.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+      
+      // Load saved theme preference
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        if (savedTheme === 'dark') {
+          document.body.setAttribute('data-theme', 'dark');
+          themeToggle.textContent = '☀️';
+        }
+      });
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+      <nav class="navbar">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#teaching" class="nav-link">Teaching</a>
+        <a href="quotes.html" class="nav-link">Quotes</a>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      </nav>
+    </div>
+
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <div id="about" class="about-section">
+            <div class="about-content">
+              <div class="about-text">
+                <p class="name" style="text-align: center;">
+                  Sreeharsha Paruchuri
+                </p>
+                <p>
+		I'm a passionate software engineer and researcher with expertise in artificial intelligence, machine learning, and computer vision. I have experience working with cutting-edge technologies and enjoy solving complex technical challenges.
+		My interests span across deep learning, computer vision, natural language processing, and building scalable software systems. I'm always eager to learn and contribute to innovative projects.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:contact@sreeharshaparuchuri.com">Email</a> &nbsp;/&nbsp;
+                  <a href="https://www.linkedin.com/in/sreeharshaparuchuri">LinkedIn</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/sreeharshaparuchuri">Github</a> &nbsp;/&nbsp;
+                  <a href="documents/Sreeharsha_Resume.pdf">Resume</a>
+                </p>
+              </div>
+              <div class="profile-picture-container">
+                <a href="images/profile_pictures/sreeharsha_profile_picture.JPG">
+                  <img alt="profile photo" src="images/profile_pictures/sreeharsha_profile_picture.JPG">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <table id="education" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Education</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+                          <tr>
+                <td style="padding:16px;width:35%;vertical-align:middle">
+                  <img src='images/logos/cmu-logo.png' width="200" alt="Carnegie Mellon University Logo" style="background-color: white; padding: 5px; border-radius: 4px;">
+                </td>
+              <td style="padding:8px;width:65%;vertical-align:middle">
+                <strong>Carnegie Mellon University</strong><br>
+                <em>Master of Science in Computer Science</em><br>
+                <strong>GPA: 3.9</strong> | August 2023 - May 2025<br><br>
+                <strong>Coursework:</strong> <span id="cmu-courses-short">Machine Learning, Computer Vision, NLP</span><span id="cmu-courses-full" style="display:none;">Machine Learning (10-701), Computer Vision (16-720), Natural Language Processing (11-411), Deep Learning (11-785), Algorithms (15-451), Distributed Systems (15-440)</span> <a href="#" onclick="toggleCourses('cmu'); return false;" id="cmu-toggle">Show more</a>
+              </td>
+            </tr>
+
+            <tr>
+                              <td style="padding:16px;width:35%;vertical-align:middle">
+                  <img src='images/logos/iiith.jpeg' width="160" alt="IIIT Hyderabad Logo" style="background-color: white; padding: 5px; border-radius: 4px;">
+                </td>
+              <td style="padding:8px;width:65%;vertical-align:middle">
+                <strong>International Institute of Information Technology, Hyderabad</strong><br>
+                <em>Bachelor of Technology (B.Tech) in Computer Science and Engineering</em><br>
+                August 2019 - July 2023<br><br>
+                <strong>Coursework:</strong> <span id="iiith-courses-short">Data Structures, Algorithms, Machine Learning</span><span id="iiith-courses-full" style="display:none;">Data Structures and Algorithms, Machine Learning, Computer Vision, Database Systems, Operating Systems, Computer Networks, Software Engineering, Probability and Statistics</span> <a href="#" onclick="toggleCourses('iiith'); return false;" id="iiith-toggle">Show more</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+                    <!-- Experience Section -->
+          <table id="experience" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Industry Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+            <tr>
+              <td style="padding:12px;width:25%;vertical-align:middle">
+                <img src='images/logos/bosch_logo.png' width="120" alt="Bosch Logo" style="background-color: white; padding: 5px; border-radius: 4px;">
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <div class="experience-header">
+                  <strong>Bosch</strong>
+                  <span class="experience-time">June 2024 - August 2024</span>
+                </div>
+                <em>Software Engineering Intern</em>
+                <div class="experience-toggle">
+                  <a href="#" onclick="toggleExperience('bosch'); return false;" id="bosch-toggle">View Details</a>
+                </div>
+                                  <div id="bosch-details" class="experience-details" style="display:none;">
+                    <strong>Key Contributions:</strong><br>
+                    • Developed machine learning models for automotive applications<br>
+                    • Worked on computer vision algorithms for autonomous driving features<br>
+                    • Collaborated with cross-functional teams on software development projects
+                  </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:12px;width:25%;vertical-align:middle">
+                <img src='images/logos/tcs-logo.jpeg' width="120" alt="TCS Logo">
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <div class="experience-header">
+                  <strong>Tata Consultancy Services</strong>
+                  <span class="experience-time">July 2023 - Present</span>
+                </div>
+                <em>Software Engineer</em>
+                <div class="experience-subtitle">Software Development & AI Solutions</div>
+                <div class="experience-toggle">
+                  <a href="#" onclick="toggleExperience('tcs'); return false;" id="tcs-toggle">View Details</a>
+                </div>
+                <div id="tcs-details" class="experience-details" style="display:none;">
+                  <strong>Key Contributions:</strong><br>
+                  • <strong>Full-Stack Development:</strong> Built web applications using modern frameworks and technologies<br>
+                  • <strong>AI Integration:</strong> Implemented machine learning solutions for client projects<br>
+                  • <strong>Cloud Solutions:</strong> Developed and deployed scalable applications on cloud platforms
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:12px;width:25%;vertical-align:middle">
+                <img src='images/logos/mach9-logo.jpeg' width="120" alt="Mach9 Logo">
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <div class="experience-header">
+                  <strong>Mach9 Technologies</strong>
+                  <span class="experience-time">May 2022 - August 2022</span>
+                </div>
+                <em>Software Engineering Intern</em>
+                <div class="experience-toggle">
+                  <a href="#" onclick="toggleExperience('mach9'); return false;" id="mach9-toggle">View Details</a>
+                </div>
+                <div id="mach9-details" class="experience-details" style="display:none;">
+                  <strong>Key Achievements:</strong><br>
+                  • <strong>Backend Development:</strong> Built RESTful APIs and microservices architecture<br>
+                  • <strong>Database Optimization:</strong> Improved query performance and database design<br>
+                  • <strong>Testing & Documentation:</strong> Implemented comprehensive testing and API documentation
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Projects/Research Section -->
+          <table id="projects" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Projects & Research</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <tr style="background-color: var(--highlight-bg);">
+      <td style="padding:16px;width:45%;vertical-align:middle">
+        <div class="one">
+          <img src="images/projects/ml_project.png" width="100%" alt="Machine Learning Project">
+        </div>
+      </td>
+              <td style="padding:8px;width:55%;vertical-align:middle">
+          <a href="#">
+            <span class="papertitle">Advanced Machine Learning for Computer Vision</span>
+          </a>
+          <br>
+          <em>Personal Project</em>, 2024<br>
+          <em>Technologies: Python, TensorFlow, OpenCV</em>
+          <br>
+          <a href="#">project page</a>
+          /
+          <a href="#">code</a>
+          <p></p>
+          <p>
+          Developed and implemented state-of-the-art machine learning models for computer vision tasks, achieving high accuracy on image classification and object detection benchmarks. The project explores advanced neural network architectures and optimization techniques.
+          </p>
+        </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:45%;vertical-align:middle">
+        <img src='images/projects/web_app.png' width="100%" alt="Web Application Project">
+      </td>
+      <td style="padding:8px;width:55%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Full-Stack Web Application with AI Integration</span>
+        </a>
+        <br>
+        <em>Personal Project</em>, 2024
+        <br>
+        <a href="#">project demo</a>
+        /
+        <a href="#">code</a>
+        /
+        <a href="#">documentation</a>
+        <p></p>
+        <p>
+        Built a modern full-stack web application featuring real-time data processing, user authentication, and AI-powered features. The application uses React for the frontend, Node.js for the backend, and integrates machine learning models for intelligent data analysis.
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:45%;vertical-align:middle">
+        <img src='images/projects/cv_project.png' width=100%>
+      </td>
+      <td style="padding:8px;width:55%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Computer Vision for Object Detection and Tracking</span>
+        </a>
+        <br>
+        <em>University Project</em>, 2024
+        <br>
+        <a href="#">project report</a>
+        /
+        <a href="#">code</a>
+        <p></p>
+        <p>
+        Implemented advanced computer vision algorithms for real-time object detection and tracking. The project utilized deep learning models including YOLO and CNN architectures, achieving high accuracy on standard benchmarks. Features include multi-object tracking, real-time processing, and performance optimization.
+        </p>
+      </td>
+    </tr>
+
+
+
+    <!-- <tr onmouseout="asr_stop()" onmouseover="asr_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:35%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='asr_image'>
+            <img src='images/asr_after.jpg' width=100%>
+          </div>
+          <img src='images/asr_before.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function asr_start() {
+            document.getElementById('asr_image').style.opacity = "1";
+          }
+
+          function asr_stop() {
+            document.getElementById('asr_image').style.opacity = "0";
+          }
+          asr_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:65%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Automatic Speech Recognition using LSTM RNNs</span>
+        </a>
+        <br>
+        <strong>Ishita Gupta</strong>
+        <br>
+        <em>CMU Course Project</em>, 2024
+        <br>
+        <a href="#">project page</a>
+        /
+        <a href="#">code</a>
+        <p></p>
+        <p>
+        Created a phoneme recognition model with dynamic decoding (greedy and beam search), achieving a validation Levenshtein distance of 5 and validation loss of 0.31 for competitive phoneme sequence accuracy.
+        </p>
+      </td>
+    </tr> -->
+
+    <!-- <tr onmouseout="face_stop()" onmouseover="face_start()">
+      <td style="padding:16px;width:35%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='face_image'>
+            <img src='images/face_after.jpg' width=100%>
+          </div>
+          <img src='images/face_before.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function face_start() {
+            document.getElementById('face_image').style.opacity = "1";
+          }
+
+          function face_stop() {
+            document.getElementById('face_image').style.opacity = "0";
+          }
+          face_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:65%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Face Classification and Verification Using CNNs</span>
+        </a>
+        <br>
+        <strong>Ishita Gupta</strong>
+        <br>
+        <em>CMU Course Project</em>, 2024
+        <br>
+        <a href="#">project page</a>
+        /
+        <a href="#">code</a>
+        <p></p>
+        <p>
+        Implemented and trained CNN models (ResNet34, SEResNet etc.) for face classification and verification using techniques like Transforms and CutMix achieving an 11% Equal Error Rate and 90.6% Validation accuracy.
+        </p>
+      </td>
+    </tr> -->
+
+    <tr style="background-color: var(--highlight-bg);">
+      <td style="padding:16px;width:35%;vertical-align:middle">
+        <img src='images/projects/data_viz.png' width=100%>
+      </td>
+      <td style="padding:8px;width:65%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Data Visualization and Analytics Dashboard</span>
+        </a>
+        <br>
+        <em>Data Science Project</em>, 2023<br>
+        <em>Technologies: Python, D3.js, Flask, MongoDB</em>
+        <br>
+        <a href="#">project demo</a>
+        /
+        <a href="#">code</a>
+        <p></p>
+        <p>
+        Created an interactive data visualization dashboard for analyzing large datasets. The project features real-time data processing, interactive charts, and comprehensive analytics. Built using modern web technologies with a focus on user experience and performance.
+        </p>
+      </td>
+    </tr>
+
+          </tbody></table>
+
+          <!-- Teaching Section -->
+          <table id="teaching" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Teaching Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+            <tr>
+              <td style="padding:16px;width:35%;vertical-align:middle">
+                <img src='images/logos/iiith.jpeg' width="240" alt="IIIT Hyderabad Logo">
+              </td>
+              <td style="padding:8px;width:65%;vertical-align:middle">
+                <strong>IIIT Hyderabad</strong><br>
+                <em>Teaching Assistant - Data Structures and Algorithms</em><br>
+                Spring 2023, Fall 2022<br>
+                <a href="#" target="_blank">Course Information</a><br><br>
+                <strong>Responsibilities:</strong><br>
+                • Conducted tutorial sessions for 150+ undergraduate students<br>
+                • Assisted with assignment grading and providing constructive feedback<br>
+                • Helped students with programming concepts and algorithm implementations<br>
+                • Created practice problems and study materials for exam preparation
+              </td>
+            </tr>
+          </tbody></table>
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  cloned from <a href="https://github.com/jonbarron/jonbarron_website">here!</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html> 

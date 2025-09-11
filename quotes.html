@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Quotes - Sreeharsha Paruchuri</title>
+    <meta name="author" content="Sreeharsha Paruchuri">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+      :root {
+        --bg-color: #fafafa;
+        --text-color: #333;
+        --quote-bg: #ffffff;
+        --border-color: #e0e0e0;
+        --nav-bg: rgba(255, 255, 255, 0.95);
+        --nav-hover: #f0f0f0;
+        --link-color: #0066cc;
+      }
+      
+      [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --quote-bg: #2d2d2d;
+        --border-color: #404040;
+        --nav-bg: rgba(26, 26, 26, 0.95);
+        --nav-hover: #404040;
+        --link-color: #66b3ff;
+      }
+      
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      .nav-container {
+        position: sticky;
+        top: 0;
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        padding: 10px 0;
+      }
+      
+      .navbar {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 14px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        background-color: var(--nav-hover);
+      }
+      
+      .nav-link.active {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+      }
+      
+      .theme-toggle {
+        background: none;
+        border: 2px solid var(--text-color);
+        color: var(--text-color);
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        margin-left: 20px;
+      }
+      
+      .theme-toggle:hover {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+      }
+      
+      .quote-container {
+        padding: 20px 0;
+        margin: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+      
+      .quote-container:hover {
+        border-bottom-color: var(--link-color);
+      }
+      
+      .quote-container:last-child {
+        border-bottom: none;
+      }
+      
+      .quote-text {
+        font-size: 16px;
+        font-style: italic;
+        color: var(--text-color);
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+      
+      .quote-author {
+        font-size: 13px;
+        color: var(--text-color);
+        opacity: 0.7;
+        text-align: right;
+        font-weight: 500;
+      }
+      
+      .page-title {
+        text-align: center;
+        color: var(--text-color);
+        margin: 40px 0 10px 0;
+        font-size: 28px;
+        font-weight: 400;
+      }
+      
+      .subtitle {
+        text-align: center;
+        color: var(--text-color);
+        opacity: 0.7;
+        margin: 0 0 40px 0;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 300;
+      }
+      
+      .back-link {
+        text-align: center;
+        margin: 40px 0;
+      }
+      
+      .back-link a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .back-link a:hover {
+        opacity: 0.8;
+      }
+    </style>
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        if (body.getAttribute('data-theme') === 'dark') {
+          body.removeAttribute('data-theme');
+          themeToggle.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.setAttribute('data-theme', 'dark');
+          themeToggle.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+      
+      // Load saved theme preference
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        if (savedTheme === 'dark') {
+          document.body.setAttribute('data-theme', 'dark');
+          themeToggle.textContent = '☀️';
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+      <nav class="navbar">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#education" class="nav-link">Education</a>
+        <a href="index.html#experience" class="nav-link">Experience</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#teaching" class="nav-link">Teaching</a>
+        <a href="quotes.html" class="nav-link active">Quotes</a>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      </nav>
+    </div>
+
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          
+          <h1 class="page-title">Quotes & Thoughts</h1>
+          <p class="subtitle">a collection of quotes and thoughts that inspire me ✨</p>
+          
+
+          
+          <div class="quote-container">
+            <div class="quote-text">
+              "The only way to do great work is to love what you do."
+            </div>
+            <div class="quote-author">— Steve Jobs</div>
+          </div>
+          
+          <div class="quote-container">
+            <div class="quote-text">
+              "Innovation distinguishes between a leader and a follower."
+            </div>
+            <div class="quote-author">— Steve Jobs</div>
+          </div>
+          
+          <div class="quote-container">
+            <div class="quote-text">
+              "The future belongs to those who believe in the beauty of their dreams."
+            </div>
+            <div class="quote-author">— Eleanor Roosevelt</div>
+          </div>
+          
+          <div class="quote-container">
+            <div class="quote-text">
+              "Code is like humor. When you have to explain it, it's bad."
+            </div>
+            <div class="quote-author">— Cory House</div>
+          </div>
+          
+          <div class="quote-container">
+            <div class="quote-text">
+              "The best way to predict the future is to invent it."
+            </div>
+            <div class="quote-author">— Alan Kay</div>
+          </div>
+          
+
+          
+          <div class="back-link">
+            <a href="index.html">← Back to Portfolio</a>
+          </div>
+          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html> 

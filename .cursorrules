@@ -1,0 +1,38 @@
+# Cursor Rules for SreeharshaParuchuri1-v2.github.io
+goal: Keep edits minimal and focused. Customize HTML/CSS and assets without rewriting everything.
+
+read:
+  - index.html
+  - index_new.html
+  - index_original.html
+  - projects_section.html
+  - quotes.html
+  - create_simple_placeholders.html
+  - stylesheet.css
+  - images/**/*.{png,jpg,jpeg,svg,webp,avif}
+  - data/**/*.{json,csv,txt}
+  - README.md
+
+write:
+  - index.html
+  - index_new.html
+  - projects_section.html
+  - quotes.html
+  - stylesheet.css
+  - images/*
+  - resume.pdf
+  - CNAME
+
+hard_excludes:
+  - .git/**
+  - node_modules/**
+  - **/*.{mp4,mov,mkv,avi,zip,tar,gz,7z,psd,ai}
+  - **/*.py        # keep placeholder scripts untouched unless asked
+  - **/__pycache__/**
+
+notes:
+  - Do not rewrite entire HTML files unless explicitly requested.
+  - Keep design minimalist, professional, and accessible.
+  - Prefer small, modular changes (e.g., update links, text, colors) over sweeping rewrites.
+  - Preserve lightweight performance (optimize images, avoid heavy JS).
+  - Maintain consistency with Jon Barron’s clean aesthetic.
