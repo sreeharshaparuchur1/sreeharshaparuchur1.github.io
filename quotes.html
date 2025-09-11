@@ -8,92 +8,7 @@
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-      :root {
-        --bg-color: #fafafa;
-        --text-color: #333;
-        --quote-bg: #ffffff;
-        --border-color: #e0e0e0;
-        --nav-bg: rgba(255, 255, 255, 0.95);
-        --nav-hover: #f0f0f0;
-        --link-color: #0066cc;
-      }
-      
-      [data-theme="dark"] {
-        --bg-color: #1a1a1a;
-        --text-color: #ffffff;
-        --quote-bg: #2d2d2d;
-        --border-color: #404040;
-        --nav-bg: rgba(26, 26, 26, 0.95);
-        --nav-hover: #404040;
-        --link-color: #66b3ff;
-      }
-      
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      .nav-container {
-        position: sticky;
-        top: 0;
-        background-color: var(--nav-bg);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border-color);
-        z-index: 1000;
-        padding: 10px 0;
-      }
-      
-      .navbar {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      
-      .nav-link {
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
-        font-size: 14px;
-        padding: 8px 12px;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-      }
-      
-      .nav-link:hover {
-        background-color: var(--nav-hover);
-      }
-      
-      .nav-link.active {
-        background-color: var(--text-color);
-        color: var(--bg-color);
-      }
-      
-      .theme-toggle {
-        background: none;
-        border: 2px solid var(--text-color);
-        color: var(--text-color);
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        margin-left: 20px;
-      }
-      
-      .theme-toggle:hover {
-        background-color: var(--text-color);
-        color: var(--bg-color);
-      }
-      
+      /* Quotes page specific styles */
       .quote-container {
         padding: 20px 0;
         margin: 15px 0;
@@ -171,7 +86,6 @@
         <a href="index.html#experience" class="nav-link">Experience</a>
         <a href="index.html#projects" class="nav-link">Projects</a>
         <a href="index.html#teaching" class="nav-link">Teaching</a>
-        <a href="index.html#skills" class="nav-link">Skills</a>
         <a href="quotes.html" class="nav-link active">Quotes</a>
         <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
       </nav>
@@ -222,6 +136,64 @@
           </div>
           
 
+          
+          <!-- Frames Section -->
+          <hr style="border: none; border-top: 1px solid var(--border-color); margin: 60px 0 40px 0;">
+          
+          <h2 style="text-align: center; margin-bottom: 10px;">Frames</h2>
+          <p style="text-align: center; color: var(--text-color); opacity: 0.8; font-style: italic; margin-bottom: 40px;">
+            capturing moments through my lens - a visual journey of perspectives ✨
+          </p>
+          
+          <!-- Carousel -->
+          <div class="frames-carousel">
+            <div class="carousel-container">
+              <div class="carousel-slide">
+                <img src="images/frames/carousel1.jpg" alt="Frame 1" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel2.jpg" alt="Frame 2" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel3.jpg" alt="Frame 3" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel4.jpg" alt="Frame 4" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel5.jpg" alt="Frame 5" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel6.jpg" alt="Frame 6" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel7.jpg" alt="Frame 7" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/carousel8.jpg" alt="Frame 8" loading="lazy">
+              </div>
+              <div class="carousel-slide">
+                <img src="images/frames/waymo_bw.jpg" alt="Waymo Black & White" loading="lazy">
+              </div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="carousel-nav carousel-prev" onclick="prevSlide()">‹</button>
+            <button class="carousel-nav carousel-next" onclick="nextSlide()">›</button>
+          </div>
+          
+          <!-- Carousel indicators -->
+          <div class="carousel-indicators">
+            <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+            <button class="carousel-dot" onclick="goToSlide(1)"></button>
+            <button class="carousel-dot" onclick="goToSlide(2)"></button>
+            <button class="carousel-dot" onclick="goToSlide(3)"></button>
+            <button class="carousel-dot" onclick="goToSlide(4)"></button>
+            <button class="carousel-dot" onclick="goToSlide(5)"></button>
+            <button class="carousel-dot" onclick="goToSlide(6)"></button>
+            <button class="carousel-dot" onclick="goToSlide(7)"></button>
+            <button class="carousel-dot" onclick="goToSlide(8)"></button>
+          </div>
           
           <div class="back-link">
             <a href="index.html">← Back to Portfolio</a>

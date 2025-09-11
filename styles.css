@@ -88,6 +88,15 @@ h2 {
   color: var(--text-color);
 }
 
+/* Section Title Styles - matching projects font size */
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
 em {
   font-style: italic;
   color: var(--link-color);
@@ -182,7 +191,7 @@ em {
   max-width: 280px !important;
   max-height: 280px !important;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 50%;
   display: block;
   position: relative;
   border: 3px solid var(--border-color);
@@ -200,7 +209,7 @@ em {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center 60% !important;
-  border-radius: 12px;
+  border-radius: 50%;
   transform: none !important;
   max-width: none !important;
   max-height: none !important;
@@ -295,6 +304,88 @@ em {
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: all 0.2s ease;
+}
+
+/* Frames Carousel Styles */
+.frames-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-nav:hover {
+  background: rgba(0,0,0,0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--link-color);
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background: var(--link-color);
+  opacity: 0.7;
 }
 
 .education-logo {
@@ -465,6 +556,33 @@ img {
     min-height: 240px !important;
     max-width: 240px !important;
     max-height: 240px !important;
+  }
+  
+  /* Carousel responsive styles */
+  .carousel-slide img {
+    height: 250px;
+  }
+  
+  .carousel-nav {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    gap: 6px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
   }
 }
 

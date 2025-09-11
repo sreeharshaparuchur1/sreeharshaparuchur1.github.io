@@ -85,6 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
   fullCourseLists.forEach(list => {
     list.style.display = 'none';
   });
+  
+  // Initialize carousel if frames section exists
+  if (document.querySelector('.frames-carousel')) {
+    startCarouselAutoPlay();
+  }
 });
 
 /**
@@ -127,7 +132,50 @@ function updateActiveNavLink() {
 // Add scroll event listener for active nav link updates
 window.addEventListener('scroll', updateActiveNavLink);
 
+// Carousel functionality
+let currentSlide = 0;
+const totalSlides = 9; // Number of carousel images
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(slide) {
+  currentSlide = slide;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const container = document.querySelector('.carousel-container');
+  const dots = document.querySelectorAll('.carousel-dot');
+  
+  if (container) {
+    container.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  
+  // Update active dot
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+// Auto-play carousel
+function startCarouselAutoPlay() {
+  setInterval(() => {
+    nextSlide();
+  }, 5000); // Change slide every 5 seconds
+}
+
 // Export functions for global access (if needed)
 window.toggleCourses = toggleCourses;
 window.toggleExperience = toggleExperience;
-window.toggleTheme = toggleTheme; 
+window.toggleTheme = toggleTheme;
+window.nextSlide = nextSlide;
+window.prevSlide = prevSlide;
+window.goToSlide = goToSlide; 
