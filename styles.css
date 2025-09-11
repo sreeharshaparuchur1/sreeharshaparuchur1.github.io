@@ -211,7 +211,25 @@ em {
   padding: 0 !important;
 }
 
-/* Experience Section Styles */
+/* Education and Experience Section Styles */
+.section-row {
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.section-image-cell {
+  padding: 16px;
+  width: 25%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.section-content-cell {
+  padding: 16px 20px;
+  width: 75%;
+  vertical-align: middle;
+}
+
 .experience-header {
   display: flex;
   justify-content: space-between;
@@ -268,11 +286,11 @@ em {
 
 /* Image Styles */
 .logo-image {
-  width: 90px !important;
-  height: 90px !important;
+  width: 110px !important;
+  height: 110px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 12px;
+  padding: 15px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -280,22 +298,22 @@ em {
 }
 
 .education-logo {
-  width: 90px !important;
-  height: 90px !important;
+  width: 110px !important;
+  height: 110px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 12px;
+  padding: 15px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .teaching-logo {
-  width: 90px !important;
-  height: 90px !important;
+  width: 110px !important;
+  height: 110px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 12px;
+  padding: 15px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);

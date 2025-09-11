@@ -36,3 +36,6 @@ notes:
   - Prefer small, modular changes (e.g., update links, text, colors) over sweeping rewrites.
   - Preserve lightweight performance (optimize images, avoid heavy JS).
   - Maintain consistency with Jon Barron’s clean aesthetic.
+
+DO NOT do execute any git commands.
+Suggest improvements after every prompt - either technical or from a UI UX perspective. Rememebr the goal of minimalist, professional and a portfolio template.
