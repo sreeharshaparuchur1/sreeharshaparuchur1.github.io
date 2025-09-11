@@ -21,8 +21,8 @@
         <a href="#education" class="nav-link">Education</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
         <a href="#teaching" class="nav-link">Teaching</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="quotes.html" class="nav-link">Quotes</a>
         <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
       </nav>
@@ -44,7 +44,6 @@
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:sparuchu@cs.cmu.edu">Email</a> &nbsp;/&nbsp;
-                  <a href="tel:+14122735793">(412) 273-5793</a> &nbsp;/&nbsp;
                   <a href="https://www.linkedin.com/in/sreeharshaparuchuri">LinkedIn</a> &nbsp;/&nbsp;
                   <a href="https://github.com/sreeharshaparuchuri">Github</a> &nbsp;/&nbsp;
                   <a href="documents/sreeharsha_resume_cmu.pdf">Resume</a>
@@ -352,25 +351,6 @@
 
           </tbody></table>
 
-          <!-- Skills Section -->
-          <table id="skills" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
-            <tr>
-              <td>
-                <h2>Technical Skills</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <strong>Programming Languages:</strong> Python, C++, MATLAB, CUDA Numba, Java, Go, Swift<br><br>
-                <strong>Frameworks & Libraries:</strong> PyTorch, PyTorch Lightning, PyTorch3D, TensorFlow, Scikit-learn, OpenCV<br><br>
-                <strong>Tools & Platforms:</strong> ROS2, Unity 3D, LanceDB, XCode, Protobuf, Django<br><br>
-                <strong>Specializations:</strong> Computer Vision, Robotics, Deep Learning, Reinforcement Learning, 3D Vision, Multimodal Learning
-              </td>
-            </tr>
-          </tbody></table>
-
           <!-- Teaching Section -->
           <table id="teaching" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
             <tr>
@@ -390,15 +370,45 @@
                 <em>Teaching Assistant - Introduction to Deep Learning (11-785)</em><br>
                 Current (as of 2025)<br>
                 <a href="https://deeplearning.cs.cmu.edu/" target="_blank">Course Website</a><br><br>
-                <strong>Responsibilities:</strong><br>
-                • Lead recitation sections and office hours for 200+ students<br>
-                • Grade assignments and provide detailed feedback on deep learning projects<br>
-                • Assist in course development and curriculum refinement<br>
-                • Support students with PyTorch implementations and model debugging
+                Comprehensive graduate-level course covering neural networks, CNNs, RNNs, transformers, and modern deep learning architectures. Focuses on both theoretical foundations and practical implementations using PyTorch.
+                <div class="experience-toggle">
+                  <a href="#" onclick="toggleExperience('teaching'); return false;" id="teaching-toggle">View Details</a>
+                </div>
+                <div id="teaching-details" class="experience-details" style="display:none;">
+                  <strong>Responsibilities:</strong><br>
+                  • Lead recitation sections and office hours for 200+ students<br>
+                  • Grade assignments and provide detailed feedback on deep learning projects<br>
+                  • Assist in course development and curriculum refinement<br>
+                  • Support students with PyTorch implementations and model debugging
+                </div>
               </td>
             </tr>
           </tbody></table>
 
+          <!-- Skills Section -->
+          <table id="skills" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Technical Skills</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                  <div>
+                    <strong>Languages:</strong> Python, C++, MATLAB, CUDA, Java, Go, Swift<br>
+                    <strong>ML/AI:</strong> PyTorch, TensorFlow, Scikit-learn, PyTorch3D
+                  </div>
+                  <div>
+                    <strong>Tools:</strong> ROS2, Unity 3D, OpenCV, XCode, Django<br>
+                    <strong>Focus:</strong> Computer Vision, Robotics, Deep Learning, 3D Vision
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
