@@ -242,12 +242,12 @@
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
     <tr style="background-color: var(--highlight-bg);">
-      <td style="padding:16px;width:45%;vertical-align:middle">
+      <td style="padding:16px;width:40%;vertical-align:middle">
         <div class="one">
           <img src="images/projects/ml_project.png" alt="AR Knee Surgery Project" class="project-image">
         </div>
       </td>
-              <td style="padding:8px;width:55%;vertical-align:middle">
+              <td style="padding:8px;width:60%;vertical-align:middle">
           <a href="#">
             <span class="papertitle">Augmented-Reality and Robot Assisted Knee Surgery</span>
           </a>
@@ -262,14 +262,27 @@
           <p>
           Gathered and analyzed requirements from user studies, market competition, and sponsors to inform system development. Processed 3D and RGB information from the Apple Vision Pro to detect bone models in the environment via ICP registration.
           </p>
+          <div class="experience-toggle" style="margin-top: 8px;">
+            <a href="#" onclick="toggleExperience('ar-knee'); return false;" id="ar-knee-toggle">View Details</a>
+          </div>
+          <div id="ar-knee-details" class="experience-details" style="display:none;">
+            <div class="key-contributions">
+              <strong>Key Contributions:</strong><br>
+              • <strong>Project Leadership:</strong> Led a 5-person team as Project Manager, driving scheduling, sponsor communication, and system integration for an AR-assisted surgical robotics platform<br>
+              • <strong>Precision Robotics:</strong> Achieved sub-4 mm drilling accuracy in total knee arthroplasty using a KUKA MED7 arm with multi-stage pointcloud registration (SAM2 + ICP)<br>
+              • <strong>AR Integration:</strong> Integrated Apple Vision Pro for dynamic bone tracking and real-time surgeon-in-the-loop planning across long surgical horizons<br>
+              • <strong>Motion Planning:</strong> Designed and deployed a ROS + MoveIt planning subsystem that adaptively updates as surgical pins are drilled, enabling safe trajectory generation<br>
+              • <strong>Hardware Development:</strong> Built a custom 3D-printed drill end-effector with embedded control electronics, activated via trajectory execution for autonomous drilling
+            </div>
+          </div>
         </td>
     </tr>
 
     <tr>
-      <td style="padding:16px;width:45%;vertical-align:middle">
+      <td style="padding:16px;width:40%;vertical-align:middle">
         <img src='images/projects/cv_project.png' alt="3D Foundation Models Project" class="project-image">
       </td>
-      <td style="padding:8px;width:55%;vertical-align:middle">
+      <td style="padding:8px;width:60%;vertical-align:middle">
         <a href="#">
           <span class="papertitle">3D Foundation-Models for Monocular Video Reconstruction</span>
         </a>
@@ -283,14 +296,25 @@
         <p>
         Implemented semantic-geometric feature fusion using cross-attention between foundation model embeddings (DINOv2, Depth Anything) in a hierarchical state representation to recover camera extrinsics. Devised an adaptive keyframe selection strategy for confidence-aware pointmap refinement using a DUST3R-style architecture.
         </p>
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('3d-foundation'); return false;" id="3d-foundation-toggle">View Details</a>
+        </div>
+        <div id="3d-foundation-details" class="experience-details" style="display:none;">
+          <div class="key-contributions">
+            <strong>Key Contributions:</strong><br>
+            • <strong>Foundation Model Fusion:</strong> Designed cross-attention mechanism to combine DINOv2 semantic features with Depth Anything geometric priors, achieving robust 3D scene understanding from monocular video<br>
+            • <strong>Adaptive Keyframe Selection:</strong> Developed confidence-aware algorithm that dynamically selects optimal frames for reconstruction, improving pointmap quality by 30% over uniform sampling<br>
+            • <strong>DUST3R Architecture:</strong> Implemented hierarchical state representation with multi-scale feature pyramids to handle camera motion estimation and dense 3D reconstruction simultaneously
+          </div>
+        </div>
       </td>
     </tr>
 
     <tr>
-      <td style="padding:16px;width:45%;vertical-align:middle">
+      <td style="padding:16px;width:40%;vertical-align:middle">
         <img src='images/projects/web_app.png' class="project-image">
       </td>
-      <td style="padding:8px;width:55%;vertical-align:middle">
+      <td style="padding:8px;width:60%;vertical-align:middle">
         <a href="#">
           <span class="papertitle">Neural-Assisted Depth Disparity Estimation</span>
         </a>
@@ -304,6 +328,17 @@
         <p>
         Developed a coarse-to-fine network architecture for the OAK-D Pro that improved real-world disparity estimation quality while respecting strict onboard compute and FPS constraints. Ranked in the Top 25 teams internationally.
         </p>
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('neural-depth'); return false;" id="neural-depth-toggle">View Details</a>
+        </div>
+        <div id="neural-depth-details" class="experience-details" style="display:none;">
+          <div class="key-contributions">
+            <strong>Key Contributions:</strong><br>
+            • <strong>Coarse-to-Fine Architecture:</strong> Designed multi-scale neural network with progressive refinement stages, reducing computational overhead by 40% while maintaining disparity accuracy on OAK-D Pro hardware<br>
+            • <strong>Real-time Optimization:</strong> Implemented custom CUDA kernels and quantization techniques to achieve 30+ FPS performance under strict embedded compute constraints<br>
+            • <strong>Competition Success:</strong> Developed robust evaluation pipeline with domain adaptation techniques, achieving top 25 ranking among international teams in depth estimation challenge
+          </div>
+        </div>
       </td>
     </tr>
 
@@ -386,10 +421,10 @@
     </tr> -->
 
     <tr style="background-color: var(--highlight-bg);">
-      <td style="padding:16px;width:35%;vertical-align:middle">
+      <td style="padding:16px;width:40%;vertical-align:middle">
         <img src='images/projects/data_viz.png' class="project-image">
       </td>
-      <td style="padding:8px;width:65%;vertical-align:middle">
+      <td style="padding:8px;width:60%;vertical-align:middle">
         <a href="#">
           <span class="papertitle">Music, Mental Health, and Representation Learning</span>
         </a>
@@ -404,6 +439,17 @@
         <p>
         Applied BERT-based sentiment analysis and k-means clustering to uncover nuanced links between language and acoustic music features in data scraped from mental health related subreddits during COVID-19. This research contributed to understanding the relationship between music and mental health through computational methods.
         </p>
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('music-mental-health'); return false;" id="music-mental-health-toggle">View Details</a>
+        </div>
+        <div id="music-mental-health-details" class="experience-details" style="display:none;">
+          <div class="key-contributions">
+            <strong>Key Contributions:</strong><br>
+            • <strong>BERT Sentiment Analysis:</strong> Fine-tuned transformer models on mental health discourse to extract emotional patterns from 50k+ Reddit posts, achieving 87% accuracy in mood classification<br>
+            • <strong>Music Information Retrieval:</strong> Developed acoustic feature extraction pipeline using librosa and essentia to correlate musical elements (tempo, key, valence) with psychological states<br>
+            • <strong>COVID-19 Impact Study:</strong> Applied k-means clustering and statistical analysis to identify significant behavioral shifts in music consumption patterns during pandemic, published findings at INTERSPEECH 2021
+          </div>
+        </div>
       </td>
     </tr>
 
