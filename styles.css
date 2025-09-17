@@ -275,12 +275,14 @@ em {
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-toggle a:hover {
   background-color: var(--link-color);
   color: white;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+  transform: translateY(-1px);
 }
 
 .experience-details {
@@ -288,9 +290,89 @@ em {
   padding: 12px;
   background-color: var(--bg-color);
   border-radius: 8px;
-  border-left: 3px solid var(--link-color);
+}
+
+/* Additional Experience Section */
+.additional-experience-section {
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.additional-logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin: 0 auto;
+}
+
+.additional-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+}
+
+.additional-logo {
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain !important;
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.additional-logo:hover {
+  transform: rotate(5deg) scale(1.1);
+  border-color: var(--link-color);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+}
+
+.additional-details {
+  margin-top: 15px;
+  background-color: var(--table-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
   font-size: 14px;
   line-height: 1.5;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: none;
+}
+
+.additional-details.show {
+  display: block;
+  padding: 16px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .additional-logos-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .additional-item {
+    max-width: 350px;
+  }
 }
 
 /* Image Styles */
@@ -303,7 +385,14 @@ em {
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-image:hover {
+  transform: rotate(3deg) scale(1.05);
+  border-color: var(--link-color);
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.15);
 }
 
 /* Frames Carousel Styles */

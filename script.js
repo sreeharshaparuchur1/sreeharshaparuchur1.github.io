@@ -36,6 +36,28 @@ function toggleExperience(company) {
 }
 
 /**
+ * Toggle display of additional experience details
+ */
+function toggleAdditional(company) {
+  const detailsDiv = document.getElementById(company + '-details');
+  
+  // Close any other open details first
+  const allDetails = document.querySelectorAll('.additional-details');
+  allDetails.forEach(detail => {
+    if (detail !== detailsDiv) {
+      detail.classList.remove('show');
+    }
+  });
+  
+  // Toggle the clicked one
+  if (detailsDiv.classList.contains('show')) {
+    detailsDiv.classList.remove('show');
+  } else {
+    detailsDiv.classList.add('show');
+  }
+}
+
+/**
  * Toggle between light and dark theme
  */
 function toggleTheme() {
@@ -79,6 +101,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const detailsSections = document.querySelectorAll('.experience-details');
   detailsSections.forEach(section => {
     section.style.display = 'none';
+  });
+  
+  const additionalDetails = document.querySelectorAll('.additional-details');
+  additionalDetails.forEach(section => {
+    section.classList.remove('show');
   });
   
   const fullCourseLists = document.querySelectorAll('[id$="-courses-full"]');
@@ -175,6 +202,7 @@ function startCarouselAutoPlay() {
 // Export functions for global access (if needed)
 window.toggleCourses = toggleCourses;
 window.toggleExperience = toggleExperience;
+window.toggleAdditional = toggleAdditional;
 window.toggleTheme = toggleTheme;
 window.nextSlide = nextSlide;
 window.prevSlide = prevSlide;

@@ -7,7 +7,7 @@
 
     <meta name="author" content="Sreeharsha Paruchuri">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/favi.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
     
@@ -75,7 +75,7 @@
                 <em>Master of Science in Robotic Systems Development (MRSD)</em><br>
                 <strong>CGPA: 4.11/4.0</strong> | Expected May 2026<br><br>
                 <strong>Teaching:</strong> Introduction to Deep Learning (11-785)<br>
-                <strong>Coursework:</strong> <span id="cmu-courses-short">Learning for 3D Vision, Generative AI, Deep RL</span><span id="cmu-courses-full" style="display:none;">Learning for 3D Vision, Generative Artificial Intelligence, Deep Reinforcement Learning and Control</span>
+                <strong>Coursework:</strong> <span id="cmu-courses-short">Learning for 3D Vision, Generative AI, Deep RL</span><span id="cmu-courses-full" style="display:none;">Learning for 3D Vision, Generative Artificial Intelligence, Deep Reinforcement Learning and Control, Advanced Computer Vision, Manipulation, Estimation and Control</span>
                 <div class="experience-toggle">
                   <a href="#" onclick="toggleCourses('cmu'); return false;" id="cmu-toggle">Show more</a>
                 </div>
@@ -84,14 +84,14 @@
 
             <tr class="section-row">
                               <td class="section-image-cell">
-                  <img src='images/logos/iiith.jpeg' alt="IIIT Hyderabad Logo" class="education-logo">
+                  <img src='images/logos/iiith-v3.png' alt="IIIT Hyderabad Logo" class="education-logo">
                 </td>
               <td class="section-content-cell">
                 <strong class="section-title">International Institute of Information Technology, Hyderabad</strong><br>
                 <em>Bachelor of Technology in Electronics and Communication Engineering (Honours)</em><br>
-                <strong>GCPA: 9.02/10</strong> | July 2022<br><br>
+                <strong>Major GCPA: 9.02/10</strong> | July 2022<br><br>
                 <strong>Awards:</strong> Deans Merit List, Undergraduate Research Award<br>
-                <strong>Coursework:</strong> <span id="iiith-courses-short">AI, Applied Optimization, Mobile Robotics</span><span id="iiith-courses-full" style="display:none;">Methods in Artificial Intelligence, Applied Optimization, Mobile Robotics, Data Structures and Algorithms</span>
+                <strong>Coursework:</strong> <span id="iiith-courses-short">Statistics in AI, Topics in Applied Optimization, Mobile Robotics</span><span id="iiith-courses-full" style="display:none;">Statistical Methods in Artificial Intelligence, Topics in Applied Optimization, Mobile Robotics, Data Structures and Algorithms, Digital Image Processing, Game Theory, Compilers, Operating Systems, Linear Algebra</span>
                 <div class="experience-toggle">
                   <a href="#" onclick="toggleCourses('iiith'); return false;" id="iiith-toggle">Show more</a>
                 </div>
@@ -112,29 +112,34 @@
             
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/mach9-logo.jpeg' alt="Mach9 Logo" class="logo-image">
+                <img src='images/logos/mach9-logo.jpeg' alt="Mach9 Logo" class="logo-image" onclick="toggleExperience('mach9-current')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
-                    <strong class="section-title">Mach9 - Computer Vision and Generative AI</strong>
+                    <strong class="section-title">Mach9</strong>
                   <span class="experience-time">May 2025 - August 2025</span>
                 </div>
                 <em>Perception Software Engineering Intern</em>
+                <div class="experience-subtitle">Computer Vision and Generative AI</div>
                 <div class="experience-toggle">
                   <a href="#" onclick="toggleExperience('mach9-current'); return false;" id="mach9-current-toggle">View Details</a>
                 </div>
                                   <div id="mach9-current-details" class="experience-details" style="display:none;">
                     <strong>Key Contributions:</strong><br>
-                    • <strong>Multimodal Symbol Extraction:</strong> Designed self-correcting vector-field and DBSCAN clustering algorithm to preserve instance consistency from multi-view panoptic masks. Accelerated per-point transformations by 50× via custom CUDA kernel<br>
+                    • Developed and deployed Pavement Symbol Extraction functionality to the Digital Surveyor software via <strong>CUDA-accelarated coordinate frame transformations</strong> and segmentation masks.<br>
+                    • Fine-tuned a <strong>Vision-Language Model (VLM)</strong> to implement a secondary-inference pipeline to classify extracted open-set painted symbols according to user specifications.<br>
+                    • Conducted 70+ controlled ablation experiments with <strong>A/B testing on Hungarian Assigner</strong> Costs, Loss weights, Model Queries and encoder-decoder expressivity to boost the performance of the production model by 4%.<br>
+                    • Utilised methods from Object-Detection literature to qualitatively capture a <strong>DETR-based</strong> polyline detection model's <strong>uncertainty</strong> to expedite downstream <strong>Quality Assurance</strong> and Quality Control processes, saving company and customer resources.<br>
+                    <!-- <strong>Multimodal Symbol Extraction:</strong> Designed self-correcting vector-field and DBSCAN clustering algorithm to preserve instance consistency from multi-view panoptic masks. Accelerated per-point transformations by 50× via custom CUDA kernel<br>
                     • <strong>Vision-Language Model Inference:</strong> Designed orientation robust RAG pipeline for symbol classification using Gemini text embeddings and GPT-o3, achieving 85% F1 score on 20k samples<br>
-                    • <strong>Uncertainty Estimation:</strong> Developed methods to quantify uncertainty in DETR-style vectorized 3D polyline predictions via self-calibration and Bayesian dropout
+                    • <strong>Uncertainty Estimation:</strong> Developed methods to quantify uncertainty in DETR-style vectorized 3D polyline predictions via self-calibration and Bayesian dropout -->
                   </div>
               </td>
             </tr>
 
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/tcs-logo.jpeg' alt="TCS Research Logo" class="logo-image">
+                <img src='images/logos/tcs-logo.jpeg' alt="TCS Research Logo" class="logo-image" onclick="toggleExperience('tcs')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
@@ -149,15 +154,17 @@
                 <div id="tcs-details" class="experience-details" style="display:none;">
                   <strong>Key Contributions:</strong><br>
                   • <strong>Audio-Visual Navigation:</strong> Led development of embodied AI agent with multimodal sensing, training online RL policy with novel class-agnostic reward, reducing path length by 21%<br>
+                  • <strong>Offline RL for Indoor Robot Navigation:</strong> Built simulation pipeline to collect large-scale trajectory datasets, training a Causal Decision Transformer with early multimodal fusion; integrated environment randomization, behavior cloning baselines, and replay buffer curation to improve policy robustness and sample efficiency
                   • <strong>CLIP-Enhanced Scene Graphs:</strong> Designed contrastive-learning framework to compute visual-language embeddings, leveraging GNNs to model object-region relationships<br>
                   • <strong>Open Vocabulary Manipulation (NeurIPS 23):</strong> Developed active SLAM exploration algorithm conditioned on probabilistic semantic map, improving task success by 60%
+                  • Volunteered for the Project Synergy initiative by TCS wherein volunteers taught written and spoken English to students in a Bangla-medium government school.
                 </div>
               </td>
             </tr>
 
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/rrc_logo.png' alt="RRC IIIT-H Logo" class="logo-image">
+                <img src='images/logos/rrc_logo.png' alt="RRC IIIT-H Logo" class="logo-image" onclick="toggleExperience('rrc')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
@@ -170,13 +177,49 @@
                   <a href="#" onclick="toggleExperience('rrc'); return false;" id="rrc-toggle">View Details</a>
                 </div>
                 <div id="rrc-details" class="experience-details" style="display:none;">
-                  <strong>Key Achievements:</strong><br>
-                  • <strong>Autonomous Sanitization Robot:</strong> Spearheaded development of computer vision, Visual-SLAM and navigation stack to simulate, build, test, and deploy (Sim2Real) an autonomous robot; finished runners-up out of 140 teams<br>
-                  • <strong>Real-Time 3D Scene Understanding:</strong> Adapted stereo and monocular depth algorithms for autonomous driving setup. Developed ROS package for multi-view bundle adjustment
+                  <strong>Key Contributions:</strong><br>
+                  • <strong>Autonomous Sanitization Robot:</strong> Designed and implemented end-to-end robotic system during COVID-19 to autonomously sanitize indoor spaces, integrating computer vision, Visual-SLAM, and coverage-based navigation<br>
+                  • <strong>Sim-to-Real Deployment:</strong> Built Gazebo simulation environments for iterative testing, then transferred stack to hardware platform with onboard sensors and sanitization actuators; finished <em>runner-up among 140 teams</em><br>
+                  • <strong>LiDAR SLAM:</strong> Evaluated LiDAR odometry and mapping approaches such as LOAM using CARLA simulation and outdoor driving data, analyzing localization accuracy and map consistency<br>
+                  • <strong>Depth Estimation:</strong> Implemented stereo and monocular depth estimation methods on driving datasets including KITTI and NuScenes, developing a ROS package for multi-view bundle adjustment<br>                  
                 </div>
               </td>
             </tr>
           </tbody></table>
+
+          <!-- Additional Experience Subsection -->
+          <div class="additional-experience-section">
+            <h3 style="text-align: center; font-size: 18px; font-weight: 400; color: var(--text-color); margin: 20px 0 15px 0;">I have also worked at</h3>
+            <div class="additional-logos-container">
+              <div class="additional-item">
+                <img src="images/logos/bosch_logo.png" alt="Bosch Research" class="additional-logo" onclick="toggleAdditional('bosch')" id="bosch-logo">
+                <div id="bosch-details" class="additional-details">
+                  <div class="experience-header">
+                    <strong class="section-title">Bosch Research and Technology Center</strong>
+                    <span class="experience-time">May 2021 – Aug 2021</span>
+                  </div>
+                  <em>Software Development Engineering Intern - Computer Vision</em><br><br>
+                  <strong>Key Contributions:</strong><br>
+                  • Fused Laser, Camera, and Odometry data using Kalman filtering to boost online Multi-Object Tracking performance by 11% IoU on outdoor autonomous driving datasets<br>
+                  • Augmented difficult-to-obtain real-world LiDAR datasets using synthetic data from generative models and physics engines, improving 3D object detection networks for outdoor scenarios
+                </div>
+              </div>
+              
+              <div class="additional-item">
+                <img src="images/logos/precog_logo-800.webp" alt="PReCoG Lab" class="additional-logo" onclick="toggleAdditional('precog')" id="precog-logo">
+                <div id="precog-details" class="additional-details">
+                  <div class="experience-header">
+                    <strong class="section-title">Precognition Lab, IIIT-H</strong>
+                    <span class="experience-time">2020-2021</span>
+                  </div>
+                  <em>Research Assistant - Information Retrieval and Computational Social Science</em><br><br>
+                  <strong>Key Contributions:</strong><br>
+                  • Applied statistical machine learning with Music Information Retrieval to analyze lyrical regularities as early indicators of mental illness; Published results at INTERSPEECH 2021<br>
+                  • Scraped Reddit data to link music-sharing trends with mental health during COVID-19 using BERT embeddings and DBSCAN clustering; Published in medical journal
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Projects/Research Section -->
           <table id="projects" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
@@ -199,12 +242,12 @@
             <span class="papertitle">Augmented-Reality and Robot Assisted Knee Surgery</span>
           </a>
           <br>
-          <em>CMU Project</em>, 2025<br>
-          <em>Technologies: Apple Vision Pro, ICP, 3D Computer Vision</em>
+          <em>MRSD Capstone Project</em>, 2024 - 2025<br>
+          <em>Technologies: 3D Computer Vision, Robotics, Extended Reality, Systems Engineering</em>
           <br>
-          <a href="#">website</a>
+          <a href="https://mrsdprojects.ri.cmu.edu/2025teamd/">website</a>
           /
-          <a href="#">code</a>
+          <a href="https://github.com/KNEEpoleon">code</a>
           <p></p>
           <p>
           Gathered and analyzed requirements from user studies, market competition, and sponsors to inform system development. Processed 3D and RGB information from the Apple Vision Pro to detect bone models in the environment via ICP registration.
