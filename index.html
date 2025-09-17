@@ -68,7 +68,7 @@
             
                           <tr class="section-row">
                 <td class="section-image-cell">
-                  <img src='images/logos/cmu.jpeg' alt="Carnegie Mellon University Logo" class="education-logo">
+                  <img src='images/logos/cmu.jpeg' alt="Carnegie Mellon University Logo" class="education-logo" onclick="window.open('https://www.ri.cmu.edu/', '_blank')">
                 </td>
               <td class="section-content-cell">
                 <strong class="section-title">Carnegie Mellon University, School of Computer Science</strong><br>
@@ -84,7 +84,7 @@
 
             <tr class="section-row">
                               <td class="section-image-cell">
-                  <img src='images/logos/iiith-v3.png' alt="IIIT Hyderabad Logo" class="education-logo">
+                  <img src='images/logos/iiith-v3.png' alt="IIIT Hyderabad Logo" class="education-logo" onclick="window.open('https://www.iiit.ac.in/', '_blank')">
                 </td>
               <td class="section-content-cell">
                 <strong class="section-title">International Institute of Information Technology, Hyderabad</strong><br>
@@ -112,7 +112,7 @@
             
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/mach9-logo.jpeg' alt="Mach9 Logo" class="logo-image" onclick="toggleExperience('mach9-current')">
+                <img src='images/logos/mach9-logo.jpeg' alt="Mach9 Logo" class="logo-image" onclick="window.open('https://www.mach9.ai/', '_blank')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
@@ -125,6 +125,7 @@
                   <a href="#" onclick="toggleExperience('mach9-current'); return false;" id="mach9-current-toggle">View Details</a>
                 </div>
                                   <div id="mach9-current-details" class="experience-details" style="display:none;">
+                    <div class="key-contributions">
                     <strong>Key Contributions:</strong><br>
                     • Developed and deployed Pavement Symbol Extraction functionality to the Digital Surveyor software via <strong>CUDA-accelarated coordinate frame transformations</strong> and segmentation masks.<br>
                     • Fine-tuned a <strong>Vision-Language Model (VLM)</strong> to implement a secondary-inference pipeline to classify extracted open-set painted symbols according to user specifications.<br>
@@ -133,13 +134,14 @@
                     <!-- <strong>Multimodal Symbol Extraction:</strong> Designed self-correcting vector-field and DBSCAN clustering algorithm to preserve instance consistency from multi-view panoptic masks. Accelerated per-point transformations by 50× via custom CUDA kernel<br>
                     • <strong>Vision-Language Model Inference:</strong> Designed orientation robust RAG pipeline for symbol classification using Gemini text embeddings and GPT-o3, achieving 85% F1 score on 20k samples<br>
                     • <strong>Uncertainty Estimation:</strong> Developed methods to quantify uncertainty in DETR-style vectorized 3D polyline predictions via self-calibration and Bayesian dropout -->
+                    </div>
                   </div>
               </td>
             </tr>
 
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/tcs-logo.jpeg' alt="TCS Research Logo" class="logo-image" onclick="toggleExperience('tcs')">
+                <img src='images/logos/tcs-logo.jpeg' alt="TCS Research Logo" class="logo-image" onclick="window.open('https://www.tcs.com/what-we-do/research', '_blank')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
@@ -152,19 +154,21 @@
                   <a href="#" onclick="toggleExperience('tcs'); return false;" id="tcs-toggle">View Details</a>
                 </div>
                 <div id="tcs-details" class="experience-details" style="display:none;">
+                  <div class="key-contributions">
                   <strong>Key Contributions:</strong><br>
                   • <strong>Audio-Visual Navigation:</strong> Led development of embodied AI agent with multimodal sensing, training online RL policy with novel class-agnostic reward, reducing path length by 21%<br>
                   • <strong>Offline RL for Indoor Robot Navigation:</strong> Built simulation pipeline to collect large-scale trajectory datasets, training a Causal Decision Transformer with early multimodal fusion; integrated environment randomization, behavior cloning baselines, and replay buffer curation to improve policy robustness and sample efficiency
                   • <strong>CLIP-Enhanced Scene Graphs:</strong> Designed contrastive-learning framework to compute visual-language embeddings, leveraging GNNs to model object-region relationships<br>
                   • <strong>Open Vocabulary Manipulation (NeurIPS 23):</strong> Developed active SLAM exploration algorithm conditioned on probabilistic semantic map, improving task success by 60%
                   • Volunteered for the Project Synergy initiative by TCS wherein volunteers taught written and spoken English to students in a Bangla-medium government school.
+                  </div>
                 </div>
               </td>
             </tr>
 
             <tr class="section-row">
               <td class="section-image-cell">
-                <img src='images/logos/rrc_logo.png' alt="RRC IIIT-H Logo" class="logo-image" onclick="toggleExperience('rrc')">
+                <img src='images/logos/rrc_logo.png' alt="RRC IIIT-H Logo" class="logo-image" onclick="window.open('https://robotics.iiit.ac.in/', '_blank')">
               </td>
               <td class="section-content-cell">
                                   <div class="experience-header">
@@ -177,11 +181,13 @@
                   <a href="#" onclick="toggleExperience('rrc'); return false;" id="rrc-toggle">View Details</a>
                 </div>
                 <div id="rrc-details" class="experience-details" style="display:none;">
+                  <div class="key-contributions">
                   <strong>Key Contributions:</strong><br>
                   • <strong>Autonomous Sanitization Robot:</strong> Designed and implemented end-to-end robotic system during COVID-19 to autonomously sanitize indoor spaces, integrating computer vision, Visual-SLAM, and coverage-based navigation<br>
                   • <strong>Sim-to-Real Deployment:</strong> Built Gazebo simulation environments for iterative testing, then transferred stack to hardware platform with onboard sensors and sanitization actuators; finished <em>runner-up among 140 teams</em><br>
                   • <strong>LiDAR SLAM:</strong> Evaluated LiDAR odometry and mapping approaches such as LOAM using CARLA simulation and outdoor driving data, analyzing localization accuracy and map consistency<br>
                   • <strong>Depth Estimation:</strong> Implemented stereo and monocular depth estimation methods on driving datasets including KITTI and NuScenes, developing a ROS package for multi-view bundle adjustment<br>                  
+                  </div>
                 </div>
               </td>
             </tr>
@@ -199,9 +205,11 @@
                     <span class="experience-time">May 2021 – Aug 2021</span>
                   </div>
                   <em>Software Development Engineering Intern - Computer Vision</em><br><br>
+                  <div class="key-contributions">
                   <strong>Key Contributions:</strong><br>
                   • Fused Laser, Camera, and Odometry data using Kalman filtering to boost online Multi-Object Tracking performance by 11% IoU on outdoor autonomous driving datasets<br>
                   • Augmented difficult-to-obtain real-world LiDAR datasets using synthetic data from generative models and physics engines, improving 3D object detection networks for outdoor scenarios
+                  </div>
                 </div>
               </div>
               
@@ -209,13 +217,15 @@
                 <img src="images/logos/precog_logo-800.webp" alt="PReCoG Lab" class="additional-logo" onclick="toggleAdditional('precog')" id="precog-logo">
                 <div id="precog-details" class="additional-details">
                   <div class="experience-header">
-                    <strong class="section-title">Precognition Lab, IIIT-H</strong>
+                    <strong class="section-title">PreCog Lab, IIIT-H</strong>
                     <span class="experience-time">2020-2021</span>
                   </div>
                   <em>Research Assistant - Information Retrieval and Computational Social Science</em><br><br>
+                  <div class="key-contributions">
                   <strong>Key Contributions:</strong><br>
                   • Applied statistical machine learning with Music Information Retrieval to analyze lyrical regularities as early indicators of mental illness; Published results at INTERSPEECH 2021<br>
                   • Scraped Reddit data to link music-sharing trends with mental health during COVID-19 using BERT embeddings and DBSCAN clustering; Published in medical journal
+                  </div>
                 </div>
               </div>
             </div>
