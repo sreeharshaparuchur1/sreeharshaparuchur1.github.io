@@ -26,12 +26,12 @@ function toggleExperience(company) {
   const detailsDiv = document.getElementById(company + '-details');
   const toggleLink = document.getElementById(company + '-toggle');
   
-  if (detailsDiv.style.display === 'none') {
-    detailsDiv.style.display = 'block';
-    toggleLink.textContent = 'Hide Details';
-  } else {
-    detailsDiv.style.display = 'none';
+  if (detailsDiv.classList.contains('show')) {
+    detailsDiv.classList.remove('show');
     toggleLink.textContent = 'View Details';
+  } else {
+    detailsDiv.classList.add('show');
+    toggleLink.textContent = 'Hide Details';
   }
 }
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize any collapsed sections
   const detailsSections = document.querySelectorAll('.experience-details');
   detailsSections.forEach(section => {
-    section.style.display = 'none';
+    section.classList.remove('show');
   });
   
   const additionalDetails = document.querySelectorAll('.additional-details');
