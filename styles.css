@@ -239,30 +239,7 @@ em {
   vertical-align: middle;
 }
 
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
 
-.experience-time {
-  color: var(--link-color);
-  font-weight: 500;
-  font-size: 14px;
-  background-color: var(--bg-color);
-  padding: 4px 8px;
-  border-radius: 12px;
-  border: 1px solid var(--link-color);
-}
-
-.experience-subtitle {
-  color: var(--text-color);
-  opacity: 0.7;
-  font-size: 13px;
-  font-style: italic;
-  margin: 2px 0 6px 0;
-}
 
 .experience-toggle {
   margin: 8px 0;
