@@ -8,14 +8,16 @@ function toggleCourses(school) {
   const fullSpan = document.getElementById(school + '-courses-full');
   const toggleLink = document.getElementById(school + '-toggle');
   
-  if (fullSpan.style.display === 'none') {
-    shortSpan.style.display = 'none';
-    fullSpan.style.display = 'inline';
-    toggleLink.textContent = 'Show less';
-  } else {
-    shortSpan.style.display = 'inline';
-    fullSpan.style.display = 'none';
+  if (fullSpan.classList.contains('show')) {
+    fullSpan.classList.remove('show');
+    setTimeout(() => {
+      shortSpan.style.display = 'inline';
+    }, 300);
     toggleLink.textContent = 'Show more';
+  } else {
+    shortSpan.style.display = 'none';
+    fullSpan.classList.add('show');
+    toggleLink.textContent = 'Show less';
   }
 }
 
@@ -110,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const fullCourseLists = document.querySelectorAll('[id$="-courses-full"]');
   fullCourseLists.forEach(list => {
-    list.style.display = 'none';
+    list.classList.remove('show');
   });
   
   // Initialize carousel if frames section exists
