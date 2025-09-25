@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Projects - Sreeharsha Paruchuri</title>
+    <meta name="author" content="Sreeharsha Paruchuri">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favi.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+      <nav class="navbar">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#education" class="nav-link">Education</a>
+        <a href="index.html#experience" class="nav-link">Experience</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#teaching" class="nav-link">Teaching</a>
+        <a href="quotes.html" class="nav-link">Photography</a>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      </nav>
+    </div>
+
+    <table style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          
+          <!-- Page Header -->
+          <div style="text-align: center; margin: 40px 0 20px 0;">
+            <h1 style="font-size: 28px; font-weight: 400; margin-bottom: 8px;">Additional Projects</h1>
+            <p style="color: #666; font-size: 16px; margin: 0;">Exploring diverse areas of robotics, AI, and computer vision</p>
+          </div>
+
+          <!-- Projects Section -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <tr style="background-color: var(--highlight-bg);">
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <img src="images/projects/autonomy.gif" alt="VSLAM Project" class="project-image">
+              </td>
+              <td style="padding:8px;width:60%;vertical-align:middle">
+                <div class="duration-container">
+                  <div class="section-title-container">
+                    <strong class="section-title">Pixel Art with Stamps using a Franka Robot</strong>
+                  </div>
+                </div>
+                <em>Motion Planning</em><br>
+                <a href="https://drive.google.com/file/d/18UWXH2ysmpVf5kuKNUX5fA8yX9ORaGiH/view?usp=sharing">report</a> / <a href="https://github.com/sreeharshaparuchur1/pixel-art-franka">code</a><br>
+                A robotic system that transforms any input image into pixel art through sequential stamping! Images are decomposed into grids, stamping paths are optimized for minimal travel, and force control enables reliable execution.
+                <div class="experience-toggle" style="margin-top: 8px;">
+                  <a href="#" onclick="toggleExperience('vslam'); return false;" id="vslam-toggle">View Details</a>
+                </div>
+                <div id="vslam-details" class="experience-details">
+                  <div class="key-contributions">
+                    <strong>Key Contributions:</strong><br>
+                    <ul style="margin: 0 0 0 18px; padding: 0; list-style-type: disc;">
+                      <li>Motion planning with Christofides’ algorithm for travel-minimizing stamping order</li>
+                      <li>Force-controlled manipulation for consistent stamping under variable surface conditions</li>
+                      <li>ArUco-based perception and calibration to localize and switch between ink pads dynamically</li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+            </tr>
+=          <!-- <tr>
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <img src="images/projects/web_app.png" alt="Medical Imaging Project" class="project-image">
+              </td>
+              <td style="padding:8px;width:60%;vertical-align:middle">
+                <div class="duration-container">
+                  <div class="section-title-container">
+                    <strong class="section-title">AI-Powered Medical Image Segmentation</strong>
+                  </div>
+                  <div class="duration-tag">Internship</div>
+                </div>
+                <em>Computer Vision Internship, 2021</em><br>
+                <a href="#">paper</a> / <a href="#">code</a><br>
+                Developed a U-Net based architecture for automatic segmentation of anatomical structures in medical CT scans. Achieved state-of-the-art performance on lung nodule detection with 94% accuracy on validation datasets.
+                <div class="experience-toggle" style="margin-top: 8px;">
+                  <a href="#" onclick="toggleExperience('medical-imaging'); return false;" id="medical-imaging-toggle">View Details</a>
+                </div>
+                <div id="medical-imaging-details" class="experience-details">
+                  <div class="key-contributions">
+                    <strong>Key Contributions:</strong><br>
+                    • <strong>U-Net Architecture:</strong> Designed custom U-Net variant with attention mechanisms and residual connections for improved segmentation accuracy<br>
+                    • <strong>Data Augmentation:</strong> Implemented medical-specific augmentation techniques including elastic deformation and intensity normalization<br>
+                    • <strong>Clinical Validation:</strong> Collaborated with radiologists to validate results, achieving 94% accuracy on lung nodule detection task
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr style="background-color: var(--highlight-bg);">
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <img src="images/projects/data_viz.png" alt="NLP Project" class="project-image">
+              </td>
+              <td style="padding:8px;width:60%;vertical-align:middle">
+                <div class="duration-container">
+                  <div class="section-title-container">
+                    <strong class="section-title">Multilingual Sentiment Analysis Platform</strong>
+                  </div>
+                  <div class="duration-tag">Research</div>
+                </div>
+                <em>NLP Research, 2020-2021</em><br>
+                <a href="#">demo</a> / <a href="#">code</a><br>
+                Built a web-based platform for real-time sentiment analysis across multiple languages. Integrated transformer models and created an interactive dashboard for visualizing sentiment trends in social media data.
+                <div class="experience-toggle" style="margin-top: 8px;">
+                  <a href="#" onclick="toggleExperience('nlp-sentiment'); return false;" id="nlp-sentiment-toggle">View Details</a>
+                </div>
+                <div id="nlp-sentiment-details" class="experience-details">
+                  <div class="key-contributions">
+                    <strong>Key Contributions:</strong><br>
+                    • <strong>Multilingual Models:</strong> Fine-tuned mBERT and XLM-RoBERTa for sentiment analysis across 8 languages, achieving 88% average F1-score<br>
+                    • <strong>Real-time Processing:</strong> Built scalable API using FastAPI and Redis for processing 10k+ tweets per minute with sub-second latency<br>
+                    • <strong>Interactive Dashboard:</strong> Developed React-based visualization platform with real-time sentiment trends and geographic mapping
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <img src="images/projects/cv_project.png" alt="AR Project" class="project-image">
+              </td>
+              <td style="padding:8px;width:60%;vertical-align:middle">
+                <div class="duration-container">
+                  <div class="section-title-container">
+                    <strong class="section-title">Augmented Reality Learning Assistant</strong>
+                  </div>
+                  <div class="duration-tag">Innovation</div>
+                </div>
+                <em>AR/VR Project, 2020</em><br>
+                <a href="#">demo</a> / <a href="#">code</a><br>
+                Created an AR application for interactive learning experiences using Unity and ARCore. Implemented 3D object tracking and spatial audio to create immersive educational content for STEM subjects.
+                <div class="experience-toggle" style="margin-top: 8px;">
+                  <a href="#" onclick="toggleExperience('ar-learning'); return false;" id="ar-learning-toggle">View Details</a>
+                </div>
+                <div id="ar-learning-details" class="experience-details">
+                  <div class="key-contributions">
+                    <strong>Key Contributions:</strong><br>
+                    • <strong>3D Object Tracking:</strong> Implemented marker-less tracking using SLAM and feature detection for stable AR object placement<br>
+                    • <strong>Interactive Content:</strong> Designed educational modules for chemistry and physics with 3D molecular models and physics simulations<br>
+                    • <strong>Spatial Audio:</strong> Integrated 3D audio cues and voice interaction using Google's speech recognition API for enhanced user experience
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- Back to Main Projects -->
+          <div class="view-more-container">
+            <a href="index.html#projects" class="view-more-link">← Back to Main Projects</a>
+          </div>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  cloned from <a href="https://github.com/jonbarron/jonbarron_website">here!</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html> 

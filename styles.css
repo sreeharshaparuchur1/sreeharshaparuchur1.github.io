@@ -233,6 +233,13 @@ em {
   text-align: center;
 }
 
+/* Project table cell styling for consistent spacing */
+td[style*="width:40%"][style*="vertical-align:middle"] {
+  padding: 16px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .section-content-cell {
   padding: 16px 20px;
   width: 75%;
@@ -591,12 +598,45 @@ em {
 }
 
 .project-image {
-  width: 100% !important;
+  /* Consistent frame dimensions */
+  width: 320px !important;
   height: 200px !important;
-  object-fit: cover !important;
-  border-radius: 12px;
-  border: 2px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+  /* Minimal border styling */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  
+  /* Image fitting */
+  object-fit: cover;
+  object-position: center;
+  
+  /* Subtle shadow and transitions */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Layout properties */
+  display: block;
+  box-sizing: border-box;
+}
+
+.project-image:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Responsive project image adjustments */
+@media screen and (max-width: 768px) {
+  .project-image {
+    width: 280px !important;
+    height: 175px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project-image {
+    width: 240px !important;
+    height: 150px !important;
+  }
 }
 
 /* Timeline Styles */
@@ -782,4 +822,28 @@ img {
     max-width: 200px !important;
     max-height: 200px !important;
   }
+}
+
+/* View More Projects Link */
+.view-more-container {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.view-more-link {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.view-more-link:hover {
+  transform: translateX(3px);
+  color: var(--text-color);
+  opacity: 0.8;
 } 

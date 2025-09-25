@@ -1,6 +1,27 @@
 // Portfolio Interactive Functionality
 
 /**
+ * Initialize all project images for consistent styling
+ */
+function initializeProjectImages() {
+  const projectImages = document.querySelectorAll('.project-image');
+  projectImages.forEach(img => {
+    // Ensure all images use consistent object-fit properties
+    // CSS handles the dimensions, we just need to ensure proper loading
+    if (!img.complete && img.src) {
+      img.onload = () => {
+        // Image loaded, CSS will handle the rest
+      };
+    }
+  });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeProjectImages();
+});
+
+/**
  * Toggle display of course lists in education section
  */
 function toggleCourses(school) {
