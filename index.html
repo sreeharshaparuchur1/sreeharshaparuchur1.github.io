@@ -1,16 +1,66 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Basics -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Sreeharsha Paruchuri</title>
+    <meta name="description" content="CMU MRSD graduate student focused on AI, Computer Vision, and Robotics. I build high-quality, scalable systems that bridge research and production.">
 
+    <!-- Canonical & Robots -->
+    <link rel="canonical" href="https://sreeharshaparuchur1.github.io/">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <meta name="google-site-verification" content="3iuIKut8-Qkv-yLKkyKC7iNF7hPGDG47Khx7w9kC1TA" />
+    
+    <!-- Branding -->
     <meta name="author" content="Sreeharsha Paruchuri">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph (LinkedIn, Slack, etc.) -->
+    <meta property="og:title" content="Sreeharsha Paruchuri">
+    <meta property="og:description" content="CMU MRSD graduate student focused on AI, Computer Vision, and Robotics. I build high-quality, scalable systems that bridge research and production.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sreeharshaparuchur1.github.io/">
+    <meta property="og:site_name" content="Sreeharsha Paruchuri">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://sreeharshaparuchur1.github.io/images/profile_pictures/sreeharsha_profile_picture.JPG">
+    <meta property="og:image:alt" content="Portrait of Sreeharsha Paruchuri">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Favicons -->
     <link rel="shortcut icon" href="images/favicon/favi.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicon/favi.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <!-- Scripts -->
     <script src="script.js"></script>
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sreeharsha Paruchuri",
+      "url": "https://sreeharshaparuchur1.github.io/",
+      "image": "https://sreeharshaparuchur1.github.io/images/profile_pictures/sreeharsha_profile_picture.JPG",
+      "jobTitle": "Graduate Student, Robotics (MRSD)",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Carnegie Mellon University"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Carnegie Mellon University"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/sreeharshaparuchur1/"
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -48,7 +98,7 @@
                 </p> -->
                 
                 <p>
-		Previously, I worked as a Pre-Doctoral Research Fellow at TCS Research where I worked on imbuing embodied AI agents with multimodal sensing capabilities through audio and visual inputs. Prior to that and as a Research Assistant at the <a href="https://robotics.iiit.ac.in/" target="_blank">Robotics Research Center, IIIT-H</a>, I focused heavily on 3D scene reconstruction and autonomous navigation for vehicles .
+		Previously, I worked as a Pre-Doctoral Research Fellow at TCS Research where I worked on imbuing embodied AI agents with multimodal sensing capabilities through audio and visual inputs.
                 </p>
                 
                 <p>
@@ -336,38 +386,91 @@
       </td>
     </tr>
 
+
     <tr>
       <td style="padding:16px;width:40%;vertical-align:middle">
-        <img src='images/projects/oakd.png' class="project-image">
+        <img src='images/projects/cmu_vln_1.png' alt="CMU VLA Challenge" class="project-image">
       </td>
       <td style="padding:8px;width:60%;vertical-align:middle">
         <div class="duration-container">
           <div class="section-title-container">
-            <strong class="section-title">Neural-Assisted Depth Disparity Estimation</strong>
+            <strong class="section-title">CMU VLA Challenge</strong>
           </div>
-          <!-- <div class="duration-tag">Hackathon</div> -->
         </div>
-        <a href="#">project demo</a> / <a href="#">code</a><br>
-        Developed a coarse-to-fine network architecture for the OAK-D Pro that improved real-world disparity estimation quality while respecting strict onboard compute and FPS constraints. Ranked in the Top 25 teams internationally.
+        <a href="#">report</a> / <a href="https://github.com/gupta-ish/CMU-VLA-Challenge/tree/team-copypasta-submission">code</a><br>
+        Built a <code>Vision-Language Navigation (VLN)</code> system that answered natural language queries by combining <code>Gemini 2.5 Pro</code> embodied reasoning with a custom ROS state machine. The system produced numerical answers, object references, or waypoint plans under a strict 10-minute limit.
         <div class="experience-toggle" style="margin-top: 8px;">
-          <a href="#" onclick="toggleExperience('neural-depth'); return false;" id="neural-depth-toggle">View Details</a>
+          <a href="#" onclick="toggleExperience('vla-challenge'); return false;" id="vla-challenge-toggle">View Details</a>
         </div>
-        <div id="neural-depth-details" class="experience-details">
+        <div id="vla-challenge-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Contributions:</strong><br>
-            • <strong>Coarse-to-Fine Architecture:</strong> Designed multi-scale neural network with progressive refinement stages, reducing computational overhead by 40% while maintaining disparity accuracy on OAK-D Pro hardware<br>
-            • <strong>Real-time Optimization:</strong> Implemented custom CUDA kernels and quantization techniques to achieve 30+ FPS performance under strict embedded compute constraints<br>
-            • <strong>Competition Success:</strong> Developed robust evaluation pipeline with domain adaptation techniques, achieving top 25 ranking among international teams in depth estimation challenge
+            <strong>Key Challenges & Solutions:</strong><br>
+            • **Ambiguous spatial queries** (“closest to the window”): used <code>Gemini 2.5 Pro</code> to classify and reason over spatial relations<br>
+            • **Strict 10-minute runtime**: designed a ROS state machine to coordinate exploration, mapping, and answering with timed transitions<br>
+            • **Constraint-aware navigation**: developed waypoint planners that leveraged semantic object information to satisfy “between/avoid” instructions
           </div>
         </div>
       </td>
     </tr>
+    
+
+<!-- 
+    <tr>
+      <td style="padding:16px;width:40%;vertical-align:middle">
+        <img src='images/projects/cmu_vln_1.png' alt="CMU VLA Challenge" class="project-image">
+      </td>
+      <td style="padding:8px;width:60%;vertical-align:middle">
+        <div class="duration-container">
+          <div class="section-title-container">
+            <strong class="section-title">CMU VLA Challenge – Vision-Language Navigation</strong>
+          </div>
+        </div>
+        <a href="#">report</a> / <a href="https://github.com/gupta-ish/CMU-VLA-Challenge/tree/team-copypasta-submission">code</a><br>
+        Built a <code>Vision-Language Navigation (VLN)</code> system for CMU’s embodied AI competition. The project combined <code>Gemini 2.5 Pro</code> for semantic reasoning with a custom ROS state machine that handled exploration, scene understanding, and navigation under strict timing constraints. Our system translated natural language queries into actionable plans, producing numerical answers, object references, or waypoint trajectories.
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('vla-challenge'); return false;" id="vla-challenge-toggle">View Details</a>
+        </div>
+        <div id="vla-challenge-details" class="experience-details">
+          <div class="key-contributions">
+            <strong>Key Contributions:</strong><br>
+            • Faced the challenge of interpreting free-form language like “go to the chair closest to the window”; solved it by integrating <code>Gemini 2.5 Pro</code> for classification and spatial relation reasoning, then routing outputs to specialized solvers<br>
+            • Needed to operate under a <strong>10-minute exploration + answering window</strong>; addressed this by designing a ROS state machine that sequenced initialization, active exploration, and answering phases with strict timeout management<br>
+            • Required navigation that respected semantic constraints (“between tables”, “avoid the window”); implemented coverage exploration and waypoint planners that intelligently used available object semantics to generate feasible paths<br>
+          </div>
+        </div>
+      </td>
+    </tr> -->
+    
 
 
-
-
-
-
+    <tr>
+      <td style="padding:16px;width:40%;vertical-align:middle">
+        <img src='images/projects/poseGraph.png' alt="Pose Graph Optimization Project" class="project-image">
+      </td>
+      <td style="padding:8px;width:60%;vertical-align:middle">
+        <div class="duration-container">
+          <div class="section-title-container">
+            <strong class="section-title">Pose Graph Optimization for 2D SLAM</strong>
+          </div>
+        </div>
+        <a href="link-to-report">report</a> / <a href="link-to-code">code</a><br>
+        Implemented a 2D SLAM backend where noisy odometry and loop closure constraints were refined into a globally consistent trajectory. Used <code>jax</code> to compute residuals and Jacobians, applied nonlinear least-squares optimization, and validated improvements with RPY and APE error metrics. Explored the role of confidence weighting in the information matrix and compared against <code>g2o</code> optimization with robust kernels.
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('pose-graph'); return false;" id="pose-graph-toggle">View Details</a>
+        </div>
+        <div id="pose-graph-details" class="experience-details">
+          <div class="key-contributions">
+            <strong>Key Contributions:</strong><br>
+            • <strong>Iterative Optimization:</strong> Built custom nonlinear solver in JAX with residual and Jacobian computation for pose updates<br>
+            • <strong>Information Matrix Analysis:</strong> Studied effect of varying odometry vs loop closure confidence weights on trajectory quality<br>
+            • <strong>Error Evaluation:</strong> Quantified improvements via RPY drift and Absolute Pose Error reduction compared to initial odometry<br>
+            • <strong>g2o Benchmarking:</strong> Ran Cauchy, PseudoHuber, and Huber kernels in <code>g2o_viewer</code> to compare optimization strategies<br>
+            • <strong>Literature Review:</strong> Analyzed “Past, Present & Future of SLAM” survey, contextualizing open problems in robustness and scalability with deep learning-based approaches
+          </div>
+        </div>
+      </td>
+    </tr>
+    
 
     <tr style="background-color: var(--highlight-bg);">
       <td style="padding:16px;width:40%;vertical-align:middle">
@@ -422,7 +525,7 @@
                   <div class="section-title-container">
                     <strong class="section-title">Carnegie Mellon University</strong>
                   </div>
-                  <div class="duration-tag">Fall 2025</div>
+                  <!-- <div class="duration-tag">Fall 2025</div> -->
                 </div>
                 <em>Introduction to Deep Learning (11-785)</em><br>
                 <a href="https://deeplearning.cs.cmu.edu/" target="_blank">Course Website</a><br>
@@ -450,7 +553,7 @@
                   <div class="section-title-container">
                     <strong class="section-title">International Institute of Information Technology, Hyderabad</strong>
                   </div>
-                  <div class="duration-tag">2020 - 2022</div>
+                  <!-- <div class="duration-tag">2020 - 2022</div> -->
                 </div>
                 <em>Multiple Courses</em><br>
                 <strong>Courses:</strong> Mobile Robotics, Music Mind and Technology, Introduction to Coding Theory, RRC Summer School<br>
