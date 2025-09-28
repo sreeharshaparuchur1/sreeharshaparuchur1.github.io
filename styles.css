@@ -602,17 +602,17 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   width: 320px !important;
   height: 200px !important;
   
-  /* Minimal border styling */
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
+  /* Theme-aware border styling */
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
   
   /* Image fitting */
   object-fit: cover;
   object-position: center;
   
-  /* Subtle shadow and transitions */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Enhanced shadow and transitions */
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   
   /* Layout properties */
   display: block;
@@ -752,6 +752,11 @@ span.highlight {
 [data-theme="dark"] .teaching-logo {
   background-color: #ffffff;
   border-color: #404040;
+}
+
+[data-theme="dark"] .project-image {
+  border-color: #555555;
+  box-shadow: 0 3px 12px rgba(255,255,255,0.05);
 }
 
 [data-theme="dark"] .content-row {
