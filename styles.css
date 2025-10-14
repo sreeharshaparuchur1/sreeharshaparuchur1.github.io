@@ -415,7 +415,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .news-item {
-  padding: 12px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--border-color);
   font-size: 19px;
   line-height: 1.5;
@@ -430,7 +430,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   background-color: rgba(0, 102, 204, 0.02);
   border-radius: 4px;
   margin: 0 -8px;
-  padding: 12px 8px;
+  padding: 8px 8px;
 }
 
 .news-date {
