@@ -146,10 +146,20 @@
                 </div>
                 <em>Master of Science in Robotic Systems Development (MRSD)</em><br>
                 <strong>CGPA: 4.11/4.0</strong><br>
-                <strong>Teaching:</strong> Introduction to Deep Learning (11-785)<br>
-                <strong>Coursework:</strong> <span id="cmu-courses-short">Learning for 3D Vision, Generative AI, Deep RL</span><span id="cmu-courses-full">Learning for 3D Vision, Generative Artificial Intelligence, Deep Reinforcement Learning and Control, Advanced Computer Vision, Manipulation, Estimation and Control</span>
+                <strong>Teaching:</strong> Introduction to Deep Learning<br>
+                <strong>Coursework:</strong> <span id="cmu-courses-short">Learning for 3D Vision, Generative AI, Deep RL</span>
                 <div class="experience-toggle">
-                  <a href="#" onclick="toggleCourses('cmu'); return false;" id="cmu-toggle">Show more</a>
+                  <a href="#" onclick="toggleExperience('cmu'); return false;" id="cmu-toggle">View Details</a>
+                </div>
+                <div id="cmu-details" class="education-details">
+                  <div class="education-contributions">
+                    • <strong>Learning for 3D vision:</strong> 3D generation, volume rendering + NeRFs, gaussian splatting + diffusion-guided optimization, Classifier-Free Guidance, PointNet classification and segmentation<br>
+                    • <strong>Generative AI:</strong> grouped query attention + RoPE in GPT-2, diffusion models and VAEs, parameter-efficient fine-tuning + DPO, In-Context Learning, Mixture of Experts, paper review<br>
+                    • <strong>Deep reinforcement learning:</strong> policy gradients, Q-learning, Performance Difference Lemma, actor-critic methods, Proximal Policy Optimization, evolutionary methods, DAgger, Imitation Learning<br>
+                    • <strong>Robot autonomy, mobility and control:</strong> grasping, Kalman filtering, control for drones, humanoids<br>
+                    • <strong>Advanced computer vision:</strong> homography, Lucas-Kanade tracking, photometric stereo<br>
+                    • <strong>Systems engineering:</strong> functional architecture, unit tests, project management<br>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -168,9 +178,23 @@
                 <em>Bachelor of Technology in Electronics and Communication Engineering (Honours)</em><br>
                 <strong>Major GCPA: 9.02/10</strong><br>
                 <strong>Awards:</strong> Deans Merit List, Undergraduate Research Award<br>
-                <strong>Coursework:</strong> <span id="iiith-courses-short">Statistics in AI, Topics in Applied Optimization, Mobile Robotics</span><span id="iiith-courses-full">Statistical Methods in Artificial Intelligence, Topics in Applied Optimization, Mobile Robotics, Data Structures and Algorithms, Digital Image Processing, Game Theory, Compilers, Operating Systems, Linear Algebra</span>
+                <strong>Coursework:</strong> <span id="iiith-courses-short">Statistics in AI, Topics in Applied Optimization, Mobile Robotics</span>
                 <div class="experience-toggle">
-                  <a href="#" onclick="toggleCourses('iiith'); return false;" id="iiith-toggle">Show more</a>
+                  <a href="#" onclick="toggleExperience('iiith'); return false;" id="iiith-toggle">View Details</a>
+                </div>
+                <div id="iiith-details" class="education-details">
+                  <div class="education-contributions">
+                    • <strong>Statistical methods in AI:</strong> PCA, SVMs, Bayesian inference, logistic regression, image classification<br>
+                    • <strong>Applied optimization:</strong> linear programming, convex optimization, singular value decomposition<br>
+                    • <strong>Computer vision:</strong> camera calibration, SIFT, grab-cut, Mask-RCNNs, bag of words, Viola-Jones<br>
+                    • <strong>Mobile robotics:</strong> pose-graph optimization, epipolar geometry, RRT, non-linear optimization<br>
+                    • <strong>Digital image processing:</strong> edge detection, morphological operations, alpha blending<br>
+                    • <strong>Data structures and algorithms:</strong> graph algorithms, dynamic programming, complexity analysis<br>
+                    • <strong>Operating systems:</strong> process management, memory allocation, file systems, concurrency<br>
+                    • <strong>Linear algebra:</strong> matrix operations, eigenvalues, vector spaces, linear transformations<br>
+                    • <strong>Compilers:</strong> lexical analysis, parsing, code generation and grammar<br>
+                    • <strong>Game theory:</strong> Nash equilibrium, mechanism design<br>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -205,8 +229,8 @@
                 </div>
                                   <div id="mach9-current-details" class="experience-details">
                     <div class="key-contributions">
-                    <strong>Key Contributions:</strong><br>
                     • Developed and deployed Pavement Symbol Extraction functionality to the Digital Surveyor software via <strong>CUDA-accelarated coordinate frame transformations</strong> and segmentation masks.<br>
+                    • Implemented <strong>unit and CI testing pipelines</strong> with GitHub Actions to validate CUDA kernels and vector-field clustering modules, ensuring production-grade reliability and reproducible deployments during rapid feature iteration.<br>
                     • Fine-tuned a <strong>Vision-Language Model (VLM)</strong> to implement a secondary-inference pipeline to classify extracted open-set painted symbols according to user specifications.<br>
                     • Conducted 70+ controlled ablation experiments with <strong>A/B testing on Hungarian Assigner</strong> Costs, Loss weights, Model Queries, Multi-Scale Deformable Attention and encoder-decoder expressivity to boost the performance of the production model by 4%.<br>
                     • Utilised methods from Object-Detection literature to qualitatively capture a <strong>DETR-based</strong> polyline detection model's <strong>uncertainty</strong> to expedite downstream <strong>Quality Assurance</strong> and Quality Control processes, saving company and customer resources.<br>
@@ -230,15 +254,14 @@
                   <div class="duration-tag">July 2022 - July 2024</div>
                 </div>
                 <em>Pre-Doctoral Research Fellow</em><br>
-                <strong>Focus:</strong> Led research in embodied AI navigation focusing on audio-visual feature correspondence and reinforcement learning<br>
+                <strong>Focus:</strong> Led research in the realm of cognitive robotics, emphasizing navigation that focussed on audio-visual feature correspondence and reinforcement learning for active SLAM.<br>
                 <div class="experience-toggle">
                   <a href="#" onclick="toggleExperience('tcs'); return false;" id="tcs-toggle">View Details</a>
                 </div>
                 <div id="tcs-details" class="experience-details">
                   <div class="key-contributions">
-                  <strong>Key Contributions:</strong><br>
                   • <strong>Audio-Visual Navigation:</strong> Led development of embodied AI agent with multimodal sensing, training online RL policy with novel class-agnostic reward, reducing path length by 21%<br>
-                  • <strong>Offline RL for Indoor Robot Navigation:</strong> Built simulation pipeline to collect large-scale trajectory datasets, training a Causal Decision Transformer with early multimodal fusion; integrated environment randomization, behavior cloning baselines, and replay buffer curation to improve policy robustness and sample efficiency
+                  • <strong>Offline RL for Indoor Robot Navigation:</strong> Built simulation pipeline to collect large-scale trajectory datasets, training a Causal Decision Transformer with early multimodal fusion; integrated environment randomization, behavior cloning baselines, and replay buffer curation to improve policy robustness and sample efficiency <br>
                   • <strong>CLIP-Enhanced Scene Graphs:</strong> Designed contrastive-learning framework to compute visual-language embeddings, leveraging GNNs to model object-region relationships<br>
                   • <strong>Open Vocabulary Manipulation (NeurIPS 23):</strong> Developed active SLAM exploration algorithm conditioned on probabilistic semantic map, improving task success by 60%
                   • Volunteered for the Project Synergy initiative by TCS wherein volunteers taught written and spoken English to students in a Bangla-medium government school.
@@ -259,13 +282,12 @@
                   <div class="duration-tag">Jan 2020 - June 2022</div>
                 </div>
                 <em>Research Assistant</em><br>
-                <strong>Focus:</strong> Worked on dense 3D reconstruction and VSLAM related projects for indoor and outdoor autonomy<br>
+                <strong>Focus:</strong> Worked on dense 3D reconstruction and utilizing SLAM techniques such as pose-graph optimization indoor and outdoor autonomy on self-driving vehicles.<br>
                 <div class="experience-toggle">
                   <a href="#" onclick="toggleExperience('rrc'); return false;" id="rrc-toggle">View Details</a>
                 </div>
                 <div id="rrc-details" class="experience-details">
                   <div class="key-contributions">
-                  <strong>Key Contributions:</strong><br>
                   • <strong>Autonomous Sanitization Robot:</strong> Designed and implemented end-to-end robotic system during COVID-19 to autonomously sanitize indoor spaces, integrating computer vision, Visual-SLAM, and coverage-based navigation<br>
                   • <strong>Sim-to-Real Deployment:</strong> Built Gazebo simulation environments for iterative testing, then transferred stack to hardware platform with onboard sensors and sanitization actuators; finished <em>runner-up among 140 teams</em><br>
                   • <strong>LiDAR SLAM:</strong> Evaluated LiDAR odometry and mapping approaches such as LOAM using CARLA simulation and outdoor driving data, analyzing localization accuracy and map consistency<br>
@@ -292,7 +314,6 @@
                   <em>Computer Vision Intern</em><br>
                   <!-- <strong>Focus:</strong> Developed sensor fusion algorithms for autonomous driving, improving Multi-Object Tracking with Kalman filtering and synthetic data augmentation<br> -->
                   <div class="key-contributions">
-                  <strong>Key Contributions:</strong><br>
                   • Fused Laser, Camera, and Odometry data using Kalman filtering to boost online Multi-Object Tracking performance by 11% IoU on outdoor autonomous driving datasets<br>
                   • Augmented difficult-to-obtain real-world LiDAR datasets using synthetic data from generative models and physics engines, improving 3D object detection networks for outdoor scenarios
                   </div>
@@ -311,7 +332,6 @@
                   <em>Research Assistant - Information Retrieval and Computational Social Science</em><br>
                   <!-- <strong>Focus:</strong> Applied machine learning to music information retrieval and social media analysis for mental health research, resulting in publications at top-tier venues<br> -->
                   <div class="key-contributions">
-                  <strong>Key Contributions:</strong><br>
                   • Applied statistical machine learning with Music Information Retrieval to analyze lyrical regularities as early indicators of mental illness; Published results at INTERSPEECH 2021<br>
                   • Scraped Reddit data to link music-sharing trends with mental health during COVID-19 using BERT embeddings and DBSCAN clustering; Published in medical journal
                   </div>
@@ -348,7 +368,6 @@
           </div>
           <div id="ar-knee-details" class="experience-details">
             <div class="key-contributions">
-              <strong>Key Contributions:</strong><br>
               • <strong>Project Leadership:</strong> Led a 5-person team as Project Manager, driving scheduling, sponsor communication, and system integration for an AR-assisted surgical robotics platform<br>
               • <strong>Accuracy-driven Perception:</strong> Achieved sub-4 mm drilling accuracy in total knee arthroplasty using a KUKA MED7 arm with multi-stage pointcloud registration (SAM2 + ICP)<br>
               • <strong>AR Integration:</strong> Integrated Apple Vision Pro for dynamic bone tracking and real-time surgeon-in-the-loop planning across long surgical horizons<br>
@@ -377,7 +396,6 @@
         </div>
         <div id="3d-foundation-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Contributions:</strong><br>
             • <strong>Foundation Model Fusion:</strong> Designed cross-attention mechanism to combine DINOv2 semantic features with Depth Anything geometric priors, achieving robust 3D scene understanding from monocular video<br>
             • <strong>Adaptive Keyframe Selection:</strong> Developed confidence-aware algorithm that dynamically selects optimal frames for reconstruction, improving pointmap quality by 30% over uniform sampling<br>
             • <strong>DUST3R Architecture:</strong> Implemented hierarchical state representation with multi-scale feature pyramids to handle camera motion estimation and dense 3D reconstruction simultaneously
@@ -404,10 +422,9 @@
         </div>
         <div id="vla-challenge-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Challenges & Solutions:</strong><br>
-            • **Ambiguous spatial queries** (“closest to the window”): used <code>Gemini 2.5 Pro</code> to classify and reason over spatial relations<br>
-            • **Strict 10-minute runtime**: designed a ROS state machine to coordinate exploration, mapping, and answering with timed transitions<br>
-            • **Constraint-aware navigation**: developed waypoint planners that leveraged semantic object information to satisfy “between/avoid” instructions
+            • <strong>Natural Language Understanding:</strong> “closest to the window” used <code>Gemini 2.5 Pro</code> to classify and intelligently reason over spatial relations<br>
+            • <strong>State Machine</strong>: designed a ROS state machine to coordinate exploration, mapping, and answering with dynamic transitions<br>
+            • <strong>Deployment Ready</strong>: Deployed the system on a real robot for the challenge through clean docker containerization.
           </div>
         </div>
       </td>
@@ -432,7 +449,6 @@
         </div>
         <div id="vla-challenge-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Contributions:</strong><br>
             • Faced the challenge of interpreting free-form language like “go to the chair closest to the window”; solved it by integrating <code>Gemini 2.5 Pro</code> for classification and spatial relation reasoning, then routing outputs to specialized solvers<br>
             • Needed to operate under a <strong>10-minute exploration + answering window</strong>; addressed this by designing a ROS state machine that sequenced initialization, active exploration, and answering phases with strict timeout management<br>
             • Required navigation that respected semantic constraints (“between tables”, “avoid the window”); implemented coverage exploration and waypoint planners that intelligently used available object semantics to generate feasible paths<br>
@@ -460,7 +476,6 @@
         </div>
         <div id="pose-graph-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Contributions:</strong><br>
             • <strong>Iterative Optimization:</strong> Built custom nonlinear solver in JAX with residual and Jacobian computation for pose updates<br>
             • <strong>Information Matrix Analysis:</strong> Studied effect of varying odometry vs loop closure confidence weights on trajectory quality<br>
             • <strong>Error Evaluation:</strong> Quantified improvements via RPY drift and Absolute Pose Error reduction compared to initial odometry<br>
@@ -490,7 +505,6 @@
         </div>
         <div id="music-mental-health-details" class="experience-details">
           <div class="key-contributions">
-            <strong>Key Contributions:</strong><br>
             • <strong>BERT Sentiment Analysis:</strong> Fine-tuned transformer models on mental health discourse to extract emotional patterns from 50k+ Reddit posts, achieving 87% accuracy in mood classification<br>
             • <strong>Music Information Retrieval:</strong> Developed acoustic feature extraction pipeline using librosa and essentia to correlate musical elements (tempo, key, valence) with psychological states<br>
             • <strong>COVID-19 Impact Study:</strong> Applied k-means clustering and statistical analysis to identify significant behavioral shifts in music consumption patterns during pandemic, published findings at INTERSPEECH 2021
@@ -535,8 +549,8 @@
                 </div>
                 <div id="cmu-teaching-details" class="experience-details">
                   <div class="key-contributions">
-                    <strong>Key Contributions:</strong><br>
                     • Created educational content including slides and tutorials for <a href="https://www.youtube.com/watch?v=pAVnXfgRJIA" target="_blank">NumPy fundamentals</a> and <a href="https://www.youtube.com/watch?v=yTQSvcuRHro" target="_blank">Loss functions (Focal Loss, Chamfer Loss, RLHF)</a><br>
+                    • Designed a Colab Notebook and made slides to lead a <a href="https://www.youtube.com/watch?v=Fb9_nDqv47A" target="_blank">lab</a> on Backprop and Training Convolutional Neural Networks.
                     • Collaborated with instructional team to revise and update homework assignments for RNNs, GRUs, Transformers, Language Generation, and Diffusion models<br>
                     • Conducted over 40 hours of office hours, labs, and hackathon events, providing hands-on instruction and problem-solving support for undergraduate and graduate students
                   </div>
@@ -583,6 +597,9 @@
           </tbody></table>
           <div class="news-container">
             <div class="news-item">
+              <span class="news-date">Oct 2025:</span> Finished in <a href="https://www.ai-meets-autonomy.com/cmu-vla-challenge#h.tx9eukqep4hb" target="_blank">3rd place</a> in the CMU VLA Challenge and will be presenting our work at IROS 2025! 🏆
+            </div>
+            <div class="news-item">
               <span class="news-date">Aug 2025:</span> Completed my Summer Internship at Mach9 in the Bay Area 🚀
             </div>
             <div class="news-item">
@@ -604,7 +621,7 @@
               <span class="news-date">July 2022:</span> Started working at TCS Research, Kolkata on Long-Horizon Robot Navigation using Deep Reinforcement Learning.
             </div>
             <div class="news-item">
-              <span class="news-date">July 2022:</span> Graduated from IIIT-H with honours in Robot Perception! Thank you to my family and friends who made it possible ✨
+              <span class="news-date">July 2022:</span> Graduated from IIIT-H with honours in Robot Perception! Grateful to my family and friends for making it possible ✨
             </div>
           </div>
 

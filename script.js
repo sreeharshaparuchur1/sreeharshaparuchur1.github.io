@@ -21,26 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeProjectImages();
 });
 
-/**
- * Toggle display of course lists in education section
- */
-function toggleCourses(school) {
-  const shortSpan = document.getElementById(school + '-courses-short');
-  const fullSpan = document.getElementById(school + '-courses-full');
-  const toggleLink = document.getElementById(school + '-toggle');
-  
-  if (fullSpan.classList.contains('show')) {
-    fullSpan.classList.remove('show');
-    setTimeout(() => {
-      shortSpan.style.display = 'inline';
-    }, 300);
-    toggleLink.textContent = 'Show more';
-  } else {
-    shortSpan.style.display = 'none';
-    fullSpan.classList.add('show');
-    toggleLink.textContent = 'Show less';
-  }
-}
 
 /**
  * Toggle display of experience details
@@ -131,10 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     section.classList.remove('show');
   });
   
-  const fullCourseLists = document.querySelectorAll('[id$="-courses-full"]');
-  fullCourseLists.forEach(list => {
-    list.classList.remove('show');
-  });
   
   // Initialize carousel if frames section exists
   if (document.querySelector('.frames-carousel')) {
@@ -223,7 +199,6 @@ function startCarouselAutoPlay() {
 }
 
 // Export functions for global access (if needed)
-window.toggleCourses = toggleCourses;
 window.toggleExperience = toggleExperience;
 window.toggleAdditional = toggleAdditional;
 window.toggleTheme = toggleTheme;
