@@ -38,8 +38,8 @@ body {
 /* Typography */
 body, td, th, tr, p, a {
   font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 19px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.4;
   letter-spacing: 0.3px;
 }
 
@@ -55,45 +55,45 @@ a:focus, a:hover {
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-color);
 }
 
 h2 {
   font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--text-color);
-  margin: 0 0 20px 0;
-  padding-bottom: 10px;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
   border-bottom: 2px solid var(--link-color);
   display: inline-block;
 }
 
 .name {
-  padding-top: 20px;
+  padding-top: 16px;
   margin: 0;
   font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 .papertitle {
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--text-color);
 }
 
 /* Section Title Styles - matching projects font size */
 .section-title {
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--text-color);
 }
 
@@ -111,7 +111,7 @@ em {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .navbar {
@@ -121,15 +121,15 @@ em {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  font-size: 18px;
-  padding: 8px 12px;
+  font-size: 15px;
+  padding: 6px 10px;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
@@ -147,10 +147,10 @@ em {
   background: none;
   border: 1px solid var(--border-color);
   color: var(--text-color);
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 0.3s ease;
   opacity: 0.8;
   backdrop-filter: blur(10px);
@@ -167,14 +167,14 @@ em {
 .about-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .about-content {
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding: 20px 0;
+  gap: 32px;
+  padding: 16px 0;
 }
 
 .about-text {
@@ -184,12 +184,12 @@ em {
 
 .profile-picture-container {
   flex-shrink: 0;
-  width: 300px !important;
-  height: 375px !important;
-  min-width: 300px !important;
-  min-height: 375px !important;
-  max-width: 300px !important;
-  max-height: 375px !important;
+  width: 240px !important;
+  height: 300px !important;
+  min-width: 240px !important;
+  min-height: 300px !important;
+  max-width: 240px !important;
+  max-height: 300px !important;
   overflow: hidden;
   border-radius: 12px;
   display: block;
@@ -222,12 +222,12 @@ em {
 
 /* Education and Experience Section Styles */
 .section-row {
-  margin-bottom: 30px;
-  padding: 20px 0;
+  margin-bottom: 24px;
+  padding: 16px 0;
 }
 
 .section-image-cell {
-  padding: 16px;
+  padding: 12px;
   width: 25%;
   vertical-align: middle;
   text-align: center;
@@ -235,13 +235,13 @@ em {
 
 /* Project table cell styling for consistent spacing */
 td[style*="width:40%"][style*="vertical-align:middle"] {
-  padding: 16px !important;
+  padding: 12px !important;
   text-align: center;
   vertical-align: middle;
 }
 
 .section-content-cell {
-  padding: 16px 20px;
+  padding: 12px 16px;
   width: 75%;
   vertical-align: middle;
 }
@@ -249,15 +249,15 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 
 .experience-toggle {
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
 .experience-toggle a {
   color: var(--link-color);
   text-decoration: none;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -270,8 +270,8 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .experience-details {
-  margin-top: 12px;
-  padding: 0 12px;
+  margin-top: 10px;
+  padding: 0 10px;
   background-color: var(--bg-color);
   border-radius: 8px;
   max-height: 0;
@@ -281,22 +281,22 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 .experience-details.show {
   max-height: 400px;
-  padding: 12px;
+  padding: 10px;
 }
 
 /* Key Contributions Highlight */
 .key-contributions {
-  margin: 6px 0;
-  padding: 10px 14px;
+  margin: 5px 0;
+  padding: 8px 12px;
   background-color: rgba(0, 102, 204, 0.03);
   border-left: 3px solid var(--link-color);
   border-radius: 0 6px 6px 0;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Education Details - No Background Container */
 .education-details {
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 0;
   max-height: 0;
   overflow: hidden;
@@ -308,9 +308,9 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .education-contributions {
-  margin: 6px 0;
+  margin: 5px 0;
   padding: 0;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Course List Transitions */
@@ -332,15 +332,15 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 /* Additional Experience Section */
 .additional-experience-section {
-  margin: 20px 0;
-  padding: 0 20px;
+  margin: 16px 0;
+  padding: 0 16px;
 }
 
 .additional-logos-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 48px;
   margin: 0 auto;
 }
 
@@ -352,11 +352,11 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .additional-logo {
-  width: 65px !important;
-  height: 65px !important;
+  width: 52px !important;
+  height: 52px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 10px;
+  padding: 8px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -404,21 +404,21 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 /* News Section */
 .news-container {
   max-width: 1200px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 16px auto;
   background-color: var(--table-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   max-height: 200px;
   overflow-y: auto;
-  padding: 16px;
+  padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .news-item {
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px solid var(--border-color);
-  font-size: 19px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.4;
   transition: background-color 0.2s ease;
 }
 
@@ -429,8 +429,8 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 .news-item:hover {
   background-color: rgba(0, 102, 204, 0.02);
   border-radius: 4px;
-  margin: 0 -8px;
-  padding: 8px 8px;
+  margin: 0 -6px;
+  padding: 6px 6px;
 }
 
 .news-date {
@@ -462,11 +462,11 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 @media (max-width: 768px) {
   .additional-logos-container {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
   }
   
   .additional-item {
-    max-width: 350px;
+    max-width: 280px;
   }
   
   .about-content {
@@ -480,18 +480,18 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   }
   
   .news-container {
-    margin: 0 20px 20px 20px;
+    margin: 0 16px 16px 16px;
     max-height: 180px;
   }
 }
 
 /* Image Styles */
 .logo-image {
-  width: 120px !important;
-  height: 120px !important;
+  width: 96px !important;
+  height: 96px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 18px;
+  padding: 14px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -527,7 +527,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 .carousel-slide img {
   width: 100%;
-  height: 400px;
+  height: 320px;
   object-fit: cover;
   display: block;
 }
@@ -539,9 +539,9 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   background: rgba(0,0,0,0.5);
   color: white;
   border: none;
-  padding: 12px 16px;
+  padding: 10px 13px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 50%;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -563,8 +563,8 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 6px;
+  margin-top: 16px;
 }
 
 .carousel-dot {
@@ -587,11 +587,11 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   opacity: 0.7;
 }
 .education-logo {
-  width: 120px !important;
-  height: 120px !important;
+  width: 96px !important;
+  height: 96px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 18px;
+  padding: 14px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -606,11 +606,11 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .teaching-logo {
-  width: 120px !important;
-  height: 120px !important;
+  width: 96px !important;
+  height: 96px !important;
   object-fit: contain !important;
   background-color: white;
-  padding: 18px;
+  padding: 14px;
   border-radius: 12px;
   border: 2px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -618,8 +618,8 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 .project-image {
   /* Larger frame dimensions for better attention */
-  width: 400px !important;
-  height: 250px !important;
+  width: 320px !important;
+  height: 200px !important;
   
   /* Theme-aware border styling */
   border: 2px solid var(--border-color);
@@ -646,15 +646,15 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 /* Responsive project image adjustments */
 @media screen and (max-width: 768px) {
   .project-image {
-    width: 350px !important;
-    height: 220px !important;
+    width: 280px !important;
+    height: 176px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
   .project-image {
-    width: 300px !important;
-    height: 190px !important;
+    width: 240px !important;
+    height: 152px !important;
   }
 }
 
@@ -663,12 +663,12 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   display: flex;
   align-items: flex-start;
 }
@@ -678,7 +678,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   background-color: var(--table-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 30px;
+  padding: 24px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   position: relative;
@@ -694,18 +694,18 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 /* Card Styles */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .experience-card {
   background-color: var(--table-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 25px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   position: relative;
@@ -720,12 +720,12 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 /* Section and Content Spacing */
 .section-container {
-  margin: 60px 0;
+  margin: 48px 0;
 }
 
 .content-row {
-  margin-bottom: 40px;
-  padding: 25px;
+  margin-bottom: 32px;
+  padding: 20px;
   background-color: var(--table-bg);
   border-radius: 16px;
   border: 1px solid var(--border-color);
@@ -738,15 +738,15 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .duration-tag {
   background-color: var(--table-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 16px;
+  padding: 3px 8px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-color);
   opacity: 0.8;
@@ -756,7 +756,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 .section-title-container {
   flex: 1;
-  padding-right: 15px;
+  padding-right: 12px;
 }
 
 /* Utility Classes */
@@ -800,23 +800,23 @@ img {
   
   .profile-picture-container {
     order: -1;
-    margin-bottom: 20px;
-    width: 260px !important;
-    height: 260px !important;
-    min-width: 260px !important;
-    min-height: 260px !important;
-    max-width: 260px !important;
-    max-height: 260px !important;
+    margin-bottom: 16px;
+    width: 208px !important;
+    height: 208px !important;
+    min-width: 208px !important;
+    min-height: 208px !important;
+    max-width: 208px !important;
+    max-height: 208px !important;
   }
   
   /* Carousel responsive styles */
   .carousel-slide img {
-    height: 300px;
+    height: 240px;
   }
   
   .carousel-nav {
-    padding: 8px 12px;
-    font-size: 16px;
+    padding: 6px 10px;
+    font-size: 13px;
   }
   
   .carousel-prev {
@@ -828,39 +828,39 @@ img {
   }
   
   .carousel-indicators {
-    gap: 6px;
+    gap: 5px;
   }
   
   .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
 }
 
 @media (max-width: 480px) {
   .profile-picture-container {
-    width: 220px !important;
-    height: 220px !important;
-    min-width: 220px !important;
-    min-height: 220px !important;
-    max-width: 220px !important;
-    max-height: 220px !important;
+    width: 176px !important;
+    height: 176px !important;
+    min-width: 176px !important;
+    min-height: 176px !important;
+    max-width: 176px !important;
+    max-height: 176px !important;
   }
 }
 
 /* View More Projects Link */
 .view-more-container {
   text-align: center;
-  margin: 40px 0 20px 0;
+  margin: 32px 0 16px 0;
 }
 
 .view-more-link {
   display: inline-block;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--link-color);
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
