@@ -72,6 +72,7 @@
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#education" class="nav-link">Education</a>
         <a href="#teaching" class="nav-link">Teaching</a>
+        <a href="#publications" class="nav-link">Publications</a>
         <a href="quotes.html" class="nav-link">Photography</a>
         <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
       </nav>
@@ -142,8 +143,8 @@
                   <a href="https://github.com/sreeharshaparuchur1">Github</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?user=Y4JFKOUAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
                   <!-- <a href="documents/Sreeharsha's Resume CMU Fulltime.pdf">Resume ML</a> &nbsp;/&nbsp; -->
-                  <a href="https://drive.google.com/file/d/18xiGEfaOVESS_x93Qd7KgF0IEkJ_YltP/view?usp=sharing", target="_blank">Resume 1</a> &nbsp;/&nbsp;
-                  <a href="https://drive.google.com/file/d/1WZZTt10pPp5Beri1sjyNr7RW4JsoThWb/view?usp=sharing", target="_blank">Resume 2</a>
+                  <a href="https://drive.google.com/file/d/18xiGEfaOVESS_x93Qd7KgF0IEkJ_YltP/view?usp=sharing", target="_blank">Physical AI Resume</a> &nbsp;/&nbsp;
+                  <a href="https://drive.google.com/file/d/1WZZTt10pPp5Beri1sjyNr7RW4JsoThWb/view?usp=sharing", target="_blank">ML/CV Resume</a>
 
                 </p>
               </div>
@@ -358,7 +359,9 @@
 
     <tr style="background-color: var(--highlight-bg);">
       <td style="padding:16px;width:40%;vertical-align:middle">
-        <img src="images/projects/capstone_1.png" alt="AR Knee Surgery Project" class="project-image">
+        <!-- <img src="images/projects/capstone_1.png" alt="AR Knee Surgery Project" class="project-image"> -->
+        <img src="images/projects/boneparte.gif" alt="AR Knee Surgery Project" class="project-image">
+      
       </td>
               <td style="padding:8px;width:60%;vertical-align:middle">
           <div class="duration-container">
@@ -465,31 +468,6 @@
     </tr>
     
 
-    <tr style="background-color: var(--highlight-bg);">
-      <td style="padding:16px;width:40%;vertical-align:middle">
-        <img src='images/projects/reddit_2.png' class="project-image">
-      </td>
-      <td style="padding:8px;width:60%;vertical-align:middle">
-        <div class="duration-container">
-          <div class="section-title-container">
-            <strong class="section-title">Music, Mental Health, and Representation Learning</strong>
-          </div>
-          <!-- <div class="duration-tag">IIIT-H</div> -->
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/37471415/">publication</a> / <a href="#">code</a><br>
-        Applied BERT-based sentiment analysis and k-means clustering to uncover nuanced links between language and acoustic music features in data scraped from mental health related subreddits during COVID-19. This research contributed to understanding the relationship between music and mental health through computational methods.
-        <div class="experience-toggle" style="margin-top: 8px;">
-          <a href="#" onclick="toggleExperience('music-mental-health'); return false;" id="music-mental-health-toggle">View Details</a>
-        </div>
-        <div id="music-mental-health-details" class="experience-details">
-          <div class="key-contributions">
-            • <strong>BERT Sentiment Analysis:</strong> Fine-tuned transformer models on mental health discourse to extract emotional patterns from 50k+ Reddit posts, achieving 87% accuracy in mood classification<br>
-            • <strong>Music Information Retrieval:</strong> Developed acoustic feature extraction pipeline using librosa and essentia to correlate musical elements (tempo, key, valence) with psychological states<br>
-            • <strong>COVID-19 Impact Study:</strong> Applied k-means clustering and statistical analysis to identify significant behavioral shifts in music consumption patterns during pandemic, published findings at INTERSPEECH 2021
-          </div>
-        </div>
-      </td>
-    </tr>
 
           </tbody></table>
 
@@ -642,6 +620,63 @@
               </td>
             </tr>
           </tbody></table>
+
+
+          <!-- Publications Section -->
+          <table id="publications" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:12px;"><tbody>
+            <tr>
+              <td>
+                <h2>Publications</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+            <tr>
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <div style="width: 384px; height: 240px; background-color: var(--table-bg); border: 2px dashed var(--border-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--border-color); font-size: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.05);">
+                  Coming Soon
+                </div>
+              </td>
+              <td style="padding:8px;width:60%;vertical-align:middle">
+                <div class="section-title" style="margin-bottom: 6px;">How Much do Lyrics Matter? Analysing Lyrical Simplicity Preferences for Individuals At Risk of Depression</div>
+                <em>International Speech Communication Association (INTERSPEECH) 2021</em><br>
+                <a href="https://arxiv.org/abs/2109.07227" target="_blank">arXiv</a><br>
+                <p style="margin: 8px 0 0 0; line-height: 1.5; color: var(--text-color);">
+                  Analyzed how lyrical regularities in music listening histories correlate with early indicators of mental health disorders through computational analysis of audio-visual features and linguistic patterns.
+                </p>
+              </td>
+            </tr>
+
+          <tr style="background-color: var(--highlight-bg);">
+            <td style="padding:16px;width:40%;vertical-align:middle">
+              <img src='images/projects/reddit_2.png' class="project-image">
+            </td>
+            <td style="padding:8px;width:60%;vertical-align:middle">
+              <div class="duration-container">
+                <div class="section-title-container">
+                  <strong class="section-title">Analysing music discourse & depression on Reddit</strong>
+                </div>
+                <!-- <div class="duration-tag">IIIT-H</div> -->
+              </div>
+              <em>Plos One Medical Journal, National Institute of Health (2023)</em><br>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/37471415/">arxiv</a> / <a href="#">code</a><br>
+              Applied BERT-based sentiment analysis and k-means clustering to uncover nuanced links between language and acoustic music features in data scraped from mental health related subreddits during COVID-19. This research contributed to understanding the relationship between music and mental health through computational methods.
+              <div class="experience-toggle" style="margin-top: 8px;">
+                <a href="#" onclick="toggleExperience('music-mental-health'); return false;" id="music-mental-health-toggle">View Details</a>
+              </div>
+              <div id="music-mental-health-details" class="experience-details">
+                <div class="key-contributions">
+                  • <strong>BERT Sentiment Analysis:</strong> Fine-tuned transformer models on mental health discourse to extract emotional patterns from 50k+ Reddit posts, achieving 87% accuracy in mood classification<br>
+                  • <strong>Music Information Retrieval:</strong> Developed acoustic feature extraction pipeline using librosa and essentia to correlate musical elements (tempo, key, valence) with psychological states<br>
+                  • <strong>COVID-19 Impact Study:</strong> Applied k-means clustering and statistical analysis to identify significant behavioral shifts in music consumption patterns during pandemic, published findings at INTERSPEECH 2021
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          </tbody></table>
+
 
 
           <!-- Skills Section -->
