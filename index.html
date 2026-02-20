@@ -351,47 +351,95 @@
           <table id="projects" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:12px;"><tbody>
             <tr>
               <td>
-                <h2>Projects & Research</h2>
+                <h2>Selected Projects</h2>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+            <tr style="background-color: var(--highlight-bg);">
+              <td style="padding:16px;width:40%;vertical-align:middle">
+                <!-- <img src="images/projects/capstone_1.png" alt="AR Knee Surgery Project" class="project-image"> -->
+                <img src="images/projects/boneparte.gif" alt="AR Knee Surgery Project" class="project-image">
+              
+              </td>
+                      <td style="padding:8px;width:60%;vertical-align:middle">
+                  <div class="duration-container">
+                    <div class="section-title-container">
+                      <strong class="section-title">Augmented-Reality and Robot Assisted Knee Surgery</strong>
+                    </div>
+                    <!-- <div class="duration-tag">MRSD Capstone</div> -->
+                  </div>
+                  <a href="https://youtu.be/3ZhXiRrXXCE">video</a> / <a href="https://mrsdprojects.ri.cmu.edu/2025teamd/">website</a> / <a href="https://github.com/KNEEpoleon">code</a><br>
+                  Gathered and analyzed requirements from user studies, market competition, and sponsors to inform system development. Processed 3D and RGB information from the Apple Vision Pro to detect bone models in the environment via ICP registration.<br>
+                  <div class="experience-toggle" style="margin-top: 8px;">
+                    <a href="#" onclick="toggleExperience('ar-knee'); return false;" id="ar-knee-toggle">View Details</a>
+                  </div>
+                  <div id="ar-knee-details" class="experience-details">
+                    <div class="key-contributions">
+                      • <strong>Project Leadership:</strong> Led a 5-person team as Project Manager, driving scheduling, sponsor communication, and system integration for an AR-assisted surgical robotics platform<br>
+                      • <strong>Accuracy-driven Perception:</strong> Achieved sub-4 mm drilling accuracy in total knee arthroplasty using a KUKA MED7 arm with multi-stage pointcloud registration (SAM2 + ICP)<br>
+                      • <strong>AR Integration:</strong> Integrated Apple Vision Pro for dynamic bone tracking and real-time surgeon-in-the-loop planning across long surgical horizons<br>
+                      • <strong>Motion Planning:</strong> Designed and deployed a ROS + MoveIt planning subsystem that adaptively updates as surgical pins are drilled, enabling safe trajectory generation<br>
+                      • <strong>Hardware Development:</strong> Built a custom 3D-printed drill end-effector with embedded control electronics, activated via trajectory execution for autonomous drilling<br>
+                    </div>
+                  </div>
+                </td>
+            </tr>
 
-    <tr style="background-color: var(--highlight-bg);">
-      <td style="padding:16px;width:40%;vertical-align:middle">
-        <!-- <img src="images/projects/capstone_1.png" alt="AR Knee Surgery Project" class="project-image"> -->
-        <img src="images/projects/boneparte.gif" alt="AR Knee Surgery Project" class="project-image">
-      
-      </td>
-              <td style="padding:8px;width:60%;vertical-align:middle">
-          <div class="duration-container">
-            <div class="section-title-container">
-              <strong class="section-title">Augmented-Reality and Robot Assisted Knee Surgery</strong>
-            </div>
-            <!-- <div class="duration-tag">MRSD Capstone</div> -->
-          </div>
-          <a href="https://youtu.be/3ZhXiRrXXCE">video</a> / <a href="https://mrsdprojects.ri.cmu.edu/2025teamd/">website</a> / <a href="https://github.com/KNEEpoleon">code</a><br>
-          Gathered and analyzed requirements from user studies, market competition, and sponsors to inform system development. Processed 3D and RGB information from the Apple Vision Pro to detect bone models in the environment via ICP registration.<br>
-          <div class="experience-toggle" style="margin-top: 8px;">
-            <a href="#" onclick="toggleExperience('ar-knee'); return false;" id="ar-knee-toggle">View Details</a>
-          </div>
-          <div id="ar-knee-details" class="experience-details">
-            <div class="key-contributions">
-              • <strong>Project Leadership:</strong> Led a 5-person team as Project Manager, driving scheduling, sponsor communication, and system integration for an AR-assisted surgical robotics platform<br>
-              • <strong>Accuracy-driven Perception:</strong> Achieved sub-4 mm drilling accuracy in total knee arthroplasty using a KUKA MED7 arm with multi-stage pointcloud registration (SAM2 + ICP)<br>
-              • <strong>AR Integration:</strong> Integrated Apple Vision Pro for dynamic bone tracking and real-time surgeon-in-the-loop planning across long surgical horizons<br>
-              • <strong>Motion Planning:</strong> Designed and deployed a ROS + MoveIt planning subsystem that adaptively updates as surgical pins are drilled, enabling safe trajectory generation<br>
-              • <strong>Hardware Development:</strong> Built a custom 3D-printed drill end-effector with embedded control electronics, activated via trajectory execution for autonomous drilling<br>
-            </div>
-          </div>
-        </td>
-    </tr>
-
-    
-    
     <tr>
       <td style="padding:16px;width:40%;vertical-align:middle">
-        <img src='images/projects/cmu_vln_1.png' alt="CMU VLA Challenge" class="project-image">
+        <img src='images/projects/libero_drl.gif' alt="RL fine-tuning of parallel-decoding VLA" class="project-image">
+      </td>
+      <td style="padding:8px;width:60%;vertical-align:middle">
+        <div class="duration-container">
+          <div class="section-title-container">
+            <strong class="section-title">Reinforcement Learning with Robotic Foundation Models for Manipulation</strong>
+          </div>
+        </div>
+        <a href="https://drive.google.com/file/d/14PQM3zFzQ-YDjGVOsg72ps8GAvWuB_9k/view?usp=sharing", target="_blank">report</a> / <a href="https://github.com/AbhinandanVellanki/OpenVLA-OFT-RL/tree/main" target="_blank">code</a><br>
+        Extended OpenVLA-OFT, a 7B parallel-decoding VLA, with online PPO fine-tuning via a dual-head architecture. Preserving a frozen L1 regression head ensures safe deterministic rollouts while a stochastic policy head trained with GRPO advantages learns from environment interaction. Improved task success from 80% → 98% on LIBERO-Spatial while preserving 100 Hz closed-loop inference.
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('drl-manip'); return false;" id="drl-manip-toggle">View Details</a>
+        </div>
+        <div id="drl-manip-details" class="experience-details">
+          <div class="key-contributions">
+            • <strong>Dual-Head Architecture:</strong> Frozen L1 regression head (167M params) executes deterministic actions during rollouts; a stochastic tokenized head maps VLA hidden states [B, 56, 256] to a categorical action distribution — PPO gradients flow through the VLA backbone to update 55.4M LoRA parameters without touching the frozen 7.6B base<br>
+            • <strong>Two-Stage Training:</strong> Behavior cloning warmup (lr 5×10⁻⁷, cross-entropy) distills the deterministic policy into the stochastic head until ~80% validation success; PPO stage with GRPO advantages (clip ratios 0.2/0.28, γ=0.99, λ=0.95) then runs for 25k steps, pushing success to ~98%<br>
+            • <strong>Results:</strong> Evaluated on LIBERO-Spatial (10 pick-and-place tasks, 50 rollouts each); stochastic policy entropy remained stable throughout PPO training, confirming the policy did not collapse
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:40%;vertical-align:middle">
+        <img src='images/projects/brickdpo.gif' alt="BrickDPO project" class="project-image">
+      </td>
+      <td style="padding:8px;width:60%;vertical-align:middle">
+        <div class="duration-container">
+          <div class="section-title-container">
+            <strong class="section-title">BrickDPO: Post-Training LLMs for Physically Stable 3D Generation</strong>
+          </div>
+        </div>
+        <a href="https://drive.google.com/file/d/1dXsaFlxaM2GQ3uunMBUN-tdmHvStdrTQ/view?usp=sharing">report</a> / <a href="https://github.com/sreeharshaparuchur1/10623-ConditionedBrickGPT", target="_blank">code</a><br>
+        Fine-tuned LLaMA-3.2-1B-Instruct with DPO + Q-LoRA on a curated stability preference dataset, where winning and losing brick sequences were ranked by a physics solver without human supervision. Baking structural stability directly into the LLM reduced mean regenerations by 57% while preserving brick stability scores.
+        <div class="experience-toggle" style="margin-top: 8px;">
+          <a href="#" onclick="toggleExperience('brickdpo'); return false;" id="brickdpo-toggle">View Details</a>
+        </div>
+        <div id="brickdpo-details" class="experience-details">
+          <div class="key-contributions">
+            • <strong>Preference Dataset:</strong> Ran BrickGPT inference with physics-aware rollback to collect 3,366 training triples (context, winning sequence, losing sequence) across the <code>car</code> class; filtered by sequence length to fit compute budget<br>
+            • <strong>DPO Loss:</strong> Optimised the Bradley-Terry objective over stable vs. unstable brick continuations; partial stable prefixes shifted into the prompt to avoid penalising valid early placements<br>
+            • <strong>Ablation:</strong> Including partial structures in the prompt reduced mean regenerations from 5.11 → 3.92 vs. 9.24 for the BrickGPT baseline, with stability scores unchanged
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:40%;vertical-align:middle">
+        <img src='images/projects/vln.gif' alt="CMU VLA Challenge" class="project-image">
       </td>
       <td style="padding:8px;width:60%;vertical-align:middle">
         <div class="duration-container">
@@ -633,9 +681,7 @@
             
             <tr>
               <td style="padding:16px;width:40%;vertical-align:middle">
-                <div style="width: 384px; height: 240px; background-color: var(--table-bg); border: 2px dashed var(--border-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--border-color); font-size: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.05);">
-                  Coming Soon
-                </div>
+                <img src='images/publications/lyrics.gif' alt="How Much do Lyrics Matter?" class="project-image">
               </td>
               <td style="padding:8px;width:60%;vertical-align:middle">
                 <div class="section-title" style="margin-bottom: 6px;">How Much do Lyrics Matter? Analysing Lyrical Simplicity Preferences for Individuals At Risk of Depression</div>
@@ -649,7 +695,7 @@
 
           <tr style="background-color: var(--highlight-bg);">
             <td style="padding:16px;width:40%;vertical-align:middle">
-              <img src='images/projects/reddit_2.png' class="project-image">
+              <img src='images/publications/reddit.gif' alt="Analysing music discourse on Reddit" class="project-image">
             </td>
             <td style="padding:8px;width:60%;vertical-align:middle">
               <div class="duration-container">

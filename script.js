@@ -198,6 +198,31 @@ function startCarouselAutoPlay() {
   }, 5000); // Change slide every 5 seconds
 }
 
+/**
+ * Synchronise all project GIFs by restarting them simultaneously.
+ * Interval ≈ 12 700 ms matches the publication GIF loop duration (~12 660 ms)
+ * and is close to the brickdpo GIF (~12 320 ms), keeping them visually aligned.
+ */
+const GIF_SYNC_MS = 12700;
+
+function syncAllGifs() {
+  document.querySelectorAll('.project-image').forEach(img => {
+    if (!img.src || !img.src.toLowerCase().includes('.gif')) return;
+    const src = img.src;
+    img.src = '';
+    void img.offsetWidth; // force browser to process the blank src before restoring
+    img.src = src;
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Short delay lets all GIFs finish their initial decode before first sync
+  setTimeout(() => {
+    syncAllGifs();
+    setInterval(syncAllGifs, GIF_SYNC_MS);
+  }, 500);
+});
+
 // Export functions for global access (if needed)
 window.toggleExperience = toggleExperience;
 window.toggleAdditional = toggleAdditional;
