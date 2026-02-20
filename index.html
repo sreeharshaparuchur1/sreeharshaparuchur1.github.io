@@ -416,25 +416,24 @@
     
     <tr>
       <td style="padding:16px;width:40%;vertical-align:middle">
-        <img src='images/projects/ReMOV3R.png' alt="3D Foundation Models Project" class="project-image">
+        <img src='images/projects/remov3r.gif' alt="ReMov3r — monocular video to 3D reconstruction" class="project-image">
       </td>
       <td style="padding:8px;width:60%;vertical-align:middle">
         <div class="duration-container">
           <div class="section-title-container">
-            <strong class="section-title">3D Foundation-Models for Monocular Video Reconstruction</strong>
+            <strong class="section-title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</strong>
           </div>
-          <!-- <div class="duration-tag">CMU</div> -->
         </div>
-        <a href="https://drive.google.com/file/d/1GlR9XqQvIqDgGwtfmFA7U9m0eOH5hUrs/view?usp=sharing">report</a> / <a href="https://github.com/sreeharshaparuchur1/Mov3r-L3D-project">code</a><br>
-        Implemented semantic-geometric feature fusion using cross-attention between foundation model embeddings (DINOv2, Depth Anything) in a hierarchical state representation to recover camera extrinsics. Devised an adaptive keyframe selection strategy for confidence-aware pointmap refinement using a DUST3R-style architecture.<br>
+        <a href="https://drive.google.com/file/d/1GlR9XqQvIqDgGwtfmFA7U9m0eOH5hUrs/view?usp=sharing">report</a> / <a href="https://github.com/offjangir/ReMov3R">code</a><br>
+        Engineered a transformer-based architecture leveraging cross-attentional feature fusion with adaptive keyframe selection to model long-range spatio-temporal dependencies via causal self-attention over sliding windows. Enforced multi-view geometric consistency via confidence-guided depth refinement, achieving a 53% reduction in absolute trajectory error over the SOTA baseline on 7-Scenes.
         <div class="experience-toggle" style="margin-top: 8px;">
           <a href="#" onclick="toggleExperience('3d-foundation'); return false;" id="3d-foundation-toggle">View Details</a>
         </div>
         <div id="3d-foundation-details" class="experience-details">
           <div class="key-contributions">
-            • <strong>Foundation Model Fusion:</strong> Designed cross-attention mechanism to combine DINOv2 semantic features with Depth Anything geometric priors, achieving robust 3D scene understanding from monocular video<br>
-            • <strong>Adaptive Keyframe Selection:</strong> Developed confidence-aware algorithm that dynamically selects optimal frames for reconstruction, improving pointmap quality by 30% over uniform sampling<br>
-            • <strong>DUST3R Architecture:</strong> Implemented hierarchical state representation with multi-scale feature pyramids to handle camera motion estimation and dense 3D reconstruction simultaneously
+            • <strong>Architecture:</strong> Asymmetric cross-attention decoders fuse Depth Anything V2 geometric priors with DINOv2 visual tokens via RoPE spatial encoding; DPT heads produce dense pointmap and depth outputs<br>
+            • <strong>Losses:</strong> Confidence-aligned pointmap regression (<code>ConfAlignPointMapRegLoss</code>), confidence-aligned depth regression (<code>ConfAlignDepthRegLoss</code>), and quaternion + translation pose regression loss jointly optimised<br>
+            • <strong>Memory:</strong> Dual local/global causal self-attention streams with cosine-similarity keyframe selection decouple frame-level coherence from scene-level consistency
           </div>
         </div>
       </td>
