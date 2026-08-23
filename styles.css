@@ -3,6 +3,10 @@
 
 /* CSS Variables for theming */
 :root {
+  /* Layout: one content width and one page gutter, used everywhere */
+  --page-max: 1000px;
+  --gutter: 24px;
+
   --bg-color: #fafafa;
   --text-color: #333;
   --nav-bg: rgba(255, 255, 255, 0.95);
@@ -30,6 +34,7 @@ html {
 }
 
 body {
+  margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -39,8 +44,13 @@ body {
 body, td, th, tr, p, a {
   font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
-  line-height: 1.4;
-  letter-spacing: 0.3px;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+/* Paragraph gap must exceed the line gap, or paragraphs read as one block */
+p {
+  margin: 0 0 1.5em;
 }
 
 a {
@@ -55,7 +65,6 @@ a:focus, a:hover {
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15px;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -99,7 +108,6 @@ h2 {
 
 em {
   font-style: italic;
-  color: var(--link-color);
   font-weight: 500;
 }
 
@@ -115,7 +123,9 @@ em {
 }
 
 .navbar {
-  max-width: 1000px;
+  max-width: var(--page-max);
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -165,7 +175,7 @@ em {
 
 /* Profile Picture Styles */
 .about-section {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -403,7 +413,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 /* News Section */
 .news-container {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto 16px auto;
   background-color: var(--table-bg);
   border: 1px solid var(--border-color);
@@ -480,8 +490,32 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   }
   
   .news-container {
-    margin: 0 16px 16px 16px;
     max-height: 180px;
+  }
+}
+
+/* Narrow screens: the layout tables become blocks so the two-column
+   image/text rows stack instead of forcing the page wider than the viewport. */
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  body > table,
+  body > table tbody,
+  body > table tr,
+  body > table td {
+    display: block;
+    width: auto !important;
+  }
+
+  body > table td {
+    padding: 8px 0 !important;
+  }
+
+  .duration-container {
+    flex-wrap: wrap;
+    gap: 6px;
   }
 }
 
@@ -508,7 +542,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 /* Frames Carousel Styles */
 .frames-carousel {
   position: relative;
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
@@ -617,10 +651,13 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 }
 
 .project-image {
-  /* Larger frame dimensions for better attention */
-  width: 384px !important;
-  height: 240px !important;
-  
+  /* Fills its column, capped at the intended frame size, so the crop ratio
+     stays constant instead of tightening as the column narrows */
+  width: 100%;
+  max-width: 384px;
+  aspect-ratio: 8 / 5;
+  height: auto;
+
   /* Theme-aware border styling */
   border: 2px solid var(--border-color);
   border-radius: 8px;
@@ -643,25 +680,10 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
-/* Responsive project image adjustments */
-@media screen and (max-width: 768px) {
-  .project-image {
-    width: 336px !important;
-    height: 212px !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .project-image {
-    width: 288px !important;
-    height: 182px !important;
-  }
-}
-
 /* Timeline Styles */
 .timeline-container {
   position: relative;
-  max-width: 1000px;
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -696,7 +718,7 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  max-width: 1000px;
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -783,9 +805,10 @@ span.highlight {
   border-color: var(--border-color);
 }
 
-/* Global image reset */
+/* Global image reset. max-width stays fluid so images can shrink below their
+   fixed px widths on narrow screens instead of forcing the page wider. */
 img {
-  max-width: none !important;
+  max-width: 100%;
   max-height: none !important;
   transform: none !important;
 }
