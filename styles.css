@@ -458,8 +458,8 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
 
 .news-icon-wordmark {
   width: auto;
-  height: 1.85em;
-  vertical-align: -0.5em;
+  height: 1.15em;
+  vertical-align: -0.2em;
 }
 
 /* Custom scrollbar for news */
