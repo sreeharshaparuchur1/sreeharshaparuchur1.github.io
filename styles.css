@@ -449,6 +449,19 @@ td[style*="width:40%"][style*="vertical-align:middle"] {
   margin-right: 8px;
 }
 
+.news-icon {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  object-fit: contain;
+}
+
+.news-icon-wordmark {
+  width: auto;
+  height: 1.85em;
+  vertical-align: -0.5em;
+}
+
 /* Custom scrollbar for news */
 .news-container::-webkit-scrollbar {
   width: 6px;
